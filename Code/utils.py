@@ -95,7 +95,7 @@ def evaluate_openai(run_id, model_name, dataset_name, prompt, shot, dev):
             # generate question text
             new_question, mapping = extract_mapping(sample["question"])
             # generate prompt text
-            prompt_text = generate_prompt(new_question, exemplar)
+            prompt_text = generate_prompt(new_question, exemplar, prompt)
             # get response
             result = generate_response(prompt_text, model_name)
 
