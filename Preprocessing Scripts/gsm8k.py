@@ -2,8 +2,6 @@ import re
 import pandas as pd
 import string
 
-from word2number import w2n
-
 from datasets import load_dataset
 
 # Loading the dataset
@@ -13,6 +11,8 @@ dataset = load_dataset("gsm8k", "main")
 # Function for extracting mapping and answer from quesitons
 
 def extract_mapping_ans(dataset):
+    
+    count = 0
 
     train_mappings = []
     train_new_questions = []
@@ -21,55 +21,49 @@ def extract_mapping_ans(dataset):
     # Replacing numbers with letters
 
     for i,d in enumerate(dataset):
-
+        
         q = d['question']
         a = d['answer']
+        
+     # Expression used to extract number
+        
+        q = re.sub(r'(\d)\s+(\d)', r'\1,\2', q)
+        q = re.sub(r'(\d),(\d)', r'\1\2', q)
+        
+        # Expression used to extract number
+    
+        exp = r'\d+(\,\d+)*(\.\d+)?'
+        
         mapping = {}
         new_question = q
         letter = 'A'
-
+    
         words = q.split(' ')
-
+        
+        # Replace number word with numbers
+    
         # Finding numbers in the questions
-
-        number_words_count = 0
-
+    
         for j, word in enumerate(words):
-
-            if(number_words_count):
-                number_words_count -= 1
-                continue
-
+                
+            # only support pure numbers, price, %, not number word (e.g. twenty)
+            
+            word = word.replace(",","")
+            
+            # checking first word
             try:
-                # only support pure numbers, price, and number words
-
-                # checking first word first
-                num = None
-                num = re.sub(r'[^(%|\w)]','',word)
-                num = w2n.word_to_num(num)
-
-                # if the above throws no exception, check whether a multi-number word
-                k = j+1
-                long_word = re.sub(r'[^(%|\w)]','',word)
-                while(k < len(words)):
-                    next_word = re.sub(r'[^(%|\w)]','',words[k])
-                    try:
-                        temp = w2n.word_to_num(next_word)
-                        long_word = long_word + " " + next_word
-                        k += 1
-                        number_words_count += 1
-                    except:
-                        break
-
-                num = w2n.word_to_num(long_word)
-                mapping[letter] = num
-                new_question = new_question.replace(long_word, letter, 1)
-                letter = chr(ord(letter)+1)
+                num = re.search(exp,word).group(0)
             except:
                 continue
-        
+            
+            # change question
+            mapping[letter] = float(num)
+            new_question = new_question.replace(num, letter, 1)
+            letter = chr(ord(letter)+1)
+                
         if(len(mapping) == 0):
             print(i,q)
+            
 
         # Finding numbers in the final answer
 
@@ -96,5 +90,3 @@ def extract_mapping_ans(dataset):
 
 dataset['train'] = extract_mapping_ans(dataset['train'])
 dataset['test'] = extract_mapping_ans(dataset['test'])
-
-dataset.save_to_disk("Data/processed_gsm8k")

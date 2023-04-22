@@ -7,6 +7,9 @@ import time
 import random
 from openai.error import APIError, APIConnectionError, RateLimitError, Timeout
 
+# For mapping extraction
+from word2number import w2n
+
 random.seed(42)
 
 
@@ -30,7 +33,7 @@ def generate_prompt(question, exemplar):
     return prompt_text
 
 
-def build_record(sample, result):
+def build_record(sample, result, mapping):
 
     record = {}
     record['question'] = sample['question']
@@ -57,6 +60,8 @@ def build_record(sample, result):
                 r'The answer is (.*?)\.', result['choices'][0]['message']['content'], re.IGNORECASE).group(1)
         except AttributeError:
             record['numeric_response'] = None
+    
+    record['mapping'] = mapping
 
     return record
 
@@ -74,13 +79,13 @@ def evaluate_openai(run_id, model_name, dataset):
         for sample in tqdm(modified_ds):
 
             # generate question text
-            question = sample["question"]
+            new_question, mapping = extract_mapping(sample["question"])
             # generate prompt text
-            prompt_text = generate_prompt(question, exemplar)
+            prompt_text = generate_prompt(new_question, exemplar)
             # get response
             result = generate_response(prompt_text, model_name)
 
-            record = build_record(sample, result)
+            record = build_record(sample, result, mapping)
             f.write(json.dumps(record) + '\n')
 
 
@@ -121,3 +126,44 @@ def generate_response(prompt, model_name):
             break
 
     return response
+
+# Extract ABC Mapping from question
+def extract_mapping(q):
+    
+    # Preprocess question
+    
+    q = re.sub(r'(\d)\s+(\d)', r'\1,\2', q)
+    q = re.sub(r'(\d),(\d)', r'\1\2', q)
+    
+    # Expression used to extract number
+
+    exp = r'\d+(\,\d+)*(\.\d+)?'
+    
+    mapping = {}
+    new_question = q
+    letter = 'A'
+
+    words = q.split(' ')
+    
+    # Replace number word with numbers
+
+    # Finding numbers in the questions
+
+    for j, word in enumerate(words):
+            
+        # only support pure numbers, price, %, not number word (e.g. twenty)
+        
+        word = word.replace(",","")
+        
+        # checking first word
+        try:
+            num = re.search(exp,word).group(0)
+        except:
+            continue
+        
+        # change question
+        mapping[letter] = float(num)
+        new_question = new_question.replace(num, letter, 1)
+        letter = chr(ord(letter)+1)
+        
+    return new_question,mapping
