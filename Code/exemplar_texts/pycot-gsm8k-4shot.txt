@@ -1,0 +1,74 @@
+Q: Natalia sold clips to c0 of her friends in April, and then she sold half as many clips in May. How many clips did Natalia sell altogether in April and May? Write a Python function that returns the answer.
+
+A:
+# solve the problem step by step
+def clips_sold(c0):
+
+    # there are c0 clips sold in April
+    april = c0
+    # compute the number of clips sold in May
+    may = april / 2
+    # compute the total number of clips sold in April and May
+    total = april + may
+    # return the answer
+    return total
+
+
+Q: Weng earns $c0 an hour for babysitting. Yesterday, she just did c1 minutes of babysitting. How much did she earn? Write a Python function that returns the answer.
+
+A:
+# solve the problem step by step
+def babysitting_pay(c0, c1):
+
+    # the pay for babysitting is $c0 an hour
+    rate = c0
+    # there are c1 minutes of babysitting
+    minutes = c1
+    # compute the number of hours of babysitting
+    hours = minutes / 60
+    # compute Weng's total pay
+    pay = rate * hours
+    # return the answer
+    return pay
+
+
+Q: Betty is saving money for a new wallet which costs $c0. Betty has only half of the money she needs. Her parents decided to give her $c1 for that purpose, and her grandparents twice as much as her parents. How much more money does Betty need to buy the wallet? Write a Python function that returns the answer.
+
+A:
+# solve the problem step by step
+def money_required(c0, c1):
+
+    # the wallet costs $c0
+    wallet = c0
+    # Betty has half of the money she needs
+    half = wallet / 2
+    # her parents give her $c1
+    parents = c1
+    # her grandparents give her twice as much as her parents
+    grandparents = parents * 2
+    # compute the total amount of money Betty has
+    total = half + parents + grandparents
+    # compute the amount of money Betty still needs
+    need = wallet - total
+    # return the answer
+    return need
+
+
+Q: Julie is reading a c0-page book. Yesterday, she was able to read c1 pages and today, she read twice as many pages as yesterday. If she wants to read half of the remaining pages tomorrow, how many pages should she read? Write a Python function that returns the answer.
+
+A:
+# solve the problem step by step
+def pages_to_read(c0, c1):
+
+    # there are c0 pages in the book
+    book = c0
+    # yesterday, Julie read c1 pages
+    yesterday = c1
+    # today, Julie read twice as many pages as yesterday
+    today = yesterday * 2
+    # compute the number of pages left to read
+    remaining = book - today - yesterday
+    # tomorrow, Julie wants to read half of the remaining pages
+    tomorrow = remaining / 2
+    # return the answer
+    return tomorrow
