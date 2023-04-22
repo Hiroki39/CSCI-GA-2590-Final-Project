@@ -35,8 +35,6 @@ def generate_prompt(question, exemplar, prompt):
     # an overall instruction could be added here if needed
     # instr = "End your response with 'The answer is <answer>.'"
 
-    # prompt_text = instr + "\n\n" + exemplar + \
-    #     "\n\nQ: " + question + "\nA:"
     if prompt == 'pycot':
         prompt_text = exemplar + "\n\nQ: " + question + \
             " Write a Python function that returns the answer.\nA:"
@@ -70,9 +68,9 @@ def build_record(sample, result):
 def evaluate_openai(run_id, model_name, dataset_name, prompt, shot, dev):
     with open(f'logs/{run_id}.jsonl', 'w') as f:
 
-        # generate exemplar
+        # retrieve the exemplar text
         exemplar = get_exemplar(dataset_name, prompt, shot)
-
+        # retrieve the dataset
         dataset = get_dataset(dataset_name)
 
         if not dev:

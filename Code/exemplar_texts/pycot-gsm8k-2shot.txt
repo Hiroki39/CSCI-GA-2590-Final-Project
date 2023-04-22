@@ -12,3 +12,21 @@ def clips_sold(c0):
     total = april + may
     # return the answer
     return total
+
+
+Q: Weng earns $c0 an hour for babysitting. Yesterday, she just did c1 minutes of babysitting. How much did she earn? Write a Python function that returns the answer.
+
+A:
+# solve the problem step by step
+def babysitting_pay(c0, c1):
+
+    # the pay for babysitting is $c0 an hour
+    rate = c0
+    # there are c1 minutes of babysitting
+    minutes = c1
+    # compute the number of hours of babysitting
+    hours = minutes / 60
+    # compute Weng's total pay
+    pay = rate * hours
+    # return the answer
+    return pay
