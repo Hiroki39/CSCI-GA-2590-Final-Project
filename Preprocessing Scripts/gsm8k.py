@@ -1,5 +1,6 @@
 import re
 import pandas as pd
+import string
 
 from word2number import w2n
 
@@ -24,35 +25,51 @@ def extract_mapping_ans(dataset):
         q = d['question']
         a = d['answer']
         mapping = {}
-        new_question = []
+        new_question = q
         letter = 'A'
 
         words = q.split(' ')
 
         # Finding numbers in the questions
 
+        number_words_count = 0
+
         for j, word in enumerate(words):
 
+            if(number_words_count):
+                number_words_count -= 1
+                continue
+
             try:
-                # only support pure numbers
-                #num = re.sub(r'[^(%|\w)]','',word)
-                #num = w2n.word_to_num(num)
+                # only support pure numbers, price, and number words
 
-                num = re.sub(r'$','',word)
-                num = float(num)
+                # checking first word first
+                num = None
+                num = re.sub(r'[^(%|\w)]','',word)
+                num = w2n.word_to_num(num)
 
-                if(num == None):
-                    raise ValueError("None num")
+                # if the above throws no exception, check whether a multi-number word
+                k = j+1
+                long_word = re.sub(r'[^(%|\w)]','',word)
+                while(k < len(words)):
+                    next_word = re.sub(r'[^(%|\w)]','',words[k])
+                    try:
+                        temp = w2n.word_to_num(next_word)
+                        long_word = long_word + " " + next_word
+                        k += 1
+                        number_words_count += 1
+                    except:
+                        break
 
+                num = w2n.word_to_num(long_word)
                 mapping[letter] = num
-                new_question.append(letter)
+                new_question = new_question.replace(long_word, letter, 1)
                 letter = chr(ord(letter)+1)
             except:
-                new_question.append(word)
                 continue
         
-        #if(len(mapping) == 0):
-            #print(i,q)
+        if(len(mapping) == 0):
+            print(i,q)
 
         # Finding numbers in the final answer
 
@@ -62,10 +79,8 @@ def extract_mapping_ans(dataset):
             ans = re.sub(r',','',ans)
             ans = float(ans)
         except:
-            print(i, a, ans)
+            #print(i, a, ans)
             ans = None
-        
-        new_question = ' '.join(new_question)
 
         train_mappings.append(mapping)
         train_new_questions.append(new_question)
@@ -82,4 +97,4 @@ def extract_mapping_ans(dataset):
 dataset['train'] = extract_mapping_ans(dataset['train'])
 dataset['test'] = extract_mapping_ans(dataset['test'])
 
-dataset.save_to_disk("processed_gsm8k.dat")
+dataset.save_to_disk("Data/processed_gsm8k")
