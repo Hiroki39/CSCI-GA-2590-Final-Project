@@ -10,22 +10,26 @@ from openai.error import APIError, APIConnectionError, RateLimitError, Timeout
 random.seed(42)
 
 
-def get_exemplar():
+def get_exemplar(prompt, shot):
 
-    with open('exemplars.txt') as f:
+    with open(f'exemplar_texts/{prompt}-{shot}shot.txt') as f:
         exemplar = f.read()
 
     return exemplar
 
 
-def generate_prompt(question, exemplar):
+def generate_prompt(question, exemplar, prompt):
 
     # an overall instruction could be added here if needed
     # instr = "End your response with 'The answer is <answer>.'"
 
     # prompt_text = instr + "\n\n" + exemplar + \
     #     "\n\nQ: " + question + "\nA:"
-    prompt_text = exemplar + "\n\nQ: " + question + "\nA:"
+    if prompt == 'pycot':
+        prompt_text = exemplar + "\n\nQ: " + question + \
+            " Write a Python function that returns the answer.\nA:"
+    elif prompt == 'sympy':
+        pass
 
     return prompt_text
 
@@ -42,41 +46,31 @@ def build_record(sample, result):
 
     if result['model'] == 'text-davinci-003':
         record['response'] = result['choices'][0]['text']
-        try:
-            record['numeric_response'] = re.search(
-                r'The answer is (.*?)\.', result['choices'][0]['text'], re.IGNORECASE).group(1)
-        except AttributeError:
-            record['numeric_response'] = None
         record['tokens'] = result['choices'][0]['logprobs']['tokens']
         record['logprobs'] = result['choices'][0]['logprobs']['token_logprobs']
 
     elif result['model'].startswith('gpt-3.5-turbo'):
         record['response'] = result['choices'][0]['message']['content']
-        try:
-            record['numeric_response'] = re.search(
-                r'The answer is (.*?)\.', result['choices'][0]['message']['content'], re.IGNORECASE).group(1)
-        except AttributeError:
-            record['numeric_response'] = None
 
     return record
 
 
-def evaluate_openai(run_id, model_name, dataset):
+def evaluate_openai(run_id, model_name, dataset, prompt, shot):
     with open(f'logs/{run_id}.jsonl', 'w') as f:
 
         # generate exemplar
-        exemplar = get_exemplar()
+        exemplar = get_exemplar(prompt, shot)
 
         # merge train and test datasets and remove the exemplar from the train set
         modified_ds = concatenate_datasets([dataset["train"].select(
-            range(1, len(dataset["train"]))), dataset["test"]])
+            range(shot, len(dataset["train"]))), dataset["test"]])
 
         for sample in tqdm(modified_ds):
 
             # generate question text
             question = sample["question"]
             # generate prompt text
-            prompt_text = generate_prompt(question, exemplar)
+            prompt_text = generate_prompt(question, exemplar, prompt)
             # get response
             result = generate_response(prompt_text, model_name)
 
