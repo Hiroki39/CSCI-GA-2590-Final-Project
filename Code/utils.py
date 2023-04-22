@@ -55,15 +55,18 @@ def build_record(sample, result):
     return record
 
 
-def evaluate_openai(run_id, model_name, dataset, prompt, shot):
+def evaluate_openai(run_id, model_name, dataset, prompt, shot, dev):
     with open(f'logs/{run_id}.jsonl', 'w') as f:
 
         # generate exemplar
         exemplar = get_exemplar(prompt, shot)
 
-        # merge train and test datasets and remove the exemplar from the train set
-        modified_ds = concatenate_datasets([dataset["train"].select(
-            range(shot, len(dataset["train"]))), dataset["test"]])
+        if not dev:
+            # merge train and test datasets and remove the exemplar from the train set
+            modified_ds = concatenate_datasets([dataset["train"].select(
+                range(shot, len(dataset["train"]))), dataset["test"]])
+        else:
+            modified_ds = dataset["test"].select(range(5))
 
         for sample in tqdm(modified_ds):
 
