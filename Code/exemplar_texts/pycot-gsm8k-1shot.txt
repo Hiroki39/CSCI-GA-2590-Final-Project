@@ -1,7 +1,6 @@
 Q: Natalia sold clips to c0 of her friends in April, and then she sold half as many clips in May. How many clips did Natalia sell altogether in April and May? Write a Python function that returns the answer.
 
 A:
-
 # solve the problem step by step
 def clips_sold(c0, c1, c2):
 

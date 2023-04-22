@@ -2,7 +2,7 @@ import openai
 import re
 import json
 from tqdm import tqdm
-from datasets import concatenate_datasets
+from datasets import concatenate_datasets, load_dataset
 import time
 import random
 from openai.error import APIError, APIConnectionError, RateLimitError, Timeout
@@ -10,12 +10,24 @@ from openai.error import APIError, APIConnectionError, RateLimitError, Timeout
 random.seed(42)
 
 
-def get_exemplar(prompt, shot):
+def get_exemplar(dataset_name, prompt, shot):
 
-    with open(f'exemplar_texts/{prompt}-{shot}shot.txt') as f:
+    with open(f'exemplar_texts/{prompt}-{dataset_name}-{shot}shot.txt') as f:
         exemplar = f.read()
 
     return exemplar
+
+
+def get_dataset(dataset_name):
+
+    # Load the GSM8K dataset from Hugging Face
+    if dataset_name == 'gsm8k':
+        # Load the GSM8K dataset from Hugging Face
+        dataset = load_dataset(dataset_name, 'main')
+    else:
+        pass
+
+    return dataset
 
 
 def generate_prompt(question, exemplar, prompt):
@@ -55,11 +67,13 @@ def build_record(sample, result):
     return record
 
 
-def evaluate_openai(run_id, model_name, dataset, prompt, shot, dev):
+def evaluate_openai(run_id, model_name, dataset_name, prompt, shot, dev):
     with open(f'logs/{run_id}.jsonl', 'w') as f:
 
         # generate exemplar
-        exemplar = get_exemplar(prompt, shot)
+        exemplar = get_exemplar(dataset_name, prompt, shot)
+
+        dataset = get_dataset(dataset_name)
 
         if not dev:
             # merge train and test datasets and remove the exemplar from the train set

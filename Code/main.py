@@ -1,6 +1,5 @@
 import argparse
 import openai
-from datasets import load_dataset
 from utils import evaluate_openai
 from uuid import uuid4
 from dotenv import load_dotenv
@@ -8,23 +7,20 @@ import os
 import csv
 
 
-def conduct_test(model, dataset_name, prompt, shot, dev):
+def conduct_test(model_name, dataset_name, prompt, shot, dev):
 
     run_id = str(uuid4())
 
     print(f"Run ID: {run_id}")
 
-    # Load the GSM8K dataset from Hugging Face
-    if dataset_name == 'gsm8k':
-        dataset = load_dataset(dataset_name, 'main')
     # Set up the OpenAI API client
     openai.api_key = os.getenv('OPENAI_API_KEY')
-    evaluate_openai(run_id, model, dataset, prompt, shot, dev)
+    evaluate_openai(run_id, model_name, dataset_name, prompt, shot, dev)
 
     if not dev:
         with open('log_files.csv', 'a') as f:
             writer = csv.writer(f)
-            writer.writerow([run_id, model, dataset_name, prompt, shot])
+            writer.writerow([run_id, model_name, dataset_name, prompt, shot])
 
 
 if __name__ == '__main__':
