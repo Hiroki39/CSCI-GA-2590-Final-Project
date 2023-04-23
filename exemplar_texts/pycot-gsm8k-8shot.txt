@@ -54,16 +54,16 @@ def money_required(c0, c1):
     return need
 
 
-Q: Julie is reading a c0-page book. Yesterday, she was able to read c1 pages and today, she read twice as many pages as yesterday. If she wants to read half of the remaining pages tomorrow, how many pages should she read? Write a Python function that returns the answer.
+Q: Julie is reading a 120-page book. Yesterday, she was able to read c0 pages and today, she read twice as many pages as yesterday. If she wants to read half of the remaining pages tomorrow, how many pages should she read? Write a Python function that returns the answer.
 
 A:
 # solve the problem step by step
-def pages_to_read(c0, c1):
+def pages_to_read(c0):
 
-    # there are c0 pages in the book
-    book = c0
-    # yesterday, Julie read c1 pages
-    yesterday = c1
+    # there are 120 pages in the book
+    book = 120
+    # yesterday, Julie read c0 pages
+    yesterday = c0
     # today, Julie read twice as many pages as yesterday
     today = yesterday * 2
     # compute the number of pages left to read
@@ -74,16 +74,16 @@ def pages_to_read(c0, c1):
     return tomorrow
 
 
-Q: James writes a c0-page letter to c1 different friends twice a week. How many pages does he write a year? Write a Python function that returns the answer.
+Q: James writes a 3-page letter to c0 different friends twice a week. How many pages does he write a year? Write a Python function that returns the answer.
 
 A:
 # solve the problem step by step
-def pages_written(c0, c1):
+def pages_written(c0):
 
-    # there are c0 pages in the letter
-    pages = c0
-    # James writes the letter to c1 different friends
-    friends = c1
+    # there are 3 pages in the letter
+    pages = 3
+    # James writes the letter to c0 different friends
+    friends = c0
     # There are 52 weeks in a year
     weeks = 52
     # James writes the letter to every friend twice a week
@@ -94,18 +94,18 @@ def pages_written(c0, c1):
     return pages_year
 
 
-Q: Mark has a garden with flowers. He planted plants of three different colors in it. c0 of them are yellow, and there are c1% more of those in purple. There are only c2% as many green flowers as there are yellow and purple flowers. How many flowers does Mark have in his garden? Write a Python function that returns the answer.
+Q: Mark has a garden with flowers. He planted plants of three different colors in it. Ten of them are yellow, and there are c0% more of those in purple. There are only c1% as many green flowers as there are yellow and purple flowers. How many flowers does Mark have in his garden? Write a Python function that returns the answer.
 
 A:
 # solve the problem step by step
-def flowers(c0, c1, c2):
+def flowers(c0, c1):
 
-    # there are c0 yellow flowers
-    yellow = c0
-    # there are c1% more purple flowers than yellow flowers
-    purple = yellow * (1 + c1 / 100)
-    # there are c2% as many green flowers as there are yellow and purple flowers
-    green = (yellow + purple) * (c2 / 100)
+    # there are 10 yellow flowers
+    yellow = 10
+    # there are c0% more purple flowers than yellow flowers
+    purple = yellow * (1 + c0 / 100)
+    # there are c1% as many green flowers as there are yellow and purple flowers
+    green = (yellow + purple) * (c1 / 100)
     # compute the total number of flowers
     total = yellow + purple + green
     # return the answer

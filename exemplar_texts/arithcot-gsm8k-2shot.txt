@@ -1,0 +1,22 @@
+Q: Natalia sold clips to c0 of her friends in April, and then she sold half as many clips in May. How many clips did Natalia sell altogether in April and May? Write multiple mathematical equations to calculate the answer step by step.
+
+A:
+Solve the problem step by step:
+
+1. Divide the number of clips sold in April by 2 to find the number of clips sold in May. Let x be the number of clips sold in May,
+x = c0 / 2
+
+2. Add the number of clips sold in April (c0) and May (c1) to get the number of clips sold altogether.
+answer = c0 + x
+
+
+Q: Weng earns $c0 an hour for babysitting. Yesterday, she just did c1 minutes of babysitting. How much did she earn? Write multiple mathematical equations to calculate the answer step by step.
+
+A:
+Solve the problem step by step:
+
+1. Divide the number of minutes spent babysitting by 60 to get the number of hours. Let x be the number of hours spent babysitting. 
+x = c1 / 60
+
+2. Multiply the number of hours spent babysitting and rate to get the total pay.
+answer = x * c0

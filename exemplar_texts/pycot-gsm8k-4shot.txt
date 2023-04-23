@@ -54,16 +54,16 @@ def money_required(c0, c1):
     return need
 
 
-Q: Julie is reading a c0-page book. Yesterday, she was able to read c1 pages and today, she read twice as many pages as yesterday. If she wants to read half of the remaining pages tomorrow, how many pages should she read? Write a Python function that returns the answer.
+Q: Julie is reading a 120-page book. Yesterday, she was able to read c0 pages and today, she read twice as many pages as yesterday. If she wants to read half of the remaining pages tomorrow, how many pages should she read? Write a Python function that returns the answer.
 
 A:
 # solve the problem step by step
-def pages_to_read(c0, c1):
+def pages_to_read(c0):
 
-    # there are c0 pages in the book
-    book = c0
-    # yesterday, Julie read c1 pages
-    yesterday = c1
+    # there are 120 pages in the book
+    book = 120
+    # yesterday, Julie read c0 pages
+    yesterday = c0
     # today, Julie read twice as many pages as yesterday
     today = yesterday * 2
     # compute the number of pages left to read

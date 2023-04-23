@@ -1,0 +1,48 @@
+Q: For Halloween Debby and her sister combined the candy they received. Debby had c0 pieces of candy while her sister had c1. If they ate c2 pieces the first night, how many pieces do they have left? Write multiple mathematical equations to calculate the answer step by step.
+
+A:
+Solve the problem step by step:
+
+1. Add the pieces of candy from Debby and her sister to calculate the total pieces of candy. Let x be the total pieces of candy,
+x = c0 + c1
+
+2. Subtract the piece of candy ate by them from the total pieces of candy to calculate the answer.
+answer = x - c2
+
+
+Q: At the town carnival Billy rode the ferris wheel c0 times and the bumper cars c1 times. If each ride cost c2 tickets, how many tickets did he use? Write multiple mathematical equations to calculate the answer step by step.
+
+A:
+Solve the problem step by step:
+
+1. Add the number of ferries wheel ride and the number of bumper cars ride to calculate the total number of rides. Let x be the total number of rides,
+x = c0 + c1
+
+2. Multiply the number of tickets by the cost each ride to calculate the answer.
+answer = x * c2
+
+
+Q: The schools debate team had c0 boys and c1 girls on it. If they were split into groups of c2 how many groups could they make? Write multiple mathematical equations to calculate the answer step by step.
+
+A:
+Solve the problem step by step:
+
+1. Add the number of boys and the number of girls to calculate the total number of students. Let x be the total number of students,
+x = c0 + c1
+
+2. Divide the number of total students by number of students per group to calculate the answer.
+answer = x / c2
+
+
+Q: A new building needed c0 windows. The builder had already installed c1 of them. If it takes c2 hours to install each window, how long will it take him to install the rest? Write multiple mathematical equations to calculate the answer step by step.
+
+A:
+Solve the problem step by step:
+
+1. Subtract the number of total windows needed and the number of windows completed to calculate the number of windows that need to be installed. Let x be the number of windows that need to be installed,
+x = c0 - c1
+
+2. Multiply the hours needed to install each window by the number of windows left to calculate the answer.
+answer = x * c2
+
+
