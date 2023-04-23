@@ -7,9 +7,6 @@ import time
 import random
 from openai.error import APIError, APIConnectionError, RateLimitError, Timeout
 
-# For mapping extraction
-from word2number import w2n
-
 random.seed(42)
 
 
@@ -69,7 +66,7 @@ def build_record(sample, result, mapping):
                 r'The answer is (.*?)\.', result['choices'][0]['message']['content'], re.IGNORECASE).group(1)
         except AttributeError:
             record['numeric_response'] = None
-    
+
     record['mapping'] = mapping
 
     return record
@@ -93,9 +90,9 @@ def evaluate_openai(run_id, model_name, dataset_name, prompt, shot, dev):
         for sample in tqdm(modified_ds):
 
             # generate question text
-            new_question, mapping = extract_mapping(sample["question"])
+            sample["question"], mapping = extract_mapping(sample["question"])
             # generate prompt text
-            prompt_text = generate_prompt(new_question, exemplar, prompt)
+            prompt_text = generate_prompt(sample["question"], exemplar, prompt)
             # get response
             result = generate_response(prompt_text, model_name)
 
@@ -142,42 +139,43 @@ def generate_response(prompt, model_name):
     return response
 
 # Extract ABC Mapping from question
+
+
 def extract_mapping(q):
-    
+
     # Preprocess question
-    
     q = re.sub(r'(\d)\s+(\d)', r'\1,\2', q)
     q = re.sub(r'(\d),(\d)', r'\1\2', q)
-    
+
     # Expression used to extract number
 
     exp = r'\d+(\,\d+)*(\.\d+)?'
-    
+
     mapping = {}
     new_question = q
     letter = 'A'
 
     words = q.split(' ')
-    
+
     # Replace number word with numbers
 
     # Finding numbers in the questions
 
     for j, word in enumerate(words):
-            
+
         # only support pure numbers, price, %, not number word (e.g. twenty)
-        
-        word = word.replace(",","")
-        
+
+        word = word.replace(",", "")
+
         # checking first word
         try:
-            num = re.search(exp,word).group(0)
+            num = re.search(exp, word).group(0)
         except:
             continue
-        
+
         # change question
         mapping[letter] = float(num)
         new_question = new_question.replace(num, letter, 1)
         letter = chr(ord(letter)+1)
-        
-    return new_question,mapping
+
+    return new_question, mapping
