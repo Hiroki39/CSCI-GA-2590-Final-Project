@@ -60,11 +60,6 @@ def build_record(sample, result, mapping):
 
     elif result['model'].startswith('gpt-3.5-turbo'):
         record['response'] = result['choices'][0]['message']['content']
-        try:
-            record['numeric_response'] = re.search(
-                r'The answer is (.*?)\.', result['choices'][0]['message']['content'], re.IGNORECASE).group(1)
-        except AttributeError:
-            record['numeric_response'] = None
 
     record['mapping'] = mapping
 
@@ -151,7 +146,7 @@ def extract_mapping(q):
 
     mapping = {}
     new_question = []
-    letter = 'C'
+    letter = 'c'
     count = 0
     name = letter + str(count)
 
@@ -164,7 +159,7 @@ def extract_mapping(q):
     for j, word in enumerate(words):
 
         # only support pure numbers, price, %, not number word (e.g. twenty)
-        
+
         # checking first word
         try:
             num = re.search(exp, word).group(0)
@@ -178,6 +173,5 @@ def extract_mapping(q):
         new_word = word.replace(num, name)
         new_question.append(new_word)
         count += 1
-        
-    return " ".join(new_question),mapping
 
+    return " ".join(new_question), mapping
