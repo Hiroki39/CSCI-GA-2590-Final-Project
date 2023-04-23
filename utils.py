@@ -6,6 +6,7 @@ from datasets import concatenate_datasets, load_dataset, load_from_disk
 import time
 import random
 from openai.error import APIError, APIConnectionError, RateLimitError, Timeout
+from datetime import datetime
 
 random.seed(42)
 
@@ -28,6 +29,8 @@ def get_dataset(dataset_name):
         dataset = load_dataset(dataset_name, 'main')
     elif dataset_name == 'multiarith':
         dataset = load_from_disk("data/multiarith")
+    elif dataset_name == 'aqua_rat':
+        dataset = load_dataset(dataset_name, 'raw')
     else:
         pass
 
@@ -46,12 +49,12 @@ def generate_prompt(question, exemplar, prompt):
         prompt_text = exemplar + "\n\nQ: " + question + \
             " Write multiple mathematical equations to calculate the answer step by step.\nA:"
     elif prompt == 'sympy':
-        pass
-
+        prompt_text = exemplar + "\n\nQ: " + question + \
+            "write a mapping and a mathematical equation starting with ‘Eq1:’ and solve using sympy"
     return prompt_text
 
 
-def build_record(sample, result, mapping):
+def build_record(sample, result, mapping, dataset_name):
 
     record = {}
     record['question'] = sample['question']
@@ -60,8 +63,10 @@ def build_record(sample, result, mapping):
     #    r"#### (\-?[0-9\.\,]+)", r"The answer is \1.", re.sub(r'<<.*?>>', '', sample['answer']))
     #record['numeric_answer'] = re.search(
     #    r"#### (\-?[0-9\.\,]+)", sample['answer']).group(1)
-
-    record['answer'] = sample['answer']
+    if dataset_name == 'aqua_rat':
+        record['answer'] = sample['correct']
+    else:
+        record['answer'] = sample['answer']
 
     if result['model'] == 'text-davinci-003':
         record['response'] = result['choices'][0]['text']
@@ -82,7 +87,8 @@ def build_record(sample, result, mapping):
 
 
 def evaluate_openai(run_id, model_name, dataset_name, prompt, shot, dev, promptset):
-    with open(f'logs/{run_id}.jsonl', 'w') as f:
+    # with open(f'logs/{run_id}.jsonl', 'w') as f:
+    with open(f'logs/{str(datetime.now())}.jsonl', 'w') as f:
 
         # retrieve the exemplar text
         exemplar = get_exemplar(dataset_name, prompt, shot, promptset)
@@ -103,7 +109,7 @@ def evaluate_openai(run_id, model_name, dataset_name, prompt, shot, dev, prompts
                 indices = random.sample(indices, 10)
             modified_ds = dataset.select(indices)
 
-        else:
+        elif dataset_name == 'gsm8k':
             if not dev:
                 # merge train and test datasets and remove the exemplar from the train set
                 modified_ds = concatenate_datasets([dataset["train"].select(
@@ -111,16 +117,31 @@ def evaluate_openai(run_id, model_name, dataset_name, prompt, shot, dev, prompts
             else:
                 modified_ds = dataset["test"].select(range(5))
 
+        elif dataset_name == 'aqua_rat':
+            dataset["train"] = dataset["train"].shuffle(seed=42)
+            dataset["test"] = dataset["test"].shuffle(seed=42)
+            if not dev:
+                modified_ds = concatenate_datasets([dataset["train"].select(range(7800)),
+                dataset["test"].select(range(200))])
+            else:
+                modified_ds = dataset["train"].select(range(5))
+        else:
+            raise ValueError("dataset is not properly defined ...")
+
         for sample in tqdm(modified_ds):
 
             # generate question text
-            sample["question"], mapping = extract_mapping(sample["question"])
+            if prompt == 'sympy':
+                mapping = ''
+                sample["question"] += ', '.join(sample['options'])
+            else:
+                sample["question"], mapping = extract_mapping(sample["question"])
             # generate prompt text
             prompt_text = generate_prompt(sample["question"], exemplar, prompt)
             # get response
             result = generate_response(prompt_text, model_name)
 
-            record = build_record(sample, result, mapping)
+            record = build_record(sample, result, mapping, dataset_name)
             f.write(json.dumps(record) + '\n')
 
 
