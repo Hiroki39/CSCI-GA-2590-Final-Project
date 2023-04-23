@@ -65,6 +65,11 @@ def build_record(sample, result, mapping):
         record['tokens'] = result['choices'][0]['logprobs']['tokens']
         record['logprobs'] = result['choices'][0]['logprobs']['token_logprobs']
 
+    elif result['model'] == 'text-davinci-002':
+        record['response'] = result['choices'][0]['text']
+        record['tokens'] = result['choices'][0]['logprobs']['tokens']
+        record['logprobs'] = result['choices'][0]['logprobs']['token_logprobs']
+
     elif result['model'].startswith('gpt-3.5-turbo'):
         record['response'] = result['choices'][0]['message']['content']
 
@@ -87,8 +92,12 @@ def evaluate_openai(run_id, model_name, dataset_name, prompt, shot, dev):
             exclude = [0, 200, 300, 400, 500, 350, 451,550]
             indices = [i for i in range(0,600) if i not in exclude]
 
-            # Randomly select 100 for testing
-            indices = random.sample(indices, 10)
+            if(not dev):
+                # Use all indices
+                pass
+            else:
+                # Randomly select 10 for testing
+                indices = random.sample(indices, 10)
             modified_ds = dataset.select(indices)
 
         else:
@@ -127,7 +136,26 @@ def generate_response(prompt, model_name):
                     presence_penalty=0.0,
                     logprobs=1,
                 ).to_dict()
-            except (APIError, OSError, APIConnectionError, RateLimitError, Timeout):
+            except (APIError, OSError, APIConnectionError, RateLimitError, Timeout) as e:
+                print(e)
+                time.sleep(1)
+                continue
+            break
+    elif model_name == 'text-davinci-002':
+        while True:
+            try:
+                response = openai.Completion.create(
+                    engine='text-davinci-002',
+                    prompt=prompt,
+                    max_tokens=300,
+                    temperature=0,
+                    top_p=1,
+                    frequency_penalty=0.0,
+                    presence_penalty=0.0,
+                    logprobs=1,
+                ).to_dict()
+            except (APIError, OSError, APIConnectionError, RateLimitError, Timeout) as e:
+                print(e)
                 time.sleep(1)
                 continue
             break
@@ -143,7 +171,8 @@ def generate_response(prompt, model_name):
                     frequency_penalty=0.0,
                     presence_penalty=0.0,
                 ).to_dict()
-            except (APIError, OSError, APIConnectionError, RateLimitError, Timeout):
+            except (APIError, OSError, APIConnectionError, RateLimitError, Timeout) as e:
+                print(e)
                 time.sleep(1)
                 continue
             break
