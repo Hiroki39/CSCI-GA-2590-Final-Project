@@ -2,7 +2,7 @@ import openai
 import re
 import json
 from tqdm import tqdm
-from datasets import concatenate_datasets, load_dataset
+from datasets import concatenate_datasets, load_dataset, load_from_disk
 import time
 import random
 from openai.error import APIError, APIConnectionError, RateLimitError, Timeout
@@ -23,6 +23,8 @@ def get_dataset(dataset_name):
     if dataset_name == 'gsm8k':
         # Load the GSM8K dataset from Hugging Face
         dataset = load_dataset(dataset_name, 'main')
+    elif dataset_name == 'multiarith':
+        dataset = load_from_disk("data/multiarith")
     else:
         pass
 
@@ -37,6 +39,9 @@ def generate_prompt(question, exemplar, prompt):
     if prompt == 'pycot':
         prompt_text = exemplar + "\n\nQ: " + question + \
             " Write a Python function that returns the answer.\nA:"
+    elif prompt == 'arithcot':
+        prompt_text = exemplar + "\n\nQ: " + question + \
+            " Write multiple mathematical equations to calculate the answer step by step.\nA:"
     elif prompt == 'sympy':
         pass
 
@@ -48,10 +53,12 @@ def build_record(sample, result, mapping):
     record = {}
     record['question'] = sample['question']
 
-    record['answer'] = re.sub(
-        r"#### (\-?[0-9\.\,]+)", r"The answer is \1.", re.sub(r'<<.*?>>', '', sample['answer']))
-    record['numeric_answer'] = re.search(
-        r"#### (\-?[0-9\.\,]+)", sample['answer']).group(1)
+    #record['answer'] = re.sub(
+    #    r"#### (\-?[0-9\.\,]+)", r"The answer is \1.", re.sub(r'<<.*?>>', '', sample['answer']))
+    #record['numeric_answer'] = re.search(
+    #    r"#### (\-?[0-9\.\,]+)", sample['answer']).group(1)
+
+    record['answer'] = sample['answer']
 
     if result['model'] == 'text-davinci-003':
         record['response'] = result['choices'][0]['text']
@@ -74,12 +81,23 @@ def evaluate_openai(run_id, model_name, dataset_name, prompt, shot, dev):
         # retrieve the dataset
         dataset = get_dataset(dataset_name)
 
-        if not dev:
-            # merge train and test datasets and remove the exemplar from the train set
-            modified_ds = concatenate_datasets([dataset["train"].select(
-                range(shot, len(dataset["train"]))), dataset["test"]])
+        if(dataset_name == 'multiarith'):
+
+            # To be modified -- read from file
+            exclude = [0, 200, 300, 400, 500, 350, 451,550]
+            indices = [i for i in range(0,600) if i not in exclude]
+
+            # Randomly select 100 for testing
+            indices = random.sample(indices, 10)
+            modified_ds = dataset.select(indices)
+
         else:
-            modified_ds = dataset["test"].select(range(5))
+            if not dev:
+                # merge train and test datasets and remove the exemplar from the train set
+                modified_ds = concatenate_datasets([dataset["train"].select(
+                    range(shot, len(dataset["train"]))), dataset["test"]])
+            else:
+                modified_ds = dataset["test"].select(range(5))
 
         for sample in tqdm(modified_ds):
 

@@ -9,6 +9,7 @@
 - `prompt`: `pycot` or `sympy`
 - `shot`: `1`, `2`, `4` or `8`
 - `dev`: use 5-example mini dataset for debugging or not
+- `name`: name of the output file (default to log_files.csv)
 
 Before running the code, please make sure you create a `.env` file in the root directory and add the following line:
 
