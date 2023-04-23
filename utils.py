@@ -136,7 +136,7 @@ def generate_response(prompt, model_name):
 # Extract C0, C1, C2 Mapping from question
 def extract_mapping(q):
 
-    # Preprocess question
+    # Preprocess question to combine multiple number to same word
     q = re.sub(r'(\d)\s+(\d)', r'\1,\2', q)
     q = re.sub(r'(\d),(\d)', r'\1\2', q)
 
@@ -156,12 +156,22 @@ def extract_mapping(q):
 
     # Finding numbers in the questions
 
-    for j, word in enumerate(words):
+    for word in words:
 
-        # only support pure numbers, price, %, not number word (e.g. twenty)
+        # only support pure numbers, $, and %, not number word (e.g. twenty, 1/4, 5th)
+
+        # check if contains letter or other symbols
+        if(bool(re.search('[a-zA-Z]',word))):
+            new_question.append(word)
+            continue
+        
+        if(bool(re.search('[\`\~\!\@\#\^\&\*\_\=\/\:\;]',word))):
+            new_question.append(word)
+            continue
 
         # checking first word
         try:
+            # check if a number
             num = re.search(exp, word).group(0)
         except:
             new_question.append(word)
