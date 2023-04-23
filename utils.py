@@ -10,9 +10,12 @@ from openai.error import APIError, APIConnectionError, RateLimitError, Timeout
 random.seed(42)
 
 
-def get_exemplar(dataset_name, prompt, shot):
+def get_exemplar(dataset_name, prompt, shot, promptset):
 
-    with open(f'exemplar_texts/{prompt}-{dataset_name}-{shot}shot.txt') as f:
+    if(promptset == ''):
+        promptset = dataset_name
+
+    with open(f'exemplar_texts/{prompt}-{promptset}-{shot}shot.txt') as f:
         exemplar = f.read()
 
     return exemplar
@@ -78,11 +81,11 @@ def build_record(sample, result, mapping):
     return record
 
 
-def evaluate_openai(run_id, model_name, dataset_name, prompt, shot, dev):
+def evaluate_openai(run_id, model_name, dataset_name, prompt, shot, dev, promptset):
     with open(f'logs/{run_id}.jsonl', 'w') as f:
 
         # retrieve the exemplar text
-        exemplar = get_exemplar(dataset_name, prompt, shot)
+        exemplar = get_exemplar(dataset_name, prompt, shot, promptset)
         # retrieve the dataset
         dataset = get_dataset(dataset_name)
 

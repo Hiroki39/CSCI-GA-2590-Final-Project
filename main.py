@@ -7,7 +7,7 @@ import os
 import csv
 
 
-def conduct_test(model_name, dataset_name, prompt, shot, dev, name):
+def conduct_test(model_name, dataset_name, prompt, shot, dev, name, promptset):
 
     run_id = str(uuid4())
 
@@ -15,7 +15,7 @@ def conduct_test(model_name, dataset_name, prompt, shot, dev, name):
 
     # Set up the OpenAI API client
     openai.api_key = os.getenv('OPENAI_API_KEY')
-    evaluate_openai(run_id, model_name, dataset_name, prompt, shot, dev)
+    evaluate_openai(run_id, model_name, dataset_name, prompt, shot, dev, promptset)
 
     if not dev:
         with open(name, 'a') as f:
@@ -35,10 +35,12 @@ if __name__ == '__main__':
         '--dev', action=argparse.BooleanOptionalAction, default=False)
     parser.add_argument('--name', type=str, required=False,
                         default='log_files.csv')
+    parser.add_argument('--promptset', type=str, required=False,
+                        default='')
     args = parser.parse_args()
 
     print("Current Arguments: ", args)
 
     load_dotenv()
 
-    conduct_test(args.model, args.dataset, args.prompt, args.shot, args.dev, args.name)
+    conduct_test(args.model, args.dataset, args.prompt, args.shot, args.dev, args.name, args.promptset)

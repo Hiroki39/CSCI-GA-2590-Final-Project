@@ -1,0 +1,7 @@
+Q: There are c0 trees in the grove. Grove workers will plant trees in the grove today. After they are done, there will be c1 trees. How many trees did the grove workers plant today? Write multiple mathematical equations to calculate the answer step by step.
+
+A:
+Solve the problem step by step:
+
+1. Subtract the number of original trees from the number of new trees to calculate the answer.
+answer = c1 - c0
