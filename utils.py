@@ -137,9 +137,8 @@ def generate_response(prompt, model_name):
 
     return response
 
-# Extract ABC Mapping from question
 
-
+# Extract C0, C1, C2 Mapping from question
 def extract_mapping(q):
 
     # Preprocess question
@@ -151,8 +150,10 @@ def extract_mapping(q):
     exp = r'\d+(\,\d+)*(\.\d+)?'
 
     mapping = {}
-    new_question = q
-    letter = 'A'
+    new_question = []
+    letter = 'C'
+    count = 0
+    name = letter + str(count)
 
     words = q.split(' ')
 
@@ -163,18 +164,20 @@ def extract_mapping(q):
     for j, word in enumerate(words):
 
         # only support pure numbers, price, %, not number word (e.g. twenty)
-
-        word = word.replace(",", "")
-
+        
         # checking first word
         try:
             num = re.search(exp, word).group(0)
         except:
+            new_question.append(word)
             continue
 
         # change question
-        mapping[letter] = float(num)
-        new_question = new_question.replace(num, letter, 1)
-        letter = chr(ord(letter)+1)
+        name = letter + str(count)
+        mapping[name] = float(num)
+        new_word = word.replace(num, name)
+        new_question.append(new_word)
+        count += 1
+        
+    return " ".join(new_question),mapping
 
-    return new_question, mapping
