@@ -20,7 +20,6 @@ def get_exemplar(dataset_name, prompt, shot):
 
 def get_dataset(dataset_name):
 
-    # Load the GSM8K dataset from Hugging Face
     if dataset_name == 'gsm8k':
         # Load the GSM8K dataset from Hugging Face
         dataset = load_dataset(dataset_name, 'main')
