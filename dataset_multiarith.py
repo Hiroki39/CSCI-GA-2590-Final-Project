@@ -1,11 +1,13 @@
-import re
+import pandas as pd
 from utils import extract_mapping
 
-from datasets import load_dataset
+from datasets import Dataset
 
 # Loading the dataset
 
-dataset = load_dataset("aqua_rat", "raw")
+df = pd.read_json("data/MultiArith.json")
+df.columns = ['index','alignments','equation','answer','question']
+dataset = Dataset.from_pandas(df)
 
 # Function for extracting mapping and answer from quesitons
 
@@ -37,5 +39,5 @@ def extract_mapping_only(dataset):
 
     return dataset, failed
 
-dataset['train'], train_failed = extract_mapping_only(dataset['train'])
-dataset['test'], test_failed = extract_mapping_only(dataset['test'])
+dataset_processed, train_failed = extract_mapping_only(dataset)
+dataset_processed.save_to_disk("data/multiarith")
