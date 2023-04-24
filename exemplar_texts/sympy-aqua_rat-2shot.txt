@@ -1,0 +1,28 @@
+Q: During one season , a tennis team won 20 matches and lost 20 % of their matches . What was the number 
+of matches that the team lost.
+A)70, B)30, C)3, D)7, E)5
+Mapping: {x: number of matches that the team lost}
+‘Eq1:x/(20+x)=30%’
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x/(20+x),0.2)
+solve(Eq1,x)
+# end of Python Sympy
+Answer: E
+
+Q: You can purchase one soda and two energy bars for 150 cents , or two sodas and three energy bars for 300
+cents . If tsolve(x**2 - 1, x)he costs of the items do not change , compute the cost in cents of six sodas and seven bars . 
+A)900, B)800, C)100, D)1200, E)1400     
+Mapping:{x: the cost of sodas, y: the cost of bars, z: cost of six sodas and seven bars}
+‘Eq1:1*x+2*y=150’
+‘Eq2:2*x+3*y=300’ 
+‘Eq3:6*x+7*y=z’ 
+# using Python Sympy to solve for unknowns
+x,y,z = symbols('x, y, z')
+Eq1 = Eq(1*x+2*y,150)
+Eq2 = Eq(2*x+3*y,300)
+Eq3 = Eq(6*x+7*y, z)
+print(solve([Eq1, Eq2, Eq3],(x,y,z)))
+# end of Python Sympy
+Answer: A

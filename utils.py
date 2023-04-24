@@ -124,7 +124,7 @@ def evaluate_openai(run_id, model_name, dataset_name, prompt, shot, dev, prompts
                 modified_ds = concatenate_datasets([dataset["train"].select(range(7800)),
                 dataset["test"].select(range(200))])
             else:
-                modified_ds = dataset["train"].select(range(5))
+                modified_ds = dataset["train"].select(range(100))
         else:
             raise ValueError("dataset is not properly defined ...")
 
