@@ -16,6 +16,9 @@ def get_exemplar(dataset_name, prompt, shot, promptset):
     if(promptset == ''):
         promptset = dataset_name
 
+    if(prompt == 'zero-cot'):
+        return ''
+
     with open(f'exemplar_texts/{prompt}-{promptset}-{shot}shot.txt') as f:
         exemplar = f.read()
 
@@ -51,6 +54,13 @@ def generate_prompt(question, exemplar, prompt):
     elif prompt == 'sympy':
         prompt_text = exemplar + "\n\nQ: " + question + \
             "write a mapping and a mathematical equation starting with ‘Eq1:’ and solve using sympy"
+    elif prompt == 'cot':
+        prompt_text = exemplar + "\n\nQ: " + question + \
+            "\nA:"
+    elif prompt == 'zero-cot':
+        prompt_text = exemplar + "\n\nQ: " + question + \
+            "\nA: Let's think step by step. "
+
     return prompt_text
 
 
@@ -87,10 +97,10 @@ def build_record(sample, result, mapping, dataset_name):
 
 
 def evaluate_openai(run_id, model_name, dataset_name, prompt, shot, dev, promptset):
-    # with open(f'logs/{run_id}.jsonl', 'w') as f:
+    with open(f'logs/{run_id}.jsonl', 'w') as f:
 
-    filename = 'logs/' + str(datetime.now()).replace(':','-') + '.jsonl'
-    with open(filename, 'w') as f:
+    #filename = 'logs/' + str(datetime.now()).replace(':','-') + '.jsonl'
+    #with open(filename, 'w') as f:
 
         # retrieve the exemplar text
         exemplar = get_exemplar(dataset_name, prompt, shot, promptset)
