@@ -2,3 +2,7 @@ b3cb6282-e910-44f6-9900-4a28c1369672,text-davinci-002,multiarith,arithcot,8,gene
 9beadaa5-01c2-4f59-a3e9-e54d7728076e,gptturbo,multiarith,arithcot,8,general
 1b4af5e2-dbda-471c-8ac6-86ff7e4dd498,gptturbo,multiarith,arithcot,8,multiarith
 bf925727-041e-49cc-a7f2-7cc7ae6e3296,gpt3,aqua_rat,sympy,4,
+76734cbd-0617-456a-8b0b-a63c8ebfd2d5,gptturbo,multiarith,cot,8,general
+ae753ae8-79f3-4123-a713-73843d64ec71,gptturbo,multiarith,arithcot,8,multiarith
+4b0a9803-c06e-4071-bf91-22d6ee197342,gptturbo,multiarith,zero-cot,8,general
+9b6287f6-2926-40bb-9802-cd69c297a32f,gptturbo,multiarith,arithcot,8,general
