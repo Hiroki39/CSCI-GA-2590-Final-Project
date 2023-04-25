@@ -1510,7 +1510,7 @@ x = c0 + c1
 total lives = x * c2
 
 3. Calculate the answer by substituting the value of x in the above equation.
-answer = (c0 + c1) * c2","{'c0': 7.0, 'c1': 2.0, 'c2': 7.0}",,"['x = c0 + c1', 'total lives = x * c2', 'answer = (c0 + c1) * c2']"
+answer = (c0 + c1) * c2","{'c0': 7.0, 'c1': 2.0, 'c2': 7.0}",63.0,"['x = c0 + c1', 'total lives = x * c2', 'answer = (c0 + c1) * c2']"
 207," Paul bought c0 boxes of chocolate candy and c1 boxes of caramel candy. If each box has c2 pieces inside it, how much candy did he have total? ",90.0,"Solve the problem step by step:
 
 1. Add the number of boxes of chocolate candy and the number of boxes of caramel candy to calculate the total number of candy boxes. Let x be the total number of candy boxes,
@@ -1661,7 +1661,7 @@ x = c0 + c1
 total lives = x * c2
 
 3. Calculate the answer by substituting the value of x in the above equation.
-answer = (c0 + c1) * c2","{'c0': 2.0, 'c1': 2.0, 'c2': 6.0}",,"['x = c0 + c1', 'total lives = x * c2', 'answer = (c0 + c1) * c2']"
+answer = (c0 + c1) * c2","{'c0': 2.0, 'c1': 2.0, 'c2': 6.0}",24.0,"['x = c0 + c1', 'total lives = x * c2', 'answer = (c0 + c1) * c2']"
 223," Wendy bought c0 new chairs and c1 new tables for her house. If she spent c2 minutes on each piece furniture putting it together, how many minutes did it take her to finish? ",48.0,"Solve the problem step by step:
 
 1. Multiply the number of chairs by the time spent on each chair to calculate the total time spent on chairs. Let x be the total time spent on chairs,
@@ -1825,7 +1825,7 @@ x = c0 + c1
 total lives = x * c2
 
 3. Calculate the answer by substituting the value of x in the above equation.
-answer = (c0 + c1) * c2","{'c0': 5.0, 'c1': 2.0, 'c2': 8.0}",,"['x = c0 + c1', 'total lives = x * c2', 'answer = (c0 + c1) * c2']"
+answer = (c0 + c1) * c2","{'c0': 5.0, 'c1': 2.0, 'c2': 8.0}",56.0,"['x = c0 + c1', 'total lives = x * c2', 'answer = (c0 + c1) * c2']"
 240," Katie was selling her necklaces at a garage sale. She sold c0 bead necklaces and c1 gem stone necklaces. If each necklace cost c2 dollars, how much money did she earn? ",21.0,"Solve the problem step by step:
 
 1. Add the number of bead necklaces and the number of gem stone necklaces to calculate the total number of necklaces. Let x be the total number of necklaces,
@@ -1939,7 +1939,7 @@ x = c0 + c1
 total lives = x * c2
 
 3. Calculate the answer by substituting the value of x in the above equation.
-answer = (c0 + c1) * c2","{'c0': 2.0, 'c1': 2.0, 'c2': 3.0}",,"['x = c0 + c1', 'total lives = x * c2', 'answer = (c0 + c1) * c2']"
+answer = (c0 + c1) * c2","{'c0': 2.0, 'c1': 2.0, 'c2': 3.0}",12.0,"['x = c0 + c1', 'total lives = x * c2', 'answer = (c0 + c1) * c2']"
 252," Adam bought c0 boxes of chocolate candy and c1 boxes of caramel candy. If each box has c2 pieces inside it, how much candy did he have total? ",28.0,"Solve the problem step by step:
 
 1. Multiply the number of boxes of chocolate candy by the number of pieces in each box to calculate the total number of chocolate candies. Let x be the total number of chocolate candies,
@@ -2053,7 +2053,7 @@ x = c0 + c1
 total lives = x * c2
 
 3. Calculate the answer by substituting the value of x in the above equation.
-answer = (c0 + c1) * c2","{'c0': 2.0, 'c1': 2.0, 'c2': 8.0}",,"['x = c0 + c1', 'total lives = x * c2', 'answer = (c0 + c1) * c2']"
+answer = (c0 + c1) * c2","{'c0': 2.0, 'c1': 2.0, 'c2': 8.0}",32.0,"['x = c0 + c1', 'total lives = x * c2', 'answer = (c0 + c1) * c2']"
 264," A waiter had c0 tables he was waiting on, with c1 women and c2 men at each table. How many customers total did the waiter have? ",63.0,"Solve the problem step by step:
 
 1. Add the number of women and men at each table to calculate the total number of customers at each table. Let x be the total number of customers at each table,
@@ -2247,7 +2247,7 @@ x = c0 + c1
 total lives = x * c2
 
 3. Calculate the answer by substituting the value of x in the above equation.
-answer = (c0 + c1) * c2","{'c0': 8.0, 'c1': 2.0, 'c2': 6.0}",,"['x = c0 + c1', 'total lives = x * c2', 'answer = (c0 + c1) * c2']"
+answer = (c0 + c1) * c2","{'c0': 8.0, 'c1': 2.0, 'c2': 6.0}",60.0,"['x = c0 + c1', 'total lives = x * c2', 'answer = (c0 + c1) * c2']"
 284," Sam was collecting cans for recycling. On Saturday he filled c0 bags up and on Sunday he filled c1 more bags. If each bag had c2 cans in it, how many cans did he pick up total? ",63.0,"Solve the problem step by step:
 
 1. Add the number of bags collected on Saturday and Sunday to calculate the total number of bags. Let x be the total number of bags,
@@ -2391,7 +2391,7 @@ x = c0 + c1
 total lives = x * c2
 
 3. Calculate the answer by substituting the value of x in the above equation.
-answer = (c0 + c1) * c2","{'c0': 4.0, 'c1': 5.0, 'c2': 3.0}",,"['x = c0 + c1', 'total lives = x * c2', 'answer = (c0 + c1) * c2']"
+answer = (c0 + c1) * c2","{'c0': 4.0, 'c1': 5.0, 'c2': 3.0}",27.0,"['x = c0 + c1', 'total lives = x * c2', 'answer = (c0 + c1) * c2']"
 299," While shopping for music online, Janet bought c0 country albums and c1 pop albums. Each album came with a lyric sheet and had c2 songs. How many songs did Janet buy total? ",72.0,"Solve the problem step by step:
 
 1. Add the number of country albums and the number of pop albums to calculate the total number of albums. Let x be the total number of albums,

@@ -50,7 +50,7 @@ def generate_prompt(question, exemplar, prompt):
             " Write a Python function that returns the answer.\nA:"
     elif prompt == 'arithcot':
         prompt_text = exemplar + "\n\nQ: " + question + \
-            " Write multiple mathematical equations to calculate the answer step by step.\nA:"
+            " Write multiple mathematical equations to calculate the answer step by step, use single letter for variable names, and generate the answer format starting with 'answer ='\nA:"
     elif prompt == 'sympy':
         prompt_text = exemplar + "\n\nQ: " + question + \
             "write a mapping and a mathematical equation starting with ‘Eq1:’ and solve using sympy"
@@ -58,7 +58,7 @@ def generate_prompt(question, exemplar, prompt):
         prompt_text = exemplar + "\n\nQ: " + question + \
             "\nA:"
     elif prompt == 'zero-cot':
-        prompt_text = exemplar + "\n\nQ: " + question + \
+        prompt_text = "\n\nQ: " + question + \
             "\nA: Let's think step by step. "
 
     return prompt_text
@@ -144,6 +144,8 @@ def evaluate_openai(run_id, model_name, dataset_name, prompt, shot, dev, prompts
             if prompt == 'sympy':
                 mapping = ''
                 sample["question"] += ', '.join(sample['options'])
+            elif prompt == 'zero-cot' or prompt == 'cot':
+                pass
             else:
                 sample["question"], mapping = extract_mapping(sample["question"])
             # generate prompt text
