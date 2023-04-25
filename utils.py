@@ -88,7 +88,9 @@ def build_record(sample, result, mapping, dataset_name):
 
 def evaluate_openai(run_id, model_name, dataset_name, prompt, shot, dev, promptset):
     # with open(f'logs/{run_id}.jsonl', 'w') as f:
-    with open(f'logs/{str(datetime.now())}.jsonl', 'w') as f:
+
+    filename = 'logs/' + str(datetime.now()).replace(':','-') + '.jsonl'
+    with open(filename, 'w') as f:
 
         # retrieve the exemplar text
         exemplar = get_exemplar(dataset_name, prompt, shot, promptset)
@@ -97,9 +99,7 @@ def evaluate_openai(run_id, model_name, dataset_name, prompt, shot, dev, prompts
 
         if(dataset_name == 'multiarith'):
 
-            # To be modified -- read from file
-            exclude = [0, 200, 300, 400, 500, 350, 451,550]
-            indices = [i for i in range(0,600) if i not in exclude]
+            indices = [i for i in range(0,600)]
 
             if(not dev):
                 # Use all indices

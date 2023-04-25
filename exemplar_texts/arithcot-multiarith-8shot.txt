@@ -1,96 +1,96 @@
-Q: For Halloween Debby and her sister combined the candy they received. Debby had c0 pieces of candy while her sister had c1. If they ate c2 pieces the first night, how many pieces do they have left? Write multiple mathematical equations to calculate the answer step by step.
+Q: Andy and his brother Aaron received money for holiday. Andy had c0 dollars while his brother had c1. If they spent c2 dollars on a new video game, how many dollars do they have left? Write multiple mathematical equations to calculate the answer step by step.
 
 A:
 Solve the problem step by step:
 
-1. Add the pieces of candy from Debby and her sister to calculate the total pieces of candy. Let x be the total pieces of candy,
+1. Add the amount of money from Andy and the amount of money from Aaron to calculate the total amount of money they have. Let x be the total amount of money they have,
 x = c0 + c1
 
-2. Subtract the piece of candy ate by them from the total pieces of candy to calculate the answer.
+2. Subtract the money spent by them on video game from the total to calculate how many dollars they have left.
 answer = x - c2
 
 
-Q: At the town carnival Billy rode the ferris wheel c0 times and the bumper cars c1 times. If each ride cost c2 tickets, how many tickets did he use? Write multiple mathematical equations to calculate the answer step by step.
+Q: Each eraser regardless of brand cost c0. Alice bought c1 erasers from brand A and c2 earsers from brand B. How many dollars did she spend? Write multiple mathematical equations to calculate the answer step by step.
 
 A:
 Solve the problem step by step:
 
-1. Add the number of ferries wheel ride and the number of bumper cars ride to calculate the total number of rides. Let x be the total number of rides,
-x = c0 + c1
-
-2. Multiply the number of tickets by the cost each ride to calculate the answer.
-answer = x * c2
-
-
-Q: The schools debate team had c0 boys and c1 girls on it. If they were split into groups of c2 how many groups could they make? Write multiple mathematical equations to calculate the answer step by step.
-
-A:
-Solve the problem step by step:
-
-1. Add the number of boys and the number of girls to calculate the total number of students. Let x be the total number of students,
-x = c0 + c1
-
-2. Divide the number of total students by number of students per group to calculate the answer.
-answer = x / c2
-
-
-Q: A new building needed c0 windows. The builder had already installed c1 of them. If it takes c2 hours to install each window, how long will it take him to install the rest? Write multiple mathematical equations to calculate the answer step by step.
-
-A:
-Solve the problem step by step:
-
-1. Subtract the number of total windows needed and the number of windows completed to calculate the number of windows that need to be installed. Let x be the number of windows that need to be installed,
-x = c0 - c1
-
-2. Multiply the hours needed to install each window by the number of windows left to calculate the answer.
-answer = x * c2
-
-
-Q: Will had c0 dollars. If he spent c1 bucks on a new game, how many c2 dollar toys could he buy with the money he had left? Write multiple mathematical equations to calculate the answer step by step.
-
-A:
-Solve the problem step by step:
-
-1. Subtract the number of money spent on a new game from the total amount of money to calculate the money he had left. Let x be the money he had left,
-x = c0 - c1
-
-2. Divide the money he had left by the price per toy to calculate the answer.
-answer = x / c2
-
-
-Q: Luke was organizing his baseball cards in a binder with c0 on each page. If he had c1 new cards and c2 old cards to put in the binder, how many pages would he use? Write multiple mathematical equations to calculate the answer step by step.
-
-A:
-Solve the problem step by step:
-
-1. Add the number of new cards and the number of old cards to calculate the total number of cards. Let x be the total number of cards,
+1. Add the number of erasers from brand A and the number of erasers from brand B to calculate the total number of erasers bought. Let x be the total number of erasers bought,
 x = c1 + c2
 
-2. Divide the number of total pages by number of cards per page to calculate the answer.
-answer = x / c0
-
-
-Q: Bianca earned c0 points for each bag of cans she recycled. If she had c1 bags, but didn't recycle c2 of them, how many points would she have earned? Write multiple mathematical equations to calculate the answer step by step.
-
-A:
-Solve the problem step by step:
-
-1. Subtract the number of bags not recycled from the total number of bags to calculate the number of bags recycled. Let x be the number of bags recycled,
-x = c1 - c2
-
-2. Multiply the number of bags recycled by the points per recycled bag to calculate the answer.
+2. Multiply the number of erasers by the cost of each eraser to calculate how many dollars she spent.
 answer = x * c0
 
 
-Q: Will had c0 pieces of clothing to wash. He put c1 of them in one load, but decided to split the rest into c2 equal loads. How many pieces of clothing could go in each of the small loads? Write multiple mathematical equations to calculate the answer step by step.
+Q: A comittee has c0 females and c1 males. If they were split into sub-comittee of size c2 how many sub-comittees could they make? Write multiple mathematical equations to calculate the answer step by step.
 
 A:
 Solve the problem step by step:
 
-1. Subtract the number of clothing in one load from the total number of clothing to wash to calculate the number of clothing to be split. Let x be the number of clothing to be split,
+1. Add the number of females and the number of males to calculate the total number of people. Let x be the total number of people,
+x = c0 + c1
+
+2. Divide the total number of people by number of people per group to calculate the number of sub comittees.
+answer = x / c2
+
+
+Q: A construction team has already completed c0 meters of a bridge that needs to be c1 meter long. Assuming each meter requries c2 minutes to complete, how many minutes do they have left? Write multiple mathematical equations to calculate the answer step by step.
+
+A:
+Solve the problem step by step:
+
+1. Subtract the length of bridge that has been completed from the total length of bridge to calculate the length of remaining bridge. Let x be the length of remaining bridge,
+x = c1 - c0
+
+2. Multiply the minutes needed to complete each meter by the meters left to calculate the time remaining.
+answer = x * c2
+
+
+Q: Tom has c0 tickets to spend in an amusement park. He has already spent c1 tickets on food. Assuming each soda cost c2 tickets, how many sodas could Tom exchange with tickets? Write multiple mathematical equations to calculate the answer step by step.
+
+A:
+Solve the problem step by step:
+
+1. Subtract the number of tickets spent on food from the total number of tickets to calculate the number of tickets left. Let x be the number of tickets left,
 x = c0 - c1
 
-2. Divide the clothing to be split by the number of loads to calculate the answer.
+2. Divide the number of tickets left by the price per soda to calculate the number of sodas Tom could exchange.
+answer = x / c2
+
+
+Q: Haley is packing gifts for holiday. She has c0 post cards from New York and c1 postcards from california. Each envelope can contain c2 postcards each. How many envelopes does Haley need to store all the postcards? Write multiple mathematical equations to calculate the answer step by step.
+
+A:
+Solve the problem step by step:
+
+1. Add the number of postcards from New York and the number of postcards from California to calculate the total number of postcards. Let x be the total number of postcards,
+x = c0 + c1
+
+2. Divide the number of total postcards by number of postcards per evenlop to calculate how many envelopes she needs.
+answer = x / c2
+
+
+Q: Charlotte got c0 marks for each correct questions. There are c1 questions on the exam, and she got c2 questions wrong. How many mmarks did she get? Write multiple mathematical equations to calculate the answer step by step.
+
+A:
+Solve the problem step by step:
+
+1. Subtract the number of wrong questions from the total number of questions to calculate the number of correct questions. Let x be the number of correct questions,
+x = c1 - c2
+
+2. Multiply the number of correct questions by the marks per question to calculate the final mark.
+answer = x * c0
+
+
+Q: Amy had c0 cups. She put c1 of them in one large cabinet, and she wants to put the rest in c2 cabinets that are the same. How many cups will there be in a single cabinet? Write multiple mathematical equations to calculate the answer step by step.
+
+A:
+Solve the problem step by step:
+
+1. Subtract the number of cups in the large cabinet from the total number of cups to calculate the number of cups left to be put in other cabinets. Let x be the number of cups left,
+x = c0 - c1
+
+2. Divide the number of cups left by the number of cabinet to calculate the number of cups in each cabinet.
 answer = x / c2
 
 
