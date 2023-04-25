@@ -21,7 +21,7 @@ def evaluate_equations(equations, mapping):
         # Evaluate equation one by one
         for equation in equations:
             elements = equation.split('=')
-            name = elements[0].strip()
+            name = elements[0].strip().replace(' ', '_')
             expression = elements[1].strip()
 
             value = eval(expression)
@@ -34,8 +34,10 @@ def evaluate_equations(equations, mapping):
         return None
     
     ret = list(new_variables.items())
-    
-    return ret[-1][1]
+    try:
+        return ret[-1][1]
+    except:
+        return None
 
 def calculate_answer(result, prompt):
 
@@ -73,7 +75,7 @@ def calculate_answer(result, prompt):
     #parser.add_argument('--logname', type=str, required=True)
     #parser.add_argument('--prompt', type=str, required=True)
 
-filename = "2023-04-24 20-28-24.238771.jsonl"
+filename = "2f6cdbe4-b7bd-43bd-9c67-298cba3f0fb3.jsonl"
 
 result = pd.read_json("logs/"+filename, lines=True)
 
