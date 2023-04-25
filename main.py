@@ -5,9 +5,10 @@ from uuid import uuid4
 from dotenv import load_dotenv
 import os
 import csv
+from read_results import eval_result
 
 
-def conduct_test(model_name, dataset_name, prompt, shot, dev, name, promptset):
+def conduct_test(model_name, dataset_name, prompt, shot, dev, name, promptset, eval):
 
     run_id = str(uuid4())
 
@@ -21,6 +22,8 @@ def conduct_test(model_name, dataset_name, prompt, shot, dev, name, promptset):
         with open(name, 'a') as f:
             writer = csv.writer(f)
             writer.writerow([run_id, model_name, dataset_name, prompt, shot, promptset])
+    if eval:
+        eval_result(run_id, prompt, dataset_name)
 
 
 if __name__ == '__main__':
@@ -37,10 +40,12 @@ if __name__ == '__main__':
                         default='log_files.csv')
     parser.add_argument('--promptset', type=str, required=False,
                         default='')
+    parser.add_argument(
+        '--eval', action=argparse.BooleanOptionalAction, default=False)
     args = parser.parse_args()
 
     print("Current Arguments: ", args)
 
     load_dotenv()
 
-    conduct_test(args.model, args.dataset, args.prompt, args.shot, args.dev, args.name, args.promptset)
+    conduct_test(args.model, args.dataset, args.prompt, args.shot, args.dev, args.name, args.promptset, args.eval)

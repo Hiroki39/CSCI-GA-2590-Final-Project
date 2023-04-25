@@ -80,8 +80,8 @@ def build_record(sample, result, mapping, dataset_name):
 
     if result['model'] == 'text-davinci-003':
         record['response'] = result['choices'][0]['text']
-        record['tokens'] = result['choices'][0]['logprobs']['tokens']
-        record['logprobs'] = result['choices'][0]['logprobs']['token_logprobs']
+        # record['tokens'] = result['choices'][0]['logprobs']['tokens']
+        # record['logprobs'] = result['choices'][0]['logprobs']['token_logprobs']
 
     elif result['model'] == 'text-davinci-002':
         record['response'] = result['choices'][0]['text']
@@ -128,13 +128,14 @@ def evaluate_openai(run_id, model_name, dataset_name, prompt, shot, dev, prompts
                 modified_ds = dataset["test"].select(range(5))
 
         elif dataset_name == 'aqua_rat':
-            dataset["train"] = dataset["train"].shuffle(seed=42)
+            # dataset["train"] = dataset["train"].shuffle(seed=42)
             dataset["test"] = dataset["test"].shuffle(seed=42)
             if not dev:
-                modified_ds = concatenate_datasets([dataset["train"].select(range(7800)),
-                dataset["test"].select(range(200))])
+                # modified_ds = concatenate_datasets([dataset["train"].select(range(7800)),
+                # dataset["test"].select(range(200))])
+                modified_ds = dataset["test"]
             else:
-                modified_ds = dataset["train"].select(range(100))
+                modified_ds = dataset["train"].select(range(5))
         else:
             raise ValueError("dataset is not properly defined ...")
 
@@ -209,7 +210,7 @@ def generate_response(prompt, model_name):
                 ).to_dict()
             except (APIError, OSError, APIConnectionError, RateLimitError, Timeout) as e:
                 print(e)
-                time.sleep(1)
+                time.sleep(60)
                 continue
             break
 

@@ -1,6 +1,6 @@
 import pandas as pd
 import numpy as np
-import math
+import math, re
 from collections import OrderedDict
 
 
@@ -69,23 +69,48 @@ def calculate_answer(result, prompt):
     print("invalid count", count)
     return answers, equation_column
 
+# evaluate aqua dataset with multiple choice
+def eval_aqua(result):
+    # output = pd.read_json("logs/e847e842-087c-4ff9-ac07-55ee02041327.jsonl", lines=True)
+    total, correct, undef = len(result), 0, 0
+    for i, response in enumerate(result['response']):
+        a = re.search(r"[Aa]nswer: [ABCDE]", response)
+        if a:
+            _, end = a.span()
+            predicted = response[end-1]
+            if predicted == result['answer'][i]:
+                correct += 1
+        else:
+            print(response)
+            undef += 1
+    print("acc", correct/total, "invalid", undef/total)
 
-#if __name__ == '__main__':
-    #parser = argparse.ArgumentParser()
-    #parser.add_argument('--logname', type=str, required=True)
-    #parser.add_argument('--prompt', type=str, required=True)
+# filename = "2f6cdbe4-b7bd-43bd-9c67-298cba3f0fb3.jsonl"
 
-filename = "2f6cdbe4-b7bd-43bd-9c67-298cba3f0fb3.jsonl"
+def eval_result(filename, prompt, dataset_name):
+    result = pd.read_json("logs/"+filename+".jsonl", lines=True)
 
-result = pd.read_json("logs/"+filename, lines=True)
+    if prompt == 'arithcot':
+        result['response_answer'], result['equations'] = calculate_answer(result, "arithcot")
+        result['answer'] = [i[0] for i in result['answer']]
+        print("acc",np.mean(result['response_answer'] == result['answer']))
+    elif prompt == 'sympy':
+        eval_aqua(result)
+    else:
+        print("eval not implemented")
+        pass
+    
+    result.to_csv("experiment_results/"+ filename + ".csv")
 
-result['response_answer'], result['equations'] = calculate_answer(result, "arithcot")
 
-result['answer'] = [i[0] for i in result['answer']]
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--logname', type=str, required=True)
+    parser.add_argument('--prompt', type=str, required=True)
+    parser.add_argument('--dataset', type=str, required=True)
+    args = parser.parse_args()
 
-print("acc",np.mean(result['response_answer'] == result['answer']))
-
-result.to_csv("experiment_results/"+ filename + ".csv")
+    eval_result(args.logname, args.prompt, args.dataset)
 
 #for i in range(0, len(result)):
 #    print("\nsample ",i,"\n")
