@@ -3,8 +3,15 @@ Q: There are c0 trees in the grove. Grove workers will plant trees in the grove 
 A:
 Solve the problem step by step:
 
-1. Subtract the number of original trees from the number of new trees to calculate the answer.
-answer = c1 - c0
+Information from question:
+
+original_trees = c0
+total_trees = c1
+
+1. Subtract the number of original trees from the number of total trees to how many new trees are planted.
+new_trees = total_trees - original_trees
+
+answer = new_trees
 
 
 Q: If there are c0 cars in the parking lot and c1 more cars arrive, how many cars are in the parking lot? Write multiple mathematical equations to calculate the answer step by step.
@@ -12,7 +19,13 @@ Q: If there are c0 cars in the parking lot and c1 more cars arrive, how many car
 A:
 Solve the problem step by step:
 
-1. Add the number of new cars and the number of original cars to calculate the answer
-answer = c0 + c1
+Information from question:
 
+original_cars = c0
+new_cars = c1
+
+1. Add the number of original cars and the number of new cars to calculate how many cars are now in the parking lot.
+total_cars = original_cars + new_cars
+
+answer = total_cars
 

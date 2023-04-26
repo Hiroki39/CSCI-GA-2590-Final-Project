@@ -8,29 +8,70 @@ import os
 
 def evaluate_equations(equations, mapping):
     
+    # helper
+
+    def isvalid(word):
+        if(len(word) == 1):
+            return True
+        elif(word[0] == 'c' and word[1].isdigit()):
+            return True
+        elif(word[0:5] == 'ceil(' 
+            or word[0:6] == 'floor(' 
+            or word[0:6] == 'round('):
+            return True
+
     new_variables = OrderedDict()
     ceil = lambda x: math.ceil(x)
     floor = lambda x: math.floor(x)
-    try:
-        # Extract variables from mapping
-        for i in mapping:
-            value = mapping[i]
-            exec(i + ' = ' + str(value))
+    # Extract variables from mapping
+    for i in mapping:
+        value = mapping[i]
+        exec(i + ' = ' + str(value))
 
-        # Evaluate equation one by one
-        for equation in equations:
-            elements = equation.split('=')
-            name = elements[0].strip().replace(' ', '_')
-            expression = elements[1].strip()
+    # Evaluate equation one by one
+    for equation in equations:
+        elements = equation.split('=')
 
+        #left side
+        name = elements[0].strip().replace(' ', '_')
+
+        #right side
+        expression = elements[1].strip()
+
+        #normal evaluation
+        try:
             value = eval(expression)
+        except:
+            processed_expression = []
+            j = 0
+            words = expression.split(' ')
+            while(j < len(words)):
+                word = words[j]
+                if(isvalid(word)):
+                    processed_expression.append(word)
+                    j += 1
+                else:
+                    long_variable = word
+                    k = j+1
+                    while(k < len(words)):
+                        next_word = words[k]
+                        if(not isvalid(next_word)):
+                            long_variable = long_variable+'_'+next_word
+                            k = k+1
+                        else:
+                            break
+                    processed_expression.append(long_variable)
+                    j = k                    
+            try:
+                value = eval(' '.join(processed_expression))
+            except Exception as e:
+                print("******Parsing Error")
+                print(' '.join(processed_expression))
+                print(e)
+                return None
 
-            exec(name + ' = ' + str(value))
-            new_variables[name] = value
-
-    except Exception as e:
-        print(e)
-        return None
+        exec(name + ' = ' + str(value))
+        new_variables[name] = value
     
     ret = list(new_variables.items())
     try:

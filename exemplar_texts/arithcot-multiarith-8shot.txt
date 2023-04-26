@@ -3,11 +3,17 @@ Q: Andy and his brother Aaron received money for holiday. Andy had c0 dollars wh
 A:
 Solve the problem step by step:
 
-1. Add the amount of money from Andy and the amount of money from Aaron to calculate the total amount of money they have. Let x be the total amount of money they have,
-x = c0 + c1
+andy_money = c0
+aaron_money = c1
+money_spent = c2
 
-2. Subtract the money spent by them on video game from the total to calculate how many dollars they have left.
-answer = x - c2
+1. Sum up their money since they spent money on a new video game together. Let total_money be the total number of dollars they have,
+total_money = andy_money + aaron_money
+
+2. Subtract the money spent by them on video game from the total money they have to calculate how many dollars they have left.
+money_left = total_money - money_spent
+
+answer = money_left
 
 
 Q: Each eraser regardless of brand cost c0. Alice bought c1 erasers from brand A and c2 earsers from brand B. How many dollars did she spend? Write multiple mathematical equations to calculate the answer step by step.
@@ -15,11 +21,17 @@ Q: Each eraser regardless of brand cost c0. Alice bought c1 erasers from brand A
 A:
 Solve the problem step by step:
 
-1. Add the number of erasers from brand A and the number of erasers from brand B to calculate the total number of erasers bought. Let x be the total number of erasers bought,
-x = c1 + c2
+eraser_cost = c0
+eraser_A = c1
+eraser_B = c2
 
-2. Multiply the number of erasers by the cost of each eraser to calculate how many dollars she spent.
-answer = x * c0
+1. Sum up the number of erasers since each eraser cost the same regardless of brand. Let total_eraser be the total number of eraser they have,
+total_eraser = eraser_A + eraser_B
+
+2. Multiply the total number of erasers by the cost of each eraser to calculate how many dollars she spent.
+money_spent = total_eraser * eraser_cost
+
+answer = money_spent
 
 
 Q: A comittee has c0 females and c1 males. If they were split into sub-comittee of size c2 how many sub-comittees could they make? Write multiple mathematical equations to calculate the answer step by step.
@@ -27,11 +39,17 @@ Q: A comittee has c0 females and c1 males. If they were split into sub-comittee 
 A:
 Solve the problem step by step:
 
-1. Add the number of females and the number of males to calculate the total number of people. Let x be the total number of people,
-x = c0 + c1
+females = c0
+males = c1
+size = c2
 
-2. Divide the total number of people by number of people per group to calculate the number of sub comittees.
-answer = x / c2
+1. Sum up the total number of people first in order to further split them. Let total_people be the total number of people,
+total_people = females + males
+
+2. Divide the total number of people by number of people per sub-comittee to calculate the number of sub-comittees.
+num_subcomittees = total_people / size
+
+answer = num_subcomittees
 
 
 Q: A construction team has already completed c0 meters of a bridge that needs to be c1 meter long. Assuming each meter requries c2 minutes to complete, how many minutes do they have left? Write multiple mathematical equations to calculate the answer step by step.
@@ -39,11 +57,17 @@ Q: A construction team has already completed c0 meters of a bridge that needs to
 A:
 Solve the problem step by step:
 
-1. Subtract the length of bridge that has been completed from the total length of bridge to calculate the length of remaining bridge. Let x be the length of remaining bridge,
-x = c1 - c0
+completed_meter = c0
+total_meter = c1
+minutes_per_meter = c2
 
-2. Multiply the minutes needed to complete each meter by the meters left to calculate the time remaining.
-answer = x * c2
+1. Subtract the length of bridge that has been completed from the total length of bridge to find the length of the remaing, not completed portion. Let length_remain be the length of remaining bridge,
+length_remain = total_meter - completed_meter
+
+2. Multiply the minutes needed to complete each meter by the length of the remaining bridge in meter to calculate the time remaining.
+minutes_remaining = length_remain * minutes_per_meter 
+
+answer = minutes_remaining
 
 
 Q: Tom has c0 tickets to spend in an amusement park. He has already spent c1 tickets on food. Assuming each soda cost c2 tickets, how many sodas could Tom exchange with tickets? Write multiple mathematical equations to calculate the answer step by step.
@@ -51,23 +75,36 @@ Q: Tom has c0 tickets to spend in an amusement park. He has already spent c1 tic
 A:
 Solve the problem step by step:
 
-1. Subtract the number of tickets spent on food from the total number of tickets to calculate the number of tickets left. Let x be the number of tickets left,
-x = c0 - c1
+total_tickets = c0
+tickets_spent = c1
+soda_cost = c2
 
-2. Divide the number of tickets left by the price per soda to calculate the number of sodas Tom could exchange.
-answer = x / c2
+1. Subtract the number of tickets spent on food from the total number of tickets to calculate the number of tickets left that could be spent on soda. Let tickets_left be the number of tickets left,
+tickets_left = total_tickets - tickets_spent
+
+2. Divide the number of tickets left by the tickets per soda to calculate the number of sodas Tom could exchange.
+num_soda = tickets_left / soda_cost
+
+answer = num_soda
 
 
-Q: Haley is packing gifts for holiday. She has c0 post cards from New York and c1 postcards from california. Each envelope can contain c2 postcards each. How many envelopes does Haley need to store all the postcards? Write multiple mathematical equations to calculate the answer step by step.
+Q: Haley is packing gifts for holiday. She has c0 post cards from New York and c1 postcards from California. Each envelope can contain c2 postcards each. How many envelopes does Haley need to store all the postcards? Write multiple mathematical equations to calculate the answer step by step.
 
 A:
 Solve the problem step by step:
 
-1. Add the number of postcards from New York and the number of postcards from California to calculate the total number of postcards. Let x be the total number of postcards,
-x = c0 + c1
+NY_postcards = c0
+CA_postcards = c1
+postcards_per_envelope = c2
+
+
+1. Add the number of postcards from New York and the number of postcards from California to calculate the total number of postcards. Let total_postcards be the total number of postcards,
+total_postcards = NY_postcards + CA_postcards
 
 2. Divide the number of total postcards by number of postcards per evenlop to calculate how many envelopes she needs.
-answer = x / c2
+total_envelopes = total_postcards / postcards_per_envelope
+
+answer = total_envelopes
 
 
 Q: Charlotte got c0 marks for each correct questions. There are c1 questions on the exam, and she got c2 questions wrong. How many mmarks did she get? Write multiple mathematical equations to calculate the answer step by step.
@@ -75,11 +112,17 @@ Q: Charlotte got c0 marks for each correct questions. There are c1 questions on 
 A:
 Solve the problem step by step:
 
-1. Subtract the number of wrong questions from the total number of questions to calculate the number of correct questions. Let x be the number of correct questions,
-x = c1 - c2
+marks_per_questions = c0
+total_questions = c1
+wrong_questions = c2
+
+1. Subtract the number of wrong questions from the total number of questions to calculate the number of correct questions. Let correct_questions be the number of correct questions,
+correct_questions = total_questions - wrong_questions
 
 2. Multiply the number of correct questions by the marks per question to calculate the final mark.
-answer = x * c0
+total_marks = correct_questions * marks_per_questions
+
+answer = total_marks
 
 
 Q: Amy had c0 cups. She put c1 of them in one large cabinet, and she wants to put the rest in c2 cabinets that are the same. How many cups will there be in a single cabinet? Write multiple mathematical equations to calculate the answer step by step.
@@ -87,10 +130,16 @@ Q: Amy had c0 cups. She put c1 of them in one large cabinet, and she wants to pu
 A:
 Solve the problem step by step:
 
-1. Subtract the number of cups in the large cabinet from the total number of cups to calculate the number of cups left to be put in other cabinets. Let x be the number of cups left,
-x = c0 - c1
+total_cups = c0
+cups_large_cabinet = c1
+total_other_cabinetes = c2
 
-2. Divide the number of cups left by the number of cabinet to calculate the number of cups in each cabinet.
-answer = x / c2
+1. Subtract the number of cups in the large cabinet from the total number of cups to calculate the number of cups left to be put in other cabinets. Let cups_left be the number of cups left,
+cups_left = total_cups - cups_large_cabinet
+
+2. Divide the number of cups left by the number of cabinet to calculate the number of cups in each cabinet that is not the first one.
+cups_per_cabinet = cups_left / total_other_cabinetes
+
+answer = cups_per_cabinet
 
 

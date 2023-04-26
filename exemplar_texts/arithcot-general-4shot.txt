@@ -3,8 +3,15 @@ Q: There are c0 trees in the grove. Grove workers will plant trees in the grove 
 A:
 Solve the problem step by step:
 
-1. Subtract the number of original trees from the number of new trees to calculate the answer.
-answer = c1 - c0
+Information from question:
+
+original_trees = c0
+total_trees = c1
+
+1. Subtract the number of original trees from the number of total trees to how many new trees are planted.
+new_trees = total_trees - original_trees
+
+answer = new_trees
 
 
 Q: If there are c0 cars in the parking lot and c1 more cars arrive, how many cars are in the parking lot? Write multiple mathematical equations to calculate the answer step by step.
@@ -12,8 +19,15 @@ Q: If there are c0 cars in the parking lot and c1 more cars arrive, how many car
 A:
 Solve the problem step by step:
 
-1. Add the number of new cars and the number of original cars to calculate the answer
-answer = c0 + c1
+Information from question:
+
+original_cars = c0
+new_cars = c1
+
+1. Add the number of original cars and the number of new cars to calculate how many cars are now in the parking lot.
+total_cars = original_cars + new_cars
+
+answer = total_cars
 
 
 Q: Leah had c0 chocolates and her sister had c1. If they ate c2, how many pieces do they have left in total? Write multiple mathematical equations to calculate the answer step by step.
@@ -21,11 +35,19 @@ Q: Leah had c0 chocolates and her sister had c1. If they ate c2, how many pieces
 A:
 Solve the problem step by step:
 
-1. Add the number of chocolates Leah had and the number of chocolates her sister had to calculate the total number of chocolates. Let x be the total number of chocolates,
-x = c0 + c1
+Information from question:
 
-2. Subtract the number of chocolates eaten from the total number of chocolates to calculate the answer.
-answer = x - c2
+leah_chocolates = c0
+sister_chocolates = c1
+chocolates_eaten = c2
+
+1. Add the number of chocolates Leah had and the number of chocolates her sister had to calculate the total number of chocolates. Let total_chocolates be the total number of chocolates,
+total_chocolates = leah_chocolates + sister_chocolates
+
+2. Subtract the number of chocolates eaten from the total number of chocolates to calculate how many chocolates are left.
+chocolates_left = total_chocolates - chocolates_eaten
+
+answer = chocolates_left
 
 
 Q: Jason had c0 lollipops. He gave Denny some lollipops. Now Jason has c1 lollipops. How many lollipops did Jason give to Denny? Write multiple mathematical equations to calculate the answer step by step.
@@ -33,8 +55,15 @@ Q: Jason had c0 lollipops. He gave Denny some lollipops. Now Jason has c1 lollip
 A:
 Solve the problem step by step:
 
+Information from question:
+
+Jason_original_lollipops = c0
+Jason_current_lollipops = c1
+
 1. Subtract the number of lollipops that Jason currently has from the number of lollipops that Jason had before to calculate the number of lollipops given out. 
-answer = c0 - c1
+Jason_given_out = Jason_original_lollipops - Jason_current_lollipops
+
+answer = Jason_given_out
 
 
 

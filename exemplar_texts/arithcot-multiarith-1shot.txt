@@ -3,8 +3,18 @@ Q: Andy and his brother Aaron received money for holiday. Andy had c0 dollars wh
 A:
 Solve the problem step by step:
 
-1. Add the amount of money from Andy and the amount of money from Aaron to calculate the total amount of money they have. Let x be the total amount of money they have,
-x = c0 + c1
+andy_money = c0
+aaron_money = c1
+money_spent = c2
 
-2. Subtract the money spent by them on video game from the total to calculate how many dollars they have left.
-answer = x - c2
+1. Sum up their money since they spent money on a new video game together. Let total_money be the total number of dollars they have,
+total_money = andy_money + aaron_money
+
+2. Subtract the money spent by them on video game from the total money they have to calculate how many dollars they have left.
+money_left = total_money - money_spent
+
+answer = money_left
+
+
+
+

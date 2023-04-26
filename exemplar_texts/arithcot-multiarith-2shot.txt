@@ -3,11 +3,17 @@ Q: Andy and his brother Aaron received money for holiday. Andy had c0 dollars wh
 A:
 Solve the problem step by step:
 
-1. Add the amount of money from Andy and the amount of money from Aaron to calculate the total amount of money they have. Let x be the total amount of money they have,
-x = c0 + c1
+andy_money = c0
+aaron_money = c1
+money_spent = c2
 
-2. Subtract the money spent by them on video game from the total to calculate how many dollars they have left.
-answer = x - c2
+1. Sum up their money since they spent money on a new video game together. Let total_money be the total number of dollars they have,
+total_money = andy_money + aaron_money
+
+2. Subtract the money spent by them on video game from the total money they have to calculate how many dollars they have left.
+money_left = total_money - money_spent
+
+answer = money_left
 
 
 Q: Each eraser regardless of brand cost c0. Alice bought c1 erasers from brand A and c2 earsers from brand B. How many dollars did she spend? Write multiple mathematical equations to calculate the answer step by step.
@@ -15,8 +21,14 @@ Q: Each eraser regardless of brand cost c0. Alice bought c1 erasers from brand A
 A:
 Solve the problem step by step:
 
-1. Add the number of erasers from brand A and the number of erasers from brand B to calculate the total number of erasers bought. Let x be the total number of erasers bought,
-x = c1 + c2
+eraser_cost = c0
+eraser_A = c1
+eraser_B = c2
 
-2. Multiply the number of erasers by the cost of each eraser to calculate how many dollars she spent.
-answer = x * c0
+1. Sum up the number of erasers since each eraser cost the same regardless of brand. Let total_eraser be the total number of eraser they have,
+total_eraser = eraser_A + eraser_B
+
+2. Multiply the total number of erasers by the cost of each eraser to calculate how many dollars she spent.
+money_spent = total_eraser * eraser_cost
+
+answer = money_spent
