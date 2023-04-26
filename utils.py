@@ -50,7 +50,7 @@ def generate_prompt(question, exemplar, prompt):
             " Write a Python function that returns the answer.\nA:"
     elif prompt == 'arithcot':
         prompt_text = exemplar + "\n\nQ: " + question + \
-            " Write multiple mathematical equations to calculate the answer step by step, use single letters for variable names, and generate the answer format starting with 'answer ='\nA:"
+            " Write multiple mathematical equations to calculate the answer step by step, use single letters for variable names, and generate the answer equation starting with 'answer ='\nA:"
     elif prompt == 'sympy':
         prompt_text = exemplar + "\n\nQ: " + question + \
             "write a mapping and a mathematical equation starting with ‘Eq1:’ and solve using sympy"

@@ -54,4 +54,4 @@ def extract_mapping_ans(dataset):
 dataset['train'], train_failed = extract_mapping_ans(dataset['train'])
 dataset['test'], test_failed = extract_mapping_ans(dataset['test'])
 
-#dataset.save_to_disk("Data/processed_gsm8k")
+dataset['test'].save_to_disk("gsm8k")

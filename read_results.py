@@ -3,7 +3,6 @@ import numpy as np
 import math, re
 from collections import OrderedDict
 
-
 import argparse
 import os
 
@@ -38,13 +37,38 @@ def evaluate_equations(equations, mapping):
         return ret[-1][1]
     except:
         return None
+       
+def extract_answer(response, prompt = 'cot'):
 
+    answer = None
+    if(prompt == 'cot'):
+        try:
+            answer = re.findall(r'(?<=The answer is ).+', response)[0]
+        except:
+            return None
+        
+        try:
+            answer = re.search(r'\d+(\,\d+)*(\.\d+)?', answer).group(0)
+        except:
+            return None
+    elif(prompt == 'zero-cot'):
+
+        # Use the number in the response
+        try:
+            answer = re.findall(r'\d+(?:\.\d+)?', response)[-1]
+        except:
+            return None
+        
+    return float(answer)
+    
 def calculate_answer(result, prompt):
 
     answers = []
     equation_column = []
     count = 0
+
     if(prompt == 'arithcot'):
+
         for i in range(len(result)):
             response = result.response[i]
             mapping = result.mapping[i]
@@ -53,7 +77,7 @@ def calculate_answer(result, prompt):
 
             # Extract eqautions from response
             for line in response.split('\n'):
-                if('=' in line):
+                if('=' in line and not line[0].isdigit()):
                     equations.append(line)
 
             answer = evaluate_equations(equations, mapping)
@@ -61,6 +85,17 @@ def calculate_answer(result, prompt):
             equation_column.append(equations)
             if(answer is None):
                 print("*****\n",i,response,equations)
+                count += 1
+
+    elif(prompt == 'cot' or prompt == 'zero-cot'):
+
+        for i in range(len(result)):
+            response = result.response[i]
+            
+            answer = extract_answer(response, prompt)
+            answers.append(answer)
+            if(answer is None):
+                print("*****\n",i,response)
                 count += 1
 
     else:
@@ -85,13 +120,22 @@ def eval_aqua(result):
             undef += 1
     print("acc", correct/total, "invalid", undef/total)
 
-# filename = "2f6cdbe4-b7bd-43bd-9c67-298cba3f0fb3.jsonl"
 
+
+
+# kinda too messy; needs to be cleaned
 def eval_result(filename, prompt, dataset_name):
+    
     result = pd.read_json("logs/"+filename+".jsonl", lines=True)
 
     if prompt == 'arithcot':
         result['response_answer'], result['equations'] = calculate_answer(result, "arithcot")
+        result['answer'] = [i[0] for i in result['answer']]
+        print("acc",np.mean(result['response_answer'] == result['answer']))
+    elif prompt == 'cot' or prompt == 'zero-cot':
+        if(prompt == 'zero-cot'):
+            raise Warning("Refer to the paper for zero-cot evaluation")
+        result['response_answer'],  _ = calculate_answer(result, prompt)
         result['answer'] = [i[0] for i in result['answer']]
         print("acc",np.mean(result['response_answer'] == result['answer']))
     elif prompt == 'sympy':
