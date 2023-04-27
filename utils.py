@@ -170,7 +170,7 @@ def generate_response(prompt, model_name):
                 response = openai.Completion.create(
                     engine='text-davinci-003',
                     prompt=prompt,
-                    max_tokens=300,
+                    max_tokens=1000,
                     temperature=0,
                     top_p=1,
                     frequency_penalty=0.0,
@@ -188,7 +188,7 @@ def generate_response(prompt, model_name):
                 response = openai.Completion.create(
                     engine='text-davinci-002',
                     prompt=prompt,
-                    max_tokens=300,
+                    max_tokens=1000,
                     temperature=0,
                     top_p=1,
                     frequency_penalty=0.0,
@@ -206,7 +206,7 @@ def generate_response(prompt, model_name):
                 response = openai.ChatCompletion.create(
                     model='gpt-3.5-turbo',
                     messages=[{"role": "user", "content": prompt}],
-                    max_tokens=300,
+                    max_tokens=1000,
                     temperature=0,
                     top_p=1,
                     frequency_penalty=0.0,

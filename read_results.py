@@ -210,6 +210,8 @@ def eval_result(filename, prompt, dataset_name):
         result['response_answer'],  _ = calculate_answer(result, prompt)
         result['answer'] = [i[0] for i in result['answer']]
         print("acc",np.mean(result['response_answer'] == result['answer']))
+        
+        #to be fixed
         print("acc",np.mean(result['response_answer'] == result['num_answer']))
     elif prompt == 'varcot':
         result['response_answer'], result['equations'] = calculate_answer(result, "varcot")
