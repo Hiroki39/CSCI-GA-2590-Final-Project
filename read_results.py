@@ -6,14 +6,16 @@ from collections import OrderedDict
 import argparse
 import os
 
-def evaluate_equations(equations, mapping):
-    
+def evaluate_equations(equations, mapping, response = ''):
+
     # helper
 
     def isvalid(word):
-        if(len(word) == 1):
+        if(len(word) <= 1):
             return True
         elif(word[0] == 'c' and word[1].isdigit()):
+            return True
+        elif("(" in word or ")" in word):
             return True
         elif(word[0:5] == 'ceil(' 
             or word[0:6] == 'floor(' 
@@ -27,14 +29,12 @@ def evaluate_equations(equations, mapping):
     for i in mapping:
         value = mapping[i]
         exec(i + ' = ' + str(value))
-
     # Evaluate equation one by one
     for equation in equations:
         elements = equation.split('=')
 
         #left side
-        name = elements[0].strip().replace(' ', '_')
-
+        name = elements[0].strip()
         #right side
         expression = elements[1].strip()
 
@@ -51,32 +51,35 @@ def evaluate_equations(equations, mapping):
                     processed_expression.append(word)
                     j += 1
                 else:
-                    long_variable = word
-                    k = j+1
-                    while(k < len(words)):
-                        next_word = words[k]
-                        if(not isvalid(next_word)):
-                            long_variable = long_variable+'_'+next_word
-                            k = k+1
-                        else:
-                            break
-                    processed_expression.append(long_variable)
-                    j = k                    
+                    break          
             try:
                 value = eval(' '.join(processed_expression))
             except Exception as e:
-                print("******Parsing Error")
-                print(' '.join(processed_expression))
-                print(e)
-                return None
-
-        exec(name + ' = ' + str(value))
+                try:
+                    value = eval(expression.split(',')[0])
+                except:
+                    print("*******Eval Error")
+                    print(' '.join(processed_expression))
+                    print(e)
+                    break
+        try:
+            exec(name + ' = ' + str(value))
+        except Exception as e:
+            print(response, equation, name, value)
+            break
         new_variables[name] = value
-    
-    ret = list(new_variables.items())
-    try:
-        return ret[-1][1]
-    except:
+
+    if('answer' in new_variables):
+        return new_variables['answer']
+    else:
+        try:
+            equation2 = equations[-2]
+            exec(equation2)
+            equation1 = equations[-1]
+            exec(equation1)
+            return answer
+        except Exception as e:
+            print(e)
         return None
        
 def extract_answer(response, prompt = 'cot'):
@@ -85,13 +88,12 @@ def extract_answer(response, prompt = 'cot'):
     if(prompt == 'cot'):
         try:
             answer = re.findall(r'(?<=The answer is ).+', response)[0]
-        except:
-            return None
-        
-        try:
             answer = re.search(r'\d+(\,\d+)*(\.\d+)?', answer).group(0)
         except:
-            return None
+            try:
+                answer = re.findall(r'\d+(?:\.\d+)?', response)[-1]
+            except:
+                return None
     elif(prompt == 'zero-cot'):
 
         # Use the number in the response
@@ -100,7 +102,7 @@ def extract_answer(response, prompt = 'cot'):
         except:
             return None
         
-    return float(answer)
+    return float(answer.replace(",",''))
     
 def calculate_answer(result, prompt):
 
@@ -137,6 +139,35 @@ def calculate_answer(result, prompt):
             answers.append(answer)
             if(answer is None):
                 print("*****\n",i,response)
+                count += 1
+    
+    elif(prompt == 'varcot'):
+
+        for i in range(len(result)):
+            response = result.response[i]
+            mapping = result.mapping[i]
+
+            equations = []
+
+            # Extract eqautions from response
+            for line in response.split('\n'):
+                if('=' in line and not line[0].isdigit()):
+                    equation = line.split("=")
+                    left = equation[0].strip().split(" ")
+                    left = left[-1]
+                    right = equation[1]
+                    equation = left + " = " + right
+                    equations.append(equation)
+                elif("The answer is" in line):
+                    newline = line.split('.')[0]
+                    newline = newline.replace("The answer is", "answer =")
+                    equations.append(newline)
+
+            answer = evaluate_equations(equations, mapping, response)
+            answers.append(answer)
+            equation_column.append(equations)
+            if(answer is None):
+                print("*****\n",i,response,equations)
                 count += 1
 
     else:
@@ -177,6 +208,11 @@ def eval_result(filename, prompt, dataset_name):
         if(prompt == 'zero-cot'):
             raise Warning("Refer to the paper for zero-cot evaluation")
         result['response_answer'],  _ = calculate_answer(result, prompt)
+        result['answer'] = [i[0] for i in result['answer']]
+        print("acc",np.mean(result['response_answer'] == result['answer']))
+        print("acc",np.mean(result['response_answer'] == result['num_answer']))
+    elif prompt == 'varcot':
+        result['response_answer'], result['equations'] = calculate_answer(result, "varcot")
         result['answer'] = [i[0] for i in result['answer']]
         print("acc",np.mean(result['response_answer'] == result['answer']))
     elif prompt == 'sympy':

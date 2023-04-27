@@ -7,11 +7,11 @@
   "download_checksums": {
     "https://raw.githubusercontent.com/openai/grade-school-math/master/grade_school_math/data/train.jsonl": {
       "num_bytes": 4166206,
-      "checksum": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465"
+      "checksum": null
     },
     "https://raw.githubusercontent.com/openai/grade-school-math/master/grade_school_math/data/test.jsonl": {
       "num_bytes": 749738,
-      "checksum": "3730d312f6e3440559ace48831e51066acaca737f6eabec99bccb9e4b3c39d14"
+      "checksum": null
     }
   },
   "download_size": 4915944,

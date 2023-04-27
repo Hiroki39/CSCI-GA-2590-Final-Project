@@ -51,7 +51,6 @@ def extract_mapping_ans(dataset):
 
     return dataset, failed
 
-dataset['train'], train_failed = extract_mapping_ans(dataset['train'])
-dataset['test'], test_failed = extract_mapping_ans(dataset['test'])
+dataset1, test_failed = extract_mapping_ans(dataset['test'])
 
-dataset['test'].save_to_disk("gsm8k")
+dataset1.save_to_disk("data/gsm8k")

@@ -29,7 +29,10 @@ def get_dataset(dataset_name):
 
     if dataset_name == 'gsm8k':
         # Load the GSM8K dataset from Hugging Face
-        dataset = load_dataset(dataset_name, 'main')
+        #dataset = load_dataset(dataset_name, 'main')
+
+        # Load from file for future edits
+        dataset = load_from_disk("data/gsm8k")
     elif dataset_name == 'multiarith':
         dataset = load_from_disk("data/multiarith")
     elif dataset_name == 'aqua_rat':
@@ -60,6 +63,9 @@ def generate_prompt(question, exemplar, prompt):
     elif prompt == 'zero-cot':
         prompt_text = "\n\nQ: " + question + \
             "\nA: Let's think step by step. "
+    elif prompt == 'varcot':
+        prompt_text = exemplar + "\n\nQ: " + question + \
+            "\nA:"
 
     return prompt_text
 
@@ -113,7 +119,7 @@ def evaluate_openai(run_id, model_name, dataset_name, prompt, shot, dev, prompts
 
             if(not dev):
                 # Use all indices
-                pass
+                modified_ds = dataset
             else:
                 # Randomly select 10 for testing
                 indices = random.sample(indices, 10)
@@ -121,11 +127,9 @@ def evaluate_openai(run_id, model_name, dataset_name, prompt, shot, dev, prompts
 
         elif dataset_name == 'gsm8k':
             if not dev:
-                # merge train and test datasets and remove the exemplar from the train set
-                modified_ds = concatenate_datasets([dataset["train"].select(
-                    range(shot, len(dataset["train"]))), dataset["test"]])
+                modified_ds = dataset
             else:
-                modified_ds = dataset["test"].select(range(5))
+                modified_ds = dataset.select(range(5))
 
         elif dataset_name == 'aqua_rat':
             # dataset["train"] = dataset["train"].shuffle(seed=42)
@@ -223,6 +227,12 @@ def extract_mapping(q):
     q = re.sub(r'(\d)\s+(\d)', r'\1,\2', q)
     q = re.sub(r'(\d),(\d)', r'\1\2', q)
 
+    # Seperate number and words
+    q = re.sub(r'(\d)([a-z])', r'\1 \2', q)
+    q = re.sub(r'(\d)([A-Z])', r'\1 \2', q)
+    q = re.sub(r'(\d)(\-)', r'\1 \2', q)
+    q = re.sub(r'\s+', ' ', q)
+
     # Expression used to extract number
 
     exp = r'\d+(\,\d+)*(\.\d+)?'
@@ -241,7 +251,7 @@ def extract_mapping(q):
 
     for word in words:
 
-        # only support pure numbers, $, and %, not number word (e.g. twenty, 1/4, 5th)
+        # only support pure numbers, $, %, single number word, but not others (e.g.  1/4, 5th)
 
         # check if contains letter or other symbols
         if(bool(re.search('[a-zA-Z]',word))):

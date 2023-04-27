@@ -31,7 +31,7 @@ if __name__ == '__main__':
     parser.add_argument('--model', type=str, required=True, default='gptturbo')
     parser.add_argument('--dataset', type=str, required=True, default='gsm8k')
     parser.add_argument('--prompt', type=str, required=True,
-                        default='pycot', choices=['pycot', 'sympy', 'arithcot', 'cot', 'zero-cot'])
+                        default='pycot', choices=['pycot', 'sympy', 'arithcot', 'cot', 'zero-cot', 'varcot'])
     parser.add_argument('--shot', type=int, required=True,
                         default=1, choices=[1, 2, 4, 8])
     parser.add_argument(
