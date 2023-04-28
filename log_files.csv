@@ -21,3 +21,7 @@ a1183cac-73bb-4c2f-be3a-795523471c14,gptturbo,multiarith,arithcot,8,general
 6a16bc77-21a2-47c8-ba4d-572f3545bf00,gptturbo,gsm8k,arithcot,8,general
 01e1cbef-1683-4f48-b4c8-e1efc7f567cd,gptturbo,multiarith,cot,8,generalvar
 2e6a0587-842f-4c88-9337-ffa4bfefbe61,text-davinci-002,multiarith,varcot,8,general
+ef2b4567-a132-4d58-be27-807745f10785,text-davinci-002,multiarith,cot,8,general
+21304d1b-c61d-4c42-a0b7-d613e0194a4e,gptturbo,gsm8k,varcot,8,general
+88b1418e-71a0-4b96-8a8f-be1f30305543,text-davinci-002,multiarith,cot,8,general
+b57c0bb2-7a6a-4d31-bbca-bdd48b38ab8e,text-davinci-002,multiarith,varcot,8,general

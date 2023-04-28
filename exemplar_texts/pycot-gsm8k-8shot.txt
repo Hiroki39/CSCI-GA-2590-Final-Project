@@ -2,11 +2,11 @@ Q: Natalia sold clips to c0 of her friends in April, and then she sold half as m
 
 A:
 # solve the problem step by step
-def clips_sold(c0):
+def Problem(c0):
 
     # there are c0 clips sold in April
     april = c0
-    # compute the number of clips sold in May
+    # compute the number of clips sold in May, which is half of that in April
     may = april / 2
     # compute the total number of clips sold in April and May
     total = april + may
@@ -14,17 +14,17 @@ def clips_sold(c0):
     return total
 
 
-Q: Weng earns $c0 an hour for babysitting. Yesterday, she just did c1 minutes of babysitting. How much did she earn? Write a Python function that returns the answer.
+Q: Weng earns c0 an hour for babysitting. Yesterday, she just did c1 minutes of babysitting. How much did she earn? Write a Python function that returns the answer.
 
 A:
 # solve the problem step by step
-def babysitting_pay(c0, c1):
+def Problem(c0, c1):
 
-    # the pay for babysitting is $c0 an hour
+    # the pay for babysitting is c0 an hour
     rate = c0
     # there are c1 minutes of babysitting
     minutes = c1
-    # compute the number of hours of babysitting
+    # 1 hour equals to 60 minutes; compute the number of hours of babysitting
     hours = minutes / 60
     # compute Weng's total pay
     pay = rate * hours
@@ -32,11 +32,11 @@ def babysitting_pay(c0, c1):
     return pay
 
 
-Q: Betty is saving money for a new wallet which costs $c0. Betty has only half of the money she needs. Her parents decided to give her $c1 for that purpose, and her grandparents twice as much as her parents. How much more money does Betty need to buy the wallet? Write a Python function that returns the answer.
+Q: Betty is saving money for a new wallet which costs c0. Betty has only half of the money she needs. Her parents decided to give her c1 for that purpose, and her grandparents twice as much as her parents. How much more money does Betty need to buy the wallet? Write a Python function that returns the answer.
 
 A:
 # solve the problem step by step
-def money_required(c0, c1):
+def Problem(c0, c1):
 
     # the wallet costs $c0
     wallet = c0
@@ -46,9 +46,9 @@ def money_required(c0, c1):
     parents = c1
     # her grandparents give her twice as much as her parents
     grandparents = parents * 2
-    # compute the total amount of money Betty has
+    # compute the total amount of money Betty has now
     total = half + parents + grandparents
-    # compute the amount of money Betty still needs
+    # compute the amount of money Betty still needs to buy wallet
     need = wallet - total
     # return the answer
     return need
@@ -58,7 +58,7 @@ Q: Julie is reading a 120-page book. Yesterday, she was able to read c0 pages an
 
 A:
 # solve the problem step by step
-def pages_to_read(c0):
+def Problem(c0):
 
     # there are 120 pages in the book
     book = 120
@@ -78,7 +78,7 @@ Q: James writes a 3-page letter to c0 different friends twice a week. How many p
 
 A:
 # solve the problem step by step
-def pages_written(c0):
+def Problem(c0):
 
     # there are 3 pages in the letter
     pages = 3
@@ -98,7 +98,7 @@ Q: Mark has a garden with flowers. He planted plants of three different colors i
 
 A:
 # solve the problem step by step
-def flowers(c0, c1):
+def Problem(c0, c1):
 
     # there are 10 yellow flowers
     yellow = 10
@@ -116,7 +116,7 @@ Q: Albert is wondering how much pizza he can eat in one day. He buys c0 large pi
 
 A:
 # solve the problem step by step
-def pizza_slices(c0, c1, c2, c3):
+def Problem(c0, c1, c2, c3):
 
     # there are c0 large pizzas
     large = c0
@@ -140,7 +140,7 @@ Q: Ken created a care package to send to his brother, who was away at boarding s
 
 A:
 # solve the problem step by step
-def box_weight(c0, c1):
+def Problem(c0, c1):
 
     # Ken poured enough jelly beans to bring the weight to c0 pounds
     box = c0

@@ -1,0 +1,732 @@
+,question,answer,median_answer,response_answer,response_answer_arith,response_answer_var,mapping_arith,response,response_arith,response_var
+14," Faye had 46 math problems and 9 science problems for homework. If she finished 40 of the problems at school, how many problems did she have to do for homework? ",15,15,15,15,-25,"{'c0': 46.0, 'c1': 9.0, 'c2': 40.0}","Faye had 46 math problems and 9 science problems for a total of 46 + 9 = 55 problems. She finished 40 of them at school, so she had 55 - 40 = 15 problems left to do for homework. The answer is 15.","Solve the problem step by step:
+
+1. Add the number of math problems and the number of science problems to calculate the total number of problems. Let x be the total number of problems,
+x = c0 + c1
+
+2. Subtract the number of problems Faye finished at school from the total number of problems to calculate the answer.
+answer = x - c2","Faye had c0 math problems and c1 science problems for homework. After finishing c2 problems at school, she still has c0-c2 math problems and c1-c2 science problems left to do. 
+homework_problems = (c0-c2) + (c1-c2)
+
+The answer is homework_problems."
+40," At the schools book fair Sam bought 13 adventure books and 17 mystery books. If 15 of the books were used, how many new books did he buy? ",15,15,15,15,-15,"{'c0': 13.0, 'c1': 17.0, 'c2': 15.0}","Sam bought a total of 13 + 17 = 30 books. After using 15 of them, he had 30 - 15 = 15 books left. These 15 books must be the new books he bought. The answer is 15.","Solve the problem step by step:
+
+1. Add the number of adventure books and the number of mystery books to calculate the total number of books. Let x be the total number of books,
+x = c0 + c1
+
+2. Subtract the number of used books from the total number of books to calculate the number of new books. 
+answer = x - c2","Sam bought c0 adventure books and c1 mystery books, so he bought a total of c0 + c1 books. If c2 of the books were used, then he has c0 + c1 - c2 books left. These are the books that he did not buy new. Therefore, the number of new books he bought is c0 + c1 - c2 minus the number of books he originally had, which is c0 + c1. 
+
+new_books = (c0 + c1 - c2) - (c0 + c1)
+new_books = c0 - c0 + c1 - c1 - c2
+new_books = -c2
+
+The answer is -c2, which means that Sam did not buy any new books."
+70," At the schools book fair Victor bought 32 adventure books and 37 mystery books. If 16 of the books were used, how many new books did he buy? ",53,53,,53,53,"{'c0': 32.0, 'c1': 37.0, 'c2': 16.0}","Victor bought 32 adventure books and 37 mystery books, so he bought a total of 32 + 37 = 69 books. If 16 of the books were used, then he has 69 - 16 = 53 books left. Therefore, he bought 53 - (32 + 37) = 53 - 69 = -16 new books. This doesn't make sense, so there may be an error in the problem.","Solve the problem step by step:
+
+1. Add the number of adventure books and the number of mystery books to calculate the total number of books bought. Let x be the total number of books,
+x = c0 + c1
+
+2. Subtract the number of used books from the total number of books to calculate the number of new books. 
+answer = x - c2","Victor bought c0 adventure books and c1 mystery books, so he bought a total of c0 + c1 books. If c2 of the books were used, then he must have bought c0 + c1 - c2 new books. 
+new_books = c0 + c1 - c2
+
+The answer is new_books."
+102," Kaleb had 34 books. If he sold 17 of them and used the money he earned to buy 7 new books, how many books would Kaleb have? ",24,24,24,16,24,"{'c0': 34.0, 'c1': 17.0, 'c2': 7.0}","Kaleb started with 34 books. After selling 17, he had 34 - 17 = 17 books left. He used the money to buy 7 new books, so he now has 17 + 7 = 24 books. The answer is 24.","Solve the problem step by step:
+
+1. Subtract the number of books sold from the original number of books to calculate the number of books Kaleb has left. Let x be the number of books Kaleb has left,
+x = c0 - c1
+
+2. Divide the total money earned from selling the books by the price of each new book to calculate the number of new books Kaleb can buy. Let y be the number of new books Kaleb can buy,
+y = (money earned from selling books) / c2
+
+3. Add the number of books Kaleb has left and the number of new books he can buy to calculate the answer.
+answer = x + y","Kaleb started with c0 books. After selling c1, he had c0 - c1 books left. 
+books_left = c0 - c1
+
+With the money earned from selling the books, he bought c2 new books. 
+new_books = c2
+
+So Kaleb now has books_left + new_books books. 
+total_books = books_left + new_books
+
+The answer is total_books."
+134," Adam had 33 books. If he sold 11 of them and used the money he earned to buy 23 new books, how many books would Adam have? ",45,45,45,0,45,"{'c0': 33.0, 'c1': 11.0, 'c2': 23.0}","Adam started with 33 books. After selling 11, he had 33 - 11 = 22 books left. He used the money to buy 23 new books, so he now has 22 + 23 = 45 books. The answer is 45.","Solve the problem step by step:
+
+1. Subtract the number of books sold from the original number of books to calculate the number of books Adam has left. Let x be the number of books Adam has left,
+x = c0 - c1
+
+2. Divide the total money earned from selling the books by the price of each new book to calculate the number of new books Adam can buy. Let y be the number of new books Adam can buy,
+y = total money earned / c2
+
+3. Add the number of books Adam has left and the number of new books he bought to calculate the answer.
+answer = x + y","Adam started with c0 books. After selling c1, he had c0 - c1 books left. 
+
+He used the money he earned from selling the books to buy c2 new books. 
+
+So in total, Adam has c0 - c1 + c2 books. 
+total_books = c0 - c1 + c2
+
+The answer is total_books."
+143," Edward had 43 books. If he sold 19 of them and used the money he earned to buy 14 new books, how many books would Edward have? ",38,38,38,0,38,"{'c0': 43.0, 'c1': 19.0, 'c2': 14.0}","Edward started with 43 books. After selling 19, he had 43 - 19 = 24 books left. He used the money to buy 14 new books, so he now has 24 + 14 = 38 books. The answer is 38.","Solve the problem step by step:
+
+1. Subtract the number of books sold from the original number of books to calculate the number of books Edward has left. Let x be the number of books Edward has left,
+x = c0 - c1
+
+2. Divide the total money earned from selling the books by the price of each new book to calculate the number of new books Edward can buy. Let y be the number of new books Edward can buy,
+y = total money earned / c2
+
+3. Add the number of books Edward has left and the number of new books he bought to calculate the answer.
+answer = x + y","Edward started with c0 books. After selling c1, he had c0 - c1 books left. 
+books_left = c0 - c1
+
+With the money he earned, he bought c2 new books. So he now has books_left + c2 books. 
+total_books = books_left + c2
+
+The answer is total_books."
+165," Tom had 5 books. If he sold 4 of them and used the money he earned to buy 38 new books, how many books would Tom have? ",39,39,39,0,39,"{'c0': 5.0, 'c1': 4.0, 'c2': 38.0}","Tom started with 5 books. He sold 4 of them, so he had 5 - 4 = 1 book left. He used the money he earned from selling the books to buy 38 new books, so he now has 1 + 38 = 39 books. The answer is 39.","Solve the problem step by step:
+
+1. Subtract the number of books sold from the original number of books to calculate the number of books Tom has left. Let x be the number of books Tom has left,
+x = c0 - c1
+
+2. Divide the total money earned from selling the books by the price of each new book to calculate the number of new books Tom can buy. Let y be the number of new books Tom can buy,
+y = total money earned / c2
+
+3. Add the number of books Tom has left and the number of new books he bought to calculate the answer.
+answer = x + y","Tom started with c0 books. After selling c1, he had c0 - c1 books left. 
+
+With the money he earned, he bought c2 new books. 
+
+So in total, Tom has c0 - c1 + c2 books. 
+total_books = c0 - c1 + c2
+
+The answer is total_books."
+169, In fourth grade there were 8 students at the start of the year. During the year 5 students left and 8 new students came to school. How many students were in fourth grade at the end? ,11,11,5,11,11,"{'c0': 8.0, 'c1': 5.0, 'c2': 8.0}","There were originally 8 students. 5 left and 8 new students came, so the total change in students is 5 - 8 = -3. This means there are 3 fewer students than before. So the total number of students at the end of the year is 8 - 3 = 5. The answer is 5.","Solve the problem step by step:
+
+1. Subtract the number of students who left from the original number of students to calculate the number of students who remained. Let x be the number of students who remained,
+x = c0 - c1
+
+2. Add the number of new students who came to the school to the number of students who remained to calculate the answer.
+answer = x + c2","At the start of the year, there were c0 students. After c1 left, there were c0 - c1 students remaining. 
+students_remaining = c0 - c1
+
+After c2 new students came, there were students_remaining + c2 students in fourth grade at the end of the year. 
+students_end = students_remaining + c2
+
+The answer is students_end."
+174," Adam had 48 books. If he sold 19 of them and used the money he earned to buy 38 new books, how many books would Adam have? ",67,67,67,0,67,"{'c0': 48.0, 'c1': 19.0, 'c2': 38.0}","Adam started with 48 books. After selling 19, he had 48 - 19 = 29 books. He used the money to buy 38 new books, so he now has 29 + 38 = 67 books. The answer is 67.","Solve the problem step by step:
+
+1. Subtract the number of books sold from the original number of books to calculate the number of books Adam has left. Let x be the number of books Adam has left,
+x = c0 - c1
+
+2. Divide the total money earned from selling the books by the price of each new book to calculate the number of new books Adam can buy. Let y be the number of new books Adam can buy,
+y = total money earned / c2
+
+3. Add the number of books Adam has left and the number of new books he bought to calculate the answer.
+answer = x + y","Adam started with c0 books. After selling c1, he had c0 - c1 books left. 
+
+He used the money he earned from selling the books to buy c2 new books. 
+
+So in total, Adam has c0 - c1 + c2 books. 
+total_books = c0 - c1 + c2
+
+The answer is total_books."
+195," Roger had 25 books. If he sold 21 of them and used the money he earned to buy 30 new books, how many books would Roger have? ",34,34,34,0,34,"{'c0': 25.0, 'c1': 21.0, 'c2': 30.0}","Roger started with 25 books. He sold 21 of them, so he had 25 - 21 = 4 books left. He used the money he earned to buy 30 new books, so he now has 4 + 30 = 34 books. The answer is 34.","Solve the problem step by step:
+
+1. Subtract the number of books sold from the original number of books to calculate the number of books Roger has left. Let x be the number of books he has left,
+x = c0 - c1
+
+2. Divide the total money earned from selling the books by the price of each new book to calculate the number of new books he can buy. Let y be the number of new books he can buy,
+y = total money earned / c2
+
+3. Add the number of books he has left and the number of new books he can buy to calculate the answer.
+answer = x + y","Roger started with c0 books. After selling c1, he had c0 - c1 books left. 
+
+He used the money he earned from selling the books to buy c2 new books. 
+
+So in total, he now has c0 - c1 + c2 books. 
+total_books = c0 - c1 + c2
+
+The answer is total_books."
+251," There were 2 friends playing a video game online when 2 more players joined the game. If each player had 3 lives, how many lives did they have total? ",12,12,18,12,12,"{'c0': 2.0, 'c1': 2.0, 'c2': 3.0}","There were originally 2 friends playing, so they had 2 x 3 = 6 lives. When 2 more players joined, there were a total of 4 players, so they had 4 x 3 = 12 lives. In total, they had 6 + 12 = 18 lives. The answer is 18.","Solve the problem step by step:
+
+1. Add the number of original players and the number of new players to calculate the total number of players. Let x be the total number of players,
+x = c0 + c1
+
+2. Multiply the number of lives each player has by the total number of players to calculate the total number of lives.
+total lives = x * c2
+
+3. Calculate the answer by substituting the value of x in the above equation.
+answer = (c0 + c1) * c2","There were originally c0 friends playing. c1 more players joined, so there were c0 + c1 players in total. Each player had c2 lives, so the total number of lives is (c0 + c1) * c2. 
+total_lives = (c0 + c1) * c2
+
+The answer is total_lives."
+255," At Tom's Restaurant a group with 2 adults and 5 children came in to eat. If each meal cost 8 dollars, how much was the bill? ",56,56,56,36,56,"{'c0': 2.0, 'c1': 5.0, 'c2': 8.0}","There were 2 adults and 5 children in the group, so a total of 7 people. Each meal cost 8 dollars, so the total bill would be 7 x 8 = 56 dollars. The answer is 56.","Solve the problem step by step:
+
+1. Multiply the number of adults by the cost of each meal and the number of children by the cost of each child's meal. Let x be the total cost of the meals,
+x = (c0 * c2) + (c1 * (c2/2))
+
+2. Add the total cost of the meals to calculate the answer.
+answer = x","The group had c0 adults and c1 children, so the total number of people is c0 + c1. If each meal costs c2 dollars, then the total cost of the meals is (c0 + c1) * c2 dollars. 
+
+The answer is (c0 + c1) * c2."
+277," Billy was putting his spare change into piles. He had 2 piles of quarters and 3 piles of dimes. If each pile had 4 coins in it, how many coins did he have total? ",20,20,320,20,20,"{'c0': 2.0, 'c1': 3.0, 'c2': 4.0}","Billy had 2 piles of quarters with 4 quarters in each pile, which is a total of 2 x 4 x 25 cents = 200 cents. He also had 3 piles of dimes with 4 dimes in each pile, which is a total of 3 x 4 x 10 cents = 120 cents. In total, he had 200 + 120 = 320 cents. The answer is 320 coins.","Solve the problem step by step:
+
+1. Multiply the number of quarters in each pile by the number of piles of quarters. Let x be the total number of quarters,
+x = c0 * c2
+
+2. Multiply the number of dimes in each pile by the number of piles of dimes. Let y be the total number of dimes,
+y = c1 * c2
+
+3. Add the total number of quarters and the total number of dimes to calculate the answer.
+answer = x + y","Billy had c0 piles of quarters, each with c2 quarters, so he had c0 * c2 quarters. 
+quarters_total = c0 * c2
+
+Billy also had c1 piles of dimes, each with c2 dimes, so he had c1 * c2 dimes. 
+dimes_total = c1 * c2
+
+In total, Billy had quarters_total + dimes_total coins. 
+total_coins = quarters_total + dimes_total
+
+The answer is total_coins."
+313," A pet shelter had 9 puppies when another 12 were brought in. If 3 puppies a day are adopted, how long would it take for all of them to be adopted? ",7,7,7,6,7,"{'c0': 9.0, 'c1': 12.0, 'c2': 3.0}","The pet shelter started with 9 puppies and then 12 more were brought in, making a total of 9 + 12 = 21 puppies. If 3 puppies are adopted each day, it will take 21 / 3 = 7 days to adopt all of them. The answer is 7.","Solve the problem step by step:
+
+1. Add the number of puppies brought in to the number of puppies already in the shelter to calculate the total number of puppies. Let x be the total number of puppies,
+x = c0 + c1
+
+2. Divide the remaining number of puppies by the number of puppies adopted per day to calculate the number of days it will take to adopt all the puppies. Let y be the number of days,
+y = (x - c2) / c2
+
+3. Round up the number of days to the nearest whole number to get the final answer.
+answer = ceil(y)","The pet shelter had c0 puppies originally. c1 more puppies were brought in, so the total number of puppies is c0 + c1. 
+
+If c2 puppies are adopted each day, then it will take (c0 + c1) / c2 days to adopt all the puppies. 
+
+The answer is (c0 + c1) / c2."
+317, Wendy's old washing machine could only wash 8 pieces of clothing at a time. If she had to wash 39 shirts and 33 sweaters how many loads would she have to do? ,9,9,9,9,,"{'c0': 8.0, 'c1': 39.0, 'c2': 33.0}","Wendy has 39 shirts and 33 sweaters, which is a total of 39 + 33 = 72 pieces of clothing. Her washing machine can only wash 8 pieces at a time, so she will need to do 72 / 8 = 9 loads. The answer is 9.","Solve the problem step by step:
+
+1. Add the number of shirts and the number of sweaters to calculate the total number of clothing items. Let x be the total number of clothing items,
+x = c1 + c2
+
+2. Divide the total number of clothing items by the number of clothing items that can be washed at a time to calculate the number of loads needed.
+answer = x / c0","Wendy's washing machine can wash c0 pieces of clothing at a time. She has c1 shirts and c2 sweaters to wash. 
+
+To calculate the total number of pieces of clothing, we add c1 and c2. 
+total_clothing = c1 + c2
+
+To calculate the number of loads, we divide the total number of clothing by the washing machine's capacity. We can use integer division to get a whole number. 
+num_loads = total_clothing // c0
+
+If there are any remaining pieces of clothing that couldn't fit in a full load, Wendy would need to do an additional load. We can check if there is a remainder after the division. 
+if total_clothing % c0 != 0:
+    num_loads += 1
+
+The answer is num_loads."
+324," For Halloween Megan received 11 pieces of candy from neighbors and 5 pieces from her older sister. If she only ate 8 pieces a day, how long would the candy last her? ",2,2,2,0,2,"{'c0': 11.0, 'c1': 5.0, 'c2': 8.0}","Megan received 11 pieces of candy from neighbors and 5 pieces from her sister, so she had 11 + 5 = 16 pieces of candy. If she ate 8 pieces a day, the candy would last her 16 / 8 = 2 days. The answer is 2.","Solve the problem step by step:
+
+1. Add the number of pieces of candy Megan received from her neighbors and her sister to calculate the total number of pieces of candy. Let x be the total number of pieces of candy,
+x = c0 + c1
+
+2. Subtract the number of pieces of candy Megan eats each day from the total number of pieces of candy to calculate the remaining number of pieces of candy. Let y be the remaining number of pieces of candy,
+y = x - c2 * t
+
+3. Solve for t, the number of days the candy will last by dividing the remaining number of pieces of candy by the number of pieces of candy Megan eats each day,
+t = y / c2","Megan received c0 pieces of candy from neighbors and c1 pieces from her sister. So she has a total of c0 + c1 pieces of candy. 
+
+If she eats c2 pieces a day, the candy will last her (c0 + c1) / c2 days. 
+
+The answer is (c0 + c1) / c2."
+326," There school's baseball team had 4 new players and 6 returning players. If the coach put them into groups with 5 players in each group, how many groups would there be? ",2,2,3,2,2,"{'c0': 4.0, 'c1': 6.0, 'c2': 5.0}","There are a total of 4 + 6 = 10 players. If they are put into groups of 5 players each, there will be 2 groups of 5 players and 1 group of 4 players. The answer is 3 groups.","Solve the problem step by step:
+
+1. Add the number of new players and the number of returning players to calculate the total number of players. Let x be the total number of players,
+x = c0 + c1
+
+2. Divide the total number of players by the number of players in each group to calculate the number of groups.
+answer = x / c2","The total number of players is c0 + c1. To find the number of groups, we need to divide the total number of players by the number of players in each group. 
+number_of_groups = (c0 + c1) / c2
+
+The answer is number_of_groups."
+327," A pet shelter had 5 puppies when another 35 were brought in. If 8 puppies a day are adopted, how long would it take for all of them to be adopted? ",5,5,5,4,5,"{'c0': 5.0, 'c1': 35.0, 'c2': 8.0}","The shelter started with 5 puppies and then 35 more were brought in, so they had a total of 40 puppies. If 8 puppies are adopted each day, it will take 40 / 8 = 5 days to adopt all of them. The answer is 5 days.","Solve the problem step by step:
+
+1. Add the number of puppies brought in to the number of puppies already in the shelter to calculate the total number of puppies. Let x be the total number of puppies,
+x = c0 + c1
+
+2. Subtract the number of puppies adopted each day from the total number of puppies to calculate the remaining number of puppies. Let y be the remaining number of puppies,
+y = x - c2
+
+3. Divide the remaining number of puppies by the number of puppies adopted each day to calculate the number of days it would take to adopt all the puppies.
+answer = y / c2","The pet shelter originally had c0 puppies. c1 more puppies were brought in, so the total number of puppies is c0 + c1. 
+
+If c2 puppies are adopted each day, then it will take (c0 + c1) / c2 days to adopt all the puppies. 
+
+The answer is (c0 + c1) / c2."
+329," Dave was helping the cafeteria workers pick up lunch trays, but he could only carry 9 trays at a time. If he had to pick up 17 trays from one table and 55 trays from another, how many trips will he make? ",8,8,8,8,,"{'c0': 9.0, 'c1': 17.0, 'c2': 55.0}",Dave can carry 9 trays at a time. He needs to pick up 17 trays from one table and 55 trays from another. So he needs to make (17 + 55) / 9 = 8 trips. The answer is 8.,"Solve the problem step by step:
+
+1. Add the number of trays from both tables to calculate the total number of trays. Let x be the total number of trays,
+x = c1 + c2
+
+2. Divide the total number of trays by the number of trays Dave can carry at a time to calculate the number of trips he will make.
+answer = x / c0","Dave can carry c0 trays at a time. He needs to pick up c1 trays from one table and c2 trays from another. So he will need to make at least 2 trips. 
+
+On the first trip, he can carry c0 trays from one table. On the second trip, he can carry c0 trays from the other table. 
+
+If c1 and c2 are both less than or equal to c0, then he can pick up all the trays in one trip. Otherwise, he will need to make more than 2 trips. 
+
+The answer is either 2 or more, depending on the values of c0, c1, and c2."
+334," Henry was helping the cafeteria workers pick up lunch trays, but he could only carry 9 trays at a time. If he had to pick up 29 trays from one table and 52 trays from another, how many trips will he make? ",9,9,9,9,10,"{'c0': 9.0, 'c1': 29.0, 'c2': 52.0}","Henry can carry 9 trays at a time. He needs to pick up 29 trays from one table and 52 trays from another. So in total, he needs to pick up 29 + 52 = 81 trays. To figure out how many trips he will make, we divide the total number of trays by the number of trays he can carry in one trip: 81 ������ 9 = 9. Henry will make 9 trips. ","Solve the problem step by step:
+
+1. Add the number of trays from both tables to calculate the total number of trays. Let x be the total number of trays,
+x = c1 + c2
+
+2. Divide the total number of trays by the number of trays Henry can carry at a time to calculate the number of trips he will make.
+answer = x / c0","Henry can carry c0 trays at a time. He needs to pick up c1 trays from one table and c2 trays from another. So he will need to make at least 2 trips. 
+
+On the first trip, he can carry c0 trays from one table. So he will need to make ceil(c1/c0) trips to pick up all the trays from that table. 
+
+On the second trip, he can carry c0 trays from the other table. So he will need to make ceil(c2/c0) trips to pick up all the trays from that table. 
+
+Therefore, the total number of trips he will make is ceil(c1/c0) + ceil(c2/c0).
+
+The answer is ceil(c1/c0) + ceil(c2/c0)."
+344," Jerry was helping the cafeteria workers pick up lunch trays, but he could only carry 8 trays at a time. If he had to pick up 9 trays from one table and 7 trays from another, how many trips will he make? ",2,2,2,2,,"{'c0': 8.0, 'c1': 9.0, 'c2': 7.0}","Jerry can only carry 8 trays at a time. He needs to pick up 9 trays from one table and 7 trays from another. That's a total of 9 + 7 = 16 trays. To figure out how many trips he needs to make, we divide the total number of trays by the number of trays he can carry in one trip: 16 ������ 8 = 2. Jerry will need to make 2 trips. ","Solve the problem step by step:
+
+1. Add the number of trays from both tables to calculate the total number of trays. Let x be the total number of trays,
+x = c1 + c2
+
+2. Divide the total number of trays by the number of trays Jerry can carry at a time to calculate the number of trips he will make.
+answer = x / c0","Jerry can carry c0 trays at a time. He needs to pick up c1 trays from one table and c2 trays from another. So he will need to make at least 2 trips. 
+
+On the first trip, he can carry c0 trays from one table. On the second trip, he can carry c0 trays from the other table. 
+
+If c1 and c2 are both less than or equal to c0, then he can pick up all the trays in one trip. Otherwise, he will need to make more than 2 trips. 
+
+The answer is either 2 or more, depending on the values of c0, c1, and c2."
+347," A pet shelter had 17 puppies when another 55 were brought in. If 8 puppies a day are adopted, how long would it take for all of them to be adopted? ",9,9,9,8,9,"{'c0': 17.0, 'c1': 55.0, 'c2': 8.0}","The shelter started with 17 puppies and then 55 more were brought in, so they had a total of 17 + 55 = 72 puppies. If 8 puppies are adopted each day, it will take 72 / 8 = 9 days to adopt all of them. The answer is 9 days.","Solve the problem step by step:
+
+1. Add the number of puppies brought in to the number of puppies already in the shelter to calculate the total number of puppies. Let x be the total number of puppies,
+x = c0 + c1
+
+2. Subtract the number of puppies adopted each day from the total number of puppies to calculate the remaining number of puppies. Let y be the remaining number of puppies,
+y = x - c2
+
+3. Divide the remaining number of puppies by the number of puppies adopted each day to calculate the number of days it would take to adopt all the puppies.
+answer = y / c2","The pet shelter had c0 puppies originally. c1 more puppies were brought in, so the total number of puppies is c0 + c1. 
+
+If c2 puppies are adopted each day, then it will take (c0 + c1) / c2 days to adopt all the puppies. 
+
+The answer is (c0 + c1) / c2."
+357," A pet shelter had 17 puppies when another 55 were brought in. If 8 puppies a day are adopted, how long would it take for all of them to be adopted? ",9,9,9,8,9,"{'c0': 17.0, 'c1': 55.0, 'c2': 8.0}","The shelter started with 17 puppies and then 55 more were brought in, so they had a total of 17 + 55 = 72 puppies. If 8 puppies are adopted each day, it will take 72 / 8 = 9 days to adopt all of them. The answer is 9 days.","Solve the problem step by step:
+
+1. Add the number of puppies brought in to the number of puppies already in the shelter to calculate the total number of puppies. Let x be the total number of puppies,
+x = c0 + c1
+
+2. Subtract the number of puppies adopted each day from the total number of puppies to calculate the remaining number of puppies. Let y be the remaining number of puppies,
+y = x - c2
+
+3. Divide the remaining number of puppies by the number of puppies adopted each day to calculate the number of days it would take to adopt all the puppies.
+answer = y / c2","The pet shelter had c0 puppies originally. c1 more puppies were brought in, so the total number of puppies is c0 + c1. 
+
+If c2 puppies are adopted each day, then it will take (c0 + c1) / c2 days to adopt all the puppies. 
+
+The answer is (c0 + c1) / c2."
+360," A pet shelter had 8 puppies when another 19 were brought in. If 3 puppies a day are adopted, how long would it take for all of them to be adopted? ",9,9,9,8,9,"{'c0': 8.0, 'c1': 19.0, 'c2': 3.0}","The shelter started with 8 puppies and 19 more were brought in, so they had a total of 8 + 19 = 27 puppies. If 3 puppies are adopted each day, it will take 27 / 3 = 9 days to adopt all of them. The answer is 9 days.","Solve the problem step by step:
+
+1. Add the number of puppies brought in to the number of puppies already in the shelter to calculate the total number of puppies. Let x be the total number of puppies,
+x = c0 + c1
+
+2. Divide the remaining number of puppies by the number of puppies adopted per day to calculate the number of days it will take to adopt all the puppies. Let y be the number of days,
+y = (x - c2) / c2
+
+3. Round up the number of days to the nearest whole number to get the final answer.
+answer = ceil(y)","The pet shelter had c0 puppies originally. c1 more puppies were brought in, so the total number of puppies is c0 + c1. 
+
+If c2 puppies are adopted each day, then it will take (c0 + c1) / c2 days to adopt all the puppies. 
+
+The answer is (c0 + c1) / c2."
+377," A pet shelter had 3 puppies when another 3 were brought in. If 3 puppies a day are adopted, how long would it take for all of them to be adopted? ",2,2,2,1,2,"{'c0': 3.0, 'c1': 3.0, 'c2': 3.0}","The shelter started with 3 puppies and then 3 more were brought in, so they had a total of 6 puppies. If 3 puppies are adopted each day, it will take 6 ������ 3 = 2 days to adopt all of them. ","Solve the problem step by step:
+
+1. Add the number of puppies brought in to the number of puppies already in the shelter to calculate the total number of puppies. Let x be the total number of puppies,
+x = c0 + c1
+
+2. Subtract the number of puppies adopted each day from the total number of puppies to calculate the remaining number of puppies. Let y be the remaining number of puppies,
+y = x - c2
+
+3. Divide the remaining number of puppies by the number of puppies adopted each day to calculate the number of days it would take to adopt all the puppies.
+answer = y / c2","The pet shelter had c0 puppies originally. c1 more puppies were brought in, so the total number of puppies is c0 + c1. 
+
+If c2 puppies are adopted each day, then it will take (c0 + c1) / c2 days to adopt all the puppies. 
+
+The answer is (c0 + c1) / c2."
+386," A pet shelter had 2 puppies when another 34 were brought in. If 4 puppies a day are adopted, how long would it take for all of them to be adopted? ",9,9,9,8,9,"{'c0': 2.0, 'c1': 34.0, 'c2': 4.0}","The shelter started with 2 puppies and then 34 more were brought in, so they had a total of 2 + 34 = 36 puppies. If 4 puppies are adopted each day, it will take 36 / 4 = 9 days to adopt all of them. The answer is 9 days.","Solve the problem step by step:
+
+1. Add the number of puppies brought in to the number of puppies already in the shelter to calculate the total number of puppies. Let x be the total number of puppies,
+x = c0 + c1
+
+2. Divide the remaining number of puppies by the number of puppies adopted per day to calculate the number of days it will take to adopt all the puppies. Let y be the number of days,
+y = (x - c2) / c2
+
+3. Round up the number of days to the nearest whole number to get the final answer.
+answer = ceil(y)","The pet shelter had c0 puppies originally. c1 more puppies were brought in, so the total number of puppies is c0 + c1. 
+
+If c2 puppies are adopted each day, then it will take (c0 + c1) / c2 days to adopt all the puppies. 
+
+The answer is (c0 + c1) / c2."
+394," Victor was helping the cafeteria workers pick up lunch trays, but he could only carry 7 trays at a time. If he had to pick up 23 trays from one table and 5 trays from another, how many trips will he make? ",4,4,4,4,5,"{'c0': 7.0, 'c1': 23.0, 'c2': 5.0}","Victor can carry 7 trays at a time. He needs to pick up 23 trays from one table and 5 trays from another. So in total, he needs to carry 23 + 5 = 28 trays. Since he can only carry 7 at a time, he will need to make 28 / 7 = 4 trips. The answer is 4.","Solve the problem step by step:
+
+1. Add the number of trays from both tables to calculate the total number of trays. Let x be the total number of trays,
+x = c1 + c2
+
+2. Divide the total number of trays by the number of trays Victor can carry at a time to calculate the number of trips he will make.
+answer = x / c0","Victor can only carry c0 trays at a time. He needs to pick up c1 trays from one table and c2 trays from another. So he will need to make at least two trips, one for each table. 
+
+For the first table, he will need to make c1/c0 rounded up to the nearest whole number trips. 
+trips_table1 = ceil(c1/c0)
+
+For the second table, he will need to make c2/c0 rounded up to the nearest whole number trips. 
+trips_table2 = ceil(c2/c0)
+
+The total number of trips he will make is trips_table1 + trips_table2. 
+total_trips = trips_table1 + trips_table2
+
+The answer is total_trips."
+403," There were 11 friends playing a video game online when 5 players quit. If each player left had 5 lives, how many lives did they have total? ",30,30,30,55,30,"{'c0': 11.0, 'c1': 5.0, 'c2': 5.0}","There were originally 11 friends playing. 5 players quit, so there were 11 - 5 = 6 players left. Each player had 5 lives, so the total number of lives was 6 x 5 = 30. The answer is 30.","Solve the problem step by step:
+
+1. Multiply the number of players who quit by the number of lives each player had to calculate the total number of lives lost. Let x be the total number of lives lost,
+x = c1 * c2
+
+2. Multiply the number of players remaining by the number of lives each player had to calculate the total number of lives remaining. Let y be the total number of lives remaining,
+y = (c0 - c1) * c2
+
+3. Add the total number of lives lost and the total number of lives remaining to calculate the answer.
+answer = x + y","After c1 players quit, there were c0 - c1 friends left playing. Each of them had c2 lives. So the total number of lives left is (c0 - c1) * c2. 
+total_lives = (c0 - c1) * c2
+
+The answer is total_lives."
+414," There were 16 friends playing a video game online when 7 players quit. If each player left had 8 lives, how many lives did they have total? ",72,72,72,128,72,"{'c0': 16.0, 'c1': 7.0, 'c2': 8.0}","There were originally 16 friends playing. 7 players quit, so there were 16 - 7 = 9 players left. Each player had 8 lives, so 9 players x 8 lives each = 72 lives total. The answer is 72.","Solve the problem step by step:
+
+1. Multiply the number of players who quit by the number of lives each player had to calculate the total number of lives lost. Let x be the total number of lives lost,
+x = c1 * c2
+
+2. Multiply the number of players remaining by the number of lives each player had to calculate the total number of lives remaining. Let y be the total number of lives remaining,
+y = (c0 - c1) * c2
+
+3. Add the total number of lives lost and the total number of lives remaining to calculate the answer.
+answer = x + y","After c1 players quit, there were c0 - c1 friends left playing. Each of them had c2 lives. So the total number of lives is (c0 - c1) * c2. 
+total_lives = (c0 - c1) * c2
+
+The answer is total_lives."
+420," There were 8 friends playing a video game online when 5 players quit. If each player left had 5 lives, how many lives did they have total? ",15,15,15,40,15,"{'c0': 8.0, 'c1': 5.0, 'c2': 5.0}","There were originally 8 friends playing. 5 players quit, so there were 8 - 5 = 3 players left. Each player had 5 lives, so the total number of lives left is 3 x 5 = 15. The answer is 15.","Solve the problem step by step:
+
+1. Multiply the number of players who quit by the number of lives each player had to calculate the total number of lives lost. Let x be the total number of lives lost,
+x = c1 * c2
+
+2. Multiply the number of players remaining by the number of lives each player had to calculate the total number of lives remaining. Let y be the total number of lives remaining,
+y = (c0 - c1) * c2
+
+3. Add the total number of lives lost and the total number of lives remaining to calculate the answer.
+answer = x + y","After c1 players quit, there were c0 - c1 friends left playing. Each of them had c2 lives. So the total number of lives left is (c0 - c1) * c2. 
+total_lives = (c0 - c1) * c2
+
+The answer is total_lives."
+455," There were 10 friends playing a video game online when 7 players quit. If each player left had 8 lives, how many lives did they have total? ",24,24,24,80,24,"{'c0': 10.0, 'c1': 7.0, 'c2': 8.0}","There were originally 10 friends playing. 7 players quit, so there were 10 - 7 = 3 players left. Each player left had 8 lives, so they had a total of 3 x 8 = 24 lives. The answer is 24.","Solve the problem step by step:
+
+1. Multiply the number of players who quit by the number of lives each player had to calculate the total number of lives lost. Let x be the total number of lives lost,
+x = c1 * c2
+
+2. Multiply the number of players remaining by the number of lives each player had to calculate the total number of lives remaining. Let y be the total number of lives remaining,
+y = (c0 - c1) * c2
+
+3. Add the total number of lives lost and the total number of lives remaining to calculate the answer.
+answer = x + y","After c1 players quit, there were c0 - c1 friends left playing. Each of them had c2 lives. So the total number of lives is (c0 - c1) * c2. 
+total_lives = (c0 - c1) * c2
+
+The answer is total_lives."
+488," There were 13 friends playing a video game online when 8 players quit. If each player left had 6 lives, how many lives did they have total? ",30,30,30,78,30,"{'c0': 13.0, 'c1': 8.0, 'c2': 6.0}","There were originally 13 friends playing. 8 players quit, so there were 13 - 8 = 5 players left. Each player had 6 lives, so the total number of lives left is 5 x 6 = 30. The answer is 30.","Solve the problem step by step:
+
+1. Multiply the number of players who quit by the number of lives each player had to calculate the total number of lives lost. Let x be the total number of lives lost,
+x = c1 * c2
+
+2. Multiply the number of players remaining by the number of lives each player had to calculate the total number of lives remaining. Let y be the total number of lives remaining,
+y = (c0 - c1) * c2
+
+3. Add the total number of lives lost and the total number of lives remaining to calculate the answer.
+answer = x + y","After c1 players quit, there were c0 - c1 friends left playing. Each of them had c2 lives. So the total number of lives left is (c0 - c1) * c2. 
+total_lives = (c0 - c1) * c2
+
+The answer is total_lives."
+497," There were 8 friends playing a video game online when 3 players quit. If each player left had 3 lives, how many lives did they have total? ",15,15,15,24,15,"{'c0': 8.0, 'c1': 3.0, 'c2': 3.0}","There were originally 8 friends playing. 3 players quit, so there were 8 - 3 = 5 players left. Each player had 3 lives, so 5 players x 3 lives each = 15 lives total. The answer is 15.","Solve the problem step by step:
+
+1. Multiply the number of players who quit by the number of lives each player had to calculate the total number of lives lost. Let x be the total number of lives lost,
+x = c1 * c2
+
+2. Multiply the number of players remaining by the number of lives each player had to calculate the total number of lives remaining. Let y be the total number of lives remaining,
+y = (c0 - c1) * c2
+
+3. Add the total number of lives lost and the total number of lives remaining to calculate the answer.
+answer = x + y","After c1 players quit, there were c0 - c1 friends left playing. Each of them had c2 lives. So the total number of lives is (c0 - c1) * c2. 
+total_lives = (c0 - c1) * c2
+
+The answer is total_lives."
+510," Paige's team won their dodgeball game and scored 41 points total. If Paige scored 11 of the points and everyone else scored 6 points each, how many players were on her team? ",5,6,6,6,-0.333333333,"{'c0': 41.0, 'c1': 11.0, 'c2': 6.0}","Paige scored 11 points and everyone else scored 6 points each. Let's call the number of other players on the team ""x"". So the total number of points scored can be represented as: 
+
+11 + 6x = 41 
+
+Subtracting 11 from both sides: 
+
+6x = 30 
+
+Dividing both sides by 6: 
+
+x = 5 
+
+So there were 5 other players on Paige's team. Adding Paige herself, the total number of players on the team is 6. The answer is 6.","Solve the problem step by step:
+
+1. Subtract Paige's score from the total score to calculate the combined score of the other players. Let x be the combined score of the other players,
+x = c0 - c1
+
+2. Divide the combined score of the other players by the number of other players to calculate the score per player. Let y be the score per player,
+y = c2
+
+3. Divide the combined score of the other players by the score per player to calculate the number of other players. Let z be the number of other players,
+z = x / y
+
+4. Add Paige and the number of other players to calculate the total number of players on the team.
+answer = 1 + z","Paige scored c1 points and everyone else scored c2 points each. Let's say there were n players on her team. Then the total points scored can be expressed as:
+
+c0 = c1 + n*c2
+
+We can rearrange this equation to solve for n:
+
+n = (c0 - c1) / c2
+
+The answer is n."
+512, Emily was planting vegetables in her garden. She started with 41 seeds and planted 29 of them in the big garden and in each of her small gardens put 4 seeds each. How many small gardens did Emily have? ,3,3,3,4,3,"{'c0': 41.0, 'c1': 29.0, 'c2': 4.0}","Emily started with 41 seeds. She planted 29 in the big garden, so she had 41 - 29 = 12 seeds left. Each small garden had 4 seeds planted in it, so Emily had 12 / 4 = 3 small gardens. The answer is 3.","Solve the problem step by step:
+
+1. Subtract the number of seeds planted in the big garden from the original number of seeds to calculate the number of seeds left for the small gardens. Let x be the number of seeds left for the small gardens,
+x = c0 - c1
+
+2. Divide the number of seeds left for the small gardens by the number of seeds planted in each small garden to calculate the number of small gardens. Let y be the number of small gardens,
+y = x / c2
+
+3. Round down the number of small gardens to the nearest whole number, since you can't have a fraction of a garden.
+y = floor(y)
+
+4. Calculate the answer by adding the number of small gardens to the big garden.
+answer = y + 1","Emily planted c1 seeds in the big garden and had c0 seeds to start with. So she had c0 - c1 seeds left for the small gardens. Each small garden had c2 seeds planted in it. So the number of small gardens is (c0 - c1) / c2. 
+
+The answer is (c0 - c1) / c2."
+517," Isabel picked 66 flowers for her friend���������s wedding. She was making bouquets with 8 flowers in each one. If 10 of the flowers wilted before the wedding, how many bouquet",7,7,56,7,7,"{'c0': 66.0, 'c1': 8.0, 'c2': 10.0}","Isabel picked 66 flowers. She was making bouquets with 8 flowers in each one, so she could make 66/8 = 8.25 bouquets. However, 10 of the flowers wilted, so she could only make 66-10 = 56 bouquets. The answer is 56.","Solve the problem step by step:
+
+1. Divide the total number of flowers Isabel picked by the number of flowers in each bouquet to calculate the total number of bouquets she could make. Let x be the total number of bouquets,
+x = c0 / c1
+
+2. Subtract the number of wilted flowers from the total number of flowers to calculate the number of usable flowers. Let y be the number of usable flowers,
+y = c0 - c2
+
+3. Divide the number of usable flowers by the number of flowers in each bouquet to calculate the number of bouquets she can still make.
+answer = y / c1","Isabel picked c0 flowers. She was making bouquets with c1 flowers in each one. So she could make c0/c1 bouquets. 
+bouquets_possible = c0/c1
+
+If c2 flowers wilted, then she has c0 - c2 flowers left. She can make (c0 - c2)/c1 bouquets. 
+bouquets_remaining = (c0 - c2)/c1
+
+The answer is bouquets_remaining."
+526," Wendy picked 103 flowers for her friend���������s wedding. She was making bouquets with 8 flowers in each one. If 47 of the flowers wilted before the wedding, how many bouquet",7,7,19,7,7,"{'c0': 103.0, 'c1': 8.0, 'c2': 47.0}","Wendy picked 103 flowers. If she makes bouquets with 8 flowers in each one, she can make 103/8 = 12.875 bouquets. Since she can't make a fraction of a bouquet, she can make 12 bouquets. If 47 flowers wilted, she has 103-47 = 56 flowers left. She can make 56/8 = 7 bouquets with the remaining flowers. In total, she can make 12+7 = 19 bouquets. The answer is 19.","Solve the problem step by step:
+
+1. Divide the total number of flowers Wendy picked by the number of flowers in each bouquet to calculate the total number of bouquets she could make. Let x be the total number of bouquets,
+x = c0 / c1
+
+2. Subtract the number of wilted flowers from the total number of flowers to calculate the number of usable flowers. Let y be the number of usable flowers,
+y = c0 - c2
+
+3. Divide the number of usable flowers by the number of flowers in each bouquet to calculate the number of bouquets she can still make.
+answer = y / c1","Wendy picked c0 flowers. She was making bouquets with c1 flowers in each one. So she could make c0/c1 bouquets. 
+bouquets_possible = c0/c1
+
+After c2 flowers wilted, she had c0 - c2 flowers left. She can make (c0 - c2)/c1 bouquets with the remaining flowers. 
+bouquets_remaining = (c0 - c2)/c1
+
+The answer is bouquets_remaining."
+532," Emily's team won their dodgeball game and scored 39 points total. If Emily scored 23 of the points and everyone else scored 2 points each, how many players were on her team? ",8,9,9,9,-0.333333333,"{'c0': 39.0, 'c1': 23.0, 'c2': 2.0}","Emily scored 23 points and everyone else scored 2 points each. Let's call the number of other players on the team ""x"". So the total number of points scored can be represented as: 
+
+23 + 2x = 39 
+
+Subtracting 23 from both sides: 
+
+2x = 16 
+
+Dividing both sides by 2: 
+
+x = 8 
+
+So there were 8 other players on Emily's team. Adding Emily herself, the total number of players on the team is 9. The answer is 9.","Solve the problem step by step:
+
+1. Subtract Emily's points from the total points to calculate the total points scored by the other players. Let x be the total points scored by the other players,
+x = c0 - c1
+
+2. Divide the total points scored by the other players by the points each player scored to calculate the number of players on the team. Let y be the number of players on the team,
+y = x / c2
+
+3. Add 1 to the number of players on the team to include Emily.
+answer = y + 1","Emily scored c1 points and everyone else scored c2 points each. Let's say there were n players on her team. Then the total points scored can be expressed as:
+
+c0 = c1 + n*c2
+
+We can rearrange this equation to solve for n:
+
+n = (c0 - c1) / c2
+
+The answer is n."
+539, Nancy was planting vegetables in her garden. She started with 52 seeds and planted 28 of them in the big garden and in each of her small gardens put 4 seeds each. How many small gardens did Nancy have? ,6,6,6,7,6,"{'c0': 52.0, 'c1': 28.0, 'c2': 4.0}","Nancy started with 52 seeds. She planted 28 in the big garden, so she has 52 - 28 = 24 seeds left. Each small garden has 4 seeds, so Nancy must have had 24 / 4 = 6 small gardens. The answer is 6.","Solve the problem step by step:
+
+1. Subtract the number of seeds planted in the big garden from the original number of seeds to calculate the number of seeds left for the small gardens. Let x be the number of seeds left for the small gardens,
+x = c0 - c1
+
+2. Divide the number of seeds left for the small gardens by the number of seeds planted in each small garden to calculate the number of small gardens. Let y be the number of small gardens,
+y = x / c2
+
+3. Round down the number of small gardens to the nearest integer, since you can't have a fraction of a garden.
+y = floor(y)
+
+4. Calculate the answer by adding the number of small gardens to the number of big gardens.
+answer = y + 1 (since there is one big garden)","Nancy started with c0 seeds. She planted c1 in the big garden, leaving c0 - c1 seeds. Each small garden had c2 seeds planted in it. So the number of small gardens is (c0 - c1) / c2. 
+number_of_small_gardens = (c0 - c1) / c2
+
+The answer is number_of_small_gardens."
+541, Bianca was planting vegetables in her garden. She started with 52 seeds and planted 40 of them in the big garden and in each of her small gardens put 2 seeds each. How many small gardens did Bianca have? ,6,6,6,7,6,"{'c0': 52.0, 'c1': 40.0, 'c2': 2.0}","Bianca started with 52 seeds. She planted 40 in the big garden, so she has 52 - 40 = 12 seeds left. Each small garden got 2 seeds, so she must have had 12 / 2 = 6 small gardens. The answer is 6.","Solve the problem step by step:
+
+1. Subtract the number of seeds planted in the big garden from the original number of seeds to calculate the number of seeds left for the small gardens. Let x be the number of seeds left for the small gardens,
+x = c0 - c1
+
+2. Divide the number of seeds left for the small gardens by the number of seeds planted in each small garden to calculate the number of small gardens. Let y be the number of small gardens,
+y = x / c2
+
+3. Round down the number of small gardens to the nearest whole number, since you can't have a fraction of a garden.
+y = floor(y)
+
+4. Calculate the answer by adding the number of small gardens to the big garden.
+answer = y + 1 (since there is also the big garden)","Bianca started with c0 seeds. She planted c1 in the big garden, leaving c0 - c1 seeds. 
+
+Each small garden had c2 seeds planted in it. So the number of small gardens is (c0 - c1) / c2. 
+
+The answer is (c0 - c1) / c2."
+552, Emily was planting vegetables in her garden. She started with 42 seeds and planted 36 of them in the big garden and in each of her small gardens put 2 seeds each. How many small gardens did Emily have? ,3,3,3,4,3,"{'c0': 42.0, 'c1': 36.0, 'c2': 2.0}","Emily started with 42 seeds. She planted 36 in the big garden, so she had 42 - 36 = 6 seeds left. She put 2 seeds in each small garden, so she must have had 6 / 2 = 3 small gardens. The answer is 3.","Solve the problem step by step:
+
+1. Subtract the number of seeds planted in the big garden from the original number of seeds to calculate the number of seeds left for the small gardens. Let x be the number of seeds left for the small gardens,
+x = c0 - c1
+
+2. Divide the number of seeds left for the small gardens by the number of seeds planted in each small garden to calculate the number of small gardens. Let y be the number of small gardens,
+y = x / c2
+
+3. Round down the number of small gardens to the nearest whole number, since you can't have a fraction of a garden.
+y = floor(y)
+
+4. Calculate the answer by adding the number of small gardens to the big garden.
+answer = y + 1","Emily planted c1 seeds in the big garden and had c0 seeds to start with. So she had c0 - c1 seeds left for the small gardens. Each small garden had c2 seeds planted in it. So the number of small gardens is (c0 - c1) / c2. 
+
+The answer is (c0 - c1) / c2."
+554," Katie's team won their dodgeball game and scored 12 points total. If Katie scored 4 of the points and everyone else scored 4 points each, how many players were on her team? ",2,3,3,3,3,"{'c0': 12.0, 'c1': 4.0, 'c2': 4.0}","Katie scored 4 points and everyone else scored 4 points each, so the number of players on her team can be found by dividing the total points by the points per player: 
+
+12 - 4 = 8 (points scored by everyone else)
+8 / 4 = 2 
+
+There were 2 players (besides Katie) on her team. So the total number of players on her team is 2 + 1 (Katie) = 3. The answer is 3.","Solve the problem step by step:
+
+1. Subtract Katie's points from the total points to calculate the total points scored by the other players. Let x be the total points scored by the other players,
+x = c0 - c1
+
+2. Divide the total points scored by the other players by the points each player scored to calculate the number of players on the team. Let y be the number of players on the team,
+y = x / c2
+
+3. Add 1 to the number of players on the team to include Katie.
+answer = y + 1","Katie's team scored c0 points total. Katie scored c1 of those points, so the rest of the team scored c0 - c1 points. Each of the other players scored c2 points, so the number of other players is (c0 - c1) / c2. 
+
+The total number of players on the team is the number of other players plus Katie, so the answer is (c0 - c1) / c2 + 1."
+570," Paige picked 53 flowers for her friend���������s wedding. She was making bouquets with 7 flowers in each one. If 18 of the flowers wilted before the wedding, how many bouquet",5,5,12,5,5,"{'c0': 53.0, 'c1': 7.0, 'c2': 18.0}","Paige picked 53 flowers. She was making bouquets with 7 flowers in each one, so she could make 53/7 = 7.57 bouquets. Since she can't make a partial bouquet, she can only make 7 bouquets. 18 of the flowers wilted, so she has 53-18 = 35 flowers left. She can make 35/7 = 5 bouquets with the remaining flowers. In total, she can make 7+5 = 12 bouquets. The answer is 12.","Solve the problem step by step:
+
+1. Divide the total number of flowers picked by the number of flowers in each bouquet to calculate the total number of bouquets. Let x be the total number of bouquets,
+x = c0 / c1
+
+2. Subtract the number of wilted flowers from the total number of flowers to calculate the number of usable flowers. Let y be the number of usable flowers,
+y = c0 - c2
+
+3. Divide the number of usable flowers by the number of flowers in each bouquet to calculate the number of bouquets she can still make.
+answer = y / c1","Paige picked c0 flowers. She was making bouquets with c1 flowers in each one. So she could make c0/c1 bouquets. 
+bouquets_possible = c0/c1
+
+If c2 flowers wilted, then she has c0 - c2 flowers left. She can make (c0 - c2)/c1 bouquets. 
+bouquets_remaining = (c0 - c2)/c1
+
+The answer is bouquets_remaining."
+578, Sarah was planting vegetables in her garden. She started with 21 seeds and planted 12 of them in the big garden and in each of her small gardens put 3 seeds each. How many small gardens did Sarah have? ,3,3,3,4,-0.333333333,"{'c0': 21.0, 'c1': 12.0, 'c2': 3.0}","Sarah started with 21 seeds. She planted 12 in the big garden, so she had 21 - 12 = 9 seeds left. She planted 3 seeds in each small garden, so she had 9 / 3 = 3 small gardens. The answer is 3.","Solve the problem step by step:
+
+1. Subtract the number of seeds planted in the big garden from the original number of seeds to calculate the number of seeds left for the small gardens. Let x be the number of seeds left for the small gardens,
+x = c0 - c1
+
+2. Divide the number of seeds left for the small gardens by the number of seeds planted in each small garden to calculate the number of small gardens. Let y be the number of small gardens,
+y = x / c2
+
+3. Round down the number of small gardens to the nearest integer, since you can't have a fraction of a garden.
+y = floor(y)
+
+4. Calculate the answer by adding the number of small gardens to the big garden.
+answer = y + 1 (for the big garden)","Sarah planted c1 seeds in the big garden and c2 seeds in each small garden. Let's say she planted s small gardens. Then the total number of seeds planted is c1 + c2*s. But we know that this is equal to c0, the number of seeds she started with. So we can set up an equation:
+
+c1 + c2*s = c0
+
+Solving for s, we get:
+
+s = (c0 - c1) / c2
+
+The answer is s."
+581," Bianca's team won their dodgeball game and scored 75 points total. If Bianca scored 45 of the points and everyone else scored 6 points each, how many players were on her team? ",5,6,6,6,-0.333333333,"{'c0': 75.0, 'c1': 45.0, 'c2': 6.0}","Bianca scored 45 points and everyone else scored 6 points each. Let's call the number of other players on the team ""x"". So the total number of points scored can be represented as: 
+
+45 + 6x = 75 
+
+Subtracting 45 from both sides: 
+
+6x = 30 
+
+Dividing both sides by 6: 
+
+x = 5 
+
+So there were 5 other players on Bianca's team. Including Bianca, the total number of players on the team is 6. The answer is 6.","Solve the problem step by step:
+
+1. Subtract Bianca's score from the total score to calculate the total score of the other players. Let x be the total score of the other players,
+x = c0 - c1
+
+2. Divide the total score of the other players by the score each player got to calculate the number of other players. Let y be the number of other players,
+y = x / c2
+
+3. Add 1 to the number of other players to include Bianca and calculate the answer.
+answer = y + 1","Bianca scored c1 points and everyone else scored c2 points each. Let's say there were n other players on her team. Then the total number of points scored can be expressed as:
+
+total_points = c1 + n*c2
+
+But we also know that the total number of points scored was c0. So we can set up an equation:
+
+c0 = c1 + n*c2
+
+Solving for n, we get:
+
+n = (c0 - c1) / c2
+
+The answer is n."
+583, Haley was planting vegetables in her garden. She started with 56 seeds and planted 35 of them in the big garden and in each of her small gardens put 3 seeds each. How many small gardens did Haley have? ,7,7,7,8,7,"{'c0': 56.0, 'c1': 35.0, 'c2': 3.0}","Haley started with 56 seeds. She planted 35 in the big garden, so she had 56 - 35 = 21 seeds left. Each small garden had 3 seeds planted in it, so the number of small gardens is 21 / 3 = 7. Haley had 7 small gardens. The answer is 7.","Solve the problem step by step:
+
+1. Subtract the number of seeds planted in the big garden from the original number of seeds to calculate the number of seeds left for the small gardens. Let x be the number of seeds left for the small gardens,
+x = c0 - c1
+
+2. Divide the number of seeds left for the small gardens by the number of seeds planted in each small garden to calculate the number of small gardens. Let y be the number of small gardens,
+y = x / c2
+
+3. Round down the number of small gardens to the nearest whole number, since you can't have a fraction of a garden.
+y = floor(y)
+
+4. Calculate the answer by adding the number of small gardens to the big garden.
+answer = y + 1 (since there is also the big garden)","Haley started with c0 seeds. She planted c1 in the big garden, leaving c0-c1 seeds left. 
+
+The remaining seeds were planted in small gardens, with c2 seeds in each garden. So the number of small gardens is (c0-c1)/c2. 
+
+The answer is (c0-c1)/c2."

@@ -38,10 +38,14 @@ def evaluate_equations(equations, mapping, response = ''):
         #right side
         expression = elements[1].strip()
 
+        if(expression[-1] == '.'):
+            expression = expression[:-1]
+
         #normal evaluation
         try:
             value = eval(expression)
         except:
+            print(expression)
             processed_expression = []
             j = 0
             words = expression.split(' ')
@@ -79,8 +83,12 @@ def evaluate_equations(equations, mapping, response = ''):
             exec(equation1)
             return answer
         except Exception as e:
-            print(e)
-        return None
+            print('!',e)
+            print(response)
+            if(len(new_variables) >= 1):
+                return list(new_variables.values())[-1]
+            else:
+                return None
        
 def extract_answer(response, prompt = 'cot'):
 
@@ -157,11 +165,11 @@ def calculate_answer(result, prompt):
                     left = left[-1]
                     right = equation[1]
                     equation = left + " = " + right
-                    equations.append(equation)
+                    equations.append(equation.strip())
                 elif("The answer is" in line):
                     newline = line.split('.')[0]
                     newline = newline.replace("The answer is", "answer =")
-                    equations.append(newline)
+                    equations.append(newline.strip())
 
             answer = evaluate_equations(equations, mapping, response)
             answers.append(answer)

@@ -214,7 +214,7 @@ def generate_response(prompt, model_name):
                 ).to_dict()
             except (APIError, OSError, APIConnectionError, RateLimitError, Timeout) as e:
                 print(e)
-                time.sleep(60)
+                time.sleep(1)
                 continue
             break
 
