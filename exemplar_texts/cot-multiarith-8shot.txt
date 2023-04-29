@@ -20,4 +20,4 @@ Q: Charlotte got 3 marks for each correct questions. There are 50 questions on t
 A: Charlotte got 3 marks for each correct question. There are 50 questions on the exam, 8 questions are wrong, so she got 50 - 8 = 42 questions right. So she got 42 * 3 = 126 marks for the exam. The answer is 126.
 
 Q: Amy had 200 cups. She put 15 of them in one large cabinet, and she wants to put the rest in 5 cabinets that are the same. How many cups will there be in a single cabinet? 
-A: Amy had 200 cups. She put 15 cups in one cabinet, so she has 200 - 15 = 185 cups left. She wants to put the the rest in 5 cabinets, so there will be 37 cups in each cabinet. The answer is 37. 
+A: Amy had 200 cups. She put 15 cups in one cabinet, so she has 200 - 15 = 185 cups left. She wants to put the the rest in 5 cabinets, so there will be 185 / 3 = 37 cups in each cabinet. The answer is 37. 

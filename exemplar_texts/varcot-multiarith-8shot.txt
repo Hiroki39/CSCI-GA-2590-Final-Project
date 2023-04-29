@@ -1,0 +1,52 @@
+Q: Andy and his brother Aaron received money for holiday. Andy had c0 dollars while his brother had c1. If they spent c2 dollars on a new video game, how many dollars do they have left? 
+A: Andy had c0 dollars. Aaron had c1 dollars. They have c0 + c1 dollars in total. They spent c2 dollars on the new video game. So the money they have left is c0 + c1 - c2. 
+money_left = c0 + c1 - c2
+The answer is money_left.
+
+Q: Each eraser regardless of brand cost c0. Alice bought c1 erasers from brand A and c2 earsers from brand B. How many dollars did she spend? 
+total_eraser = c1 + c2
+Each eraser cost c0. So she spent total_eraser * c0.
+money_spent = total_eraser * c0
+The answer is money_spent.
+
+Q: A comittee has c0 females and c1 males. If they were split into sub-comittee of size c2 how many sub-comittees could they make?
+A: The committee has c0 femailes and c1 males. So the committee has 5 + 4 = 9 people in total. 
+total_people = c0 + c1
+They should split into sub-committee of c2. So they can split into total_people / c2 committees. 
+num_subcommittees = total_people / c2
+The answer is num_subcommittees.
+
+Q: A construction team has already completed c0 meters of a bridge that needs to be c1 meter long. Assuming each meter requries c2 minutes to complete, how many minutes do they have left? 
+A: The construction team completed c0 meters of a bridge. The bridge needs to be c1 meters long. So the construction team needs to complete c0 - c1 more meters. 
+length_remain = c1 - c0
+Each meter requires c2 minutes. So they have length_remain * c2 minutes left. 
+minutes_remaining = length_remain * c2
+The answer is minutes_remaining.
+
+Q: Tom has c0 tickets to spend in an amusement park. He has already spent c1 tickets on food. Assuming each soda cost c2 tickets, how many sodas could Tom exchange with tickets?
+A: Tom has c0 tickets to spend. He has spent c1 tickets on food. So he has c0 - c1 tickets left.
+tickets_left = c0 - c1
+Each soda cost c2 tickets. He could exchange tickets_left / c2 sodas with tickets. 
+num_soda = tickets_left / c2
+The answer is num_soda.
+
+Q: Haley is packing gifts for holiday. She has c0 post cards from New York and c1 postcards from California. Each envelope can contain c2 postcards each. How many envelopes does Haley need to store all the postcards? 
+A: Haley has c0 postcards from New York. Haley also has c1 postcards from California. She has c0 + c1 postcards in total. 
+total_postcards = c0 + c1
+Each envelope can store c2 postcards. Haley needs total_postcards / c2 envelopes to store all the postcards. 
+total_envelopes = total_postcards / c2
+The answer is total_envelopes.
+
+Q: Charlotte got c0 marks for each correct questions. There are c1 questions on the exam, and she got c2 questions wrong. How many mmarks did she get? Write multiple mathematical equations to calculate the answer step by step.
+A: There are c1 questions on the exam, c2 questions are wrong, so she got c1 - c2 questions right. 
+correct_questions = c1 - c2
+Charlotte got c0 marks for each correct question. So she got correct_questions * c0 marks for the exam. 
+total_marks = correct_questions * c0
+The answer is total_marks.
+
+Q: Amy had c0 cups. She put c1 of them in one large cabinet, and she wants to put the rest in c2 cabinets that are the same. How many cups will there be in a single cabinet? Write multiple mathematical equations to calculate the answer step by step.
+A: Amy had c0 cups. She put c1 cups in one cabinet, so she has c0 - c1 cups left. 
+cups_left = c0 - c1
+She wants to put the the rest in c2 cabinets, so there will be cups_left / c2 cups in each cabinet. 
+cups_per_cabinet = cups_left / c2
+The answer is cups_per_cabinet. 
