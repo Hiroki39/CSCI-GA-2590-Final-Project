@@ -1,30 +1,31 @@
 import pandas as pd
 import numpy as np
-import math, re
+import math
+import re
 from collections import OrderedDict
 
 import argparse
 import os
 
-def evaluate_equations(equations, mapping, response = ''):
+
+def evaluate_equations(equations, mapping, response=''):
 
     # helper
-
     def isvalid(word):
-        if(len(word) <= 1):
+        if (len(word) <= 1):
             return True
-        elif(word[0] == 'c' and word[1].isdigit()):
+        elif (word[0] == 'c' and word[1].isdigit()):
             return True
-        elif("(" in word or ")" in word):
+        elif ("(" in word or ")" in word):
             return True
-        elif(word[0:5] == 'ceil(' 
-            or word[0:6] == 'floor(' 
-            or word[0:6] == 'round('):
+        elif (word[0:5] == 'ceil('
+              or word[0:6] == 'floor('
+              or word[0:6] == 'round('):
             return True
 
     new_variables = OrderedDict()
-    ceil = lambda x: math.ceil(x)
-    floor = lambda x: math.floor(x)
+    def ceil(x): return math.ceil(x)
+    def floor(x): return math.floor(x)
     # Extract variables from mapping
     for i in mapping:
         value = mapping[i]
@@ -33,25 +34,25 @@ def evaluate_equations(equations, mapping, response = ''):
     for equation in equations:
         elements = equation.split('=')
 
-        #left side
+        # left side
         name = elements[0].strip()
-        #right side
+        # right side
         expression = elements[1].strip()
 
-        #normal evaluation
+        # normal evaluation
         try:
             value = eval(expression)
         except:
             processed_expression = []
             j = 0
             words = expression.split(' ')
-            while(j < len(words)):
+            while (j < len(words)):
                 word = words[j]
-                if(isvalid(word)):
+                if (isvalid(word)):
                     processed_expression.append(word)
                     j += 1
                 else:
-                    break          
+                    break
             try:
                 value = eval(' '.join(processed_expression))
             except Exception as e:
@@ -69,7 +70,7 @@ def evaluate_equations(equations, mapping, response = ''):
             break
         new_variables[name] = value
 
-    if('answer' in new_variables):
+    if ('answer' in new_variables):
         return new_variables['answer']
     else:
         try:
@@ -81,11 +82,12 @@ def evaluate_equations(equations, mapping, response = ''):
         except Exception as e:
             print(e)
         return None
-       
-def extract_answer(response, prompt = 'cot'):
+
+
+def extract_answer(response, prompt='cot'):
 
     answer = None
-    if(prompt == 'cot'):
+    if (prompt == 'cot'):
         try:
             answer = re.findall(r'(?<=The answer is ).+', response)[0]
             answer = re.search(r'\d+(\,\d+)*(\.\d+)?', answer).group(0)
@@ -94,23 +96,24 @@ def extract_answer(response, prompt = 'cot'):
                 answer = re.findall(r'\d+(?:\.\d+)?', response)[-1]
             except:
                 return None
-    elif(prompt == 'zero-cot'):
+    elif (prompt == 'zero-cot'):
 
         # Use the number in the response
         try:
             answer = re.findall(r'\d+(?:\.\d+)?', response)[-1]
         except:
             return None
-        
-    return float(answer.replace(",",''))
-    
+
+    return float(answer.replace(",", ''))
+
+
 def calculate_answer(result, prompt):
 
     answers = []
     equation_column = []
     count = 0
 
-    if(prompt == 'arithcot'):
+    if (prompt == 'arithcot'):
 
         for i in range(len(result)):
             response = result.response[i]
@@ -120,28 +123,28 @@ def calculate_answer(result, prompt):
 
             # Extract eqautions from response
             for line in response.split('\n'):
-                if('=' in line and not line[0].isdigit()):
+                if ('=' in line and not line[0].isdigit()):
                     equations.append(line)
 
             answer = evaluate_equations(equations, mapping)
             answers.append(answer)
             equation_column.append(equations)
-            if(answer is None):
-                print("*****\n",i,response,equations)
+            if (answer is None):
+                print("*****\n", i, response, equations)
                 count += 1
 
-    elif(prompt == 'cot' or prompt == 'zero-cot'):
+    elif (prompt == 'cot' or prompt == 'zero-cot'):
 
         for i in range(len(result)):
             response = result.response[i]
-            
+
             answer = extract_answer(response, prompt)
             answers.append(answer)
-            if(answer is None):
-                print("*****\n",i,response)
+            if (answer is None):
+                print("*****\n", i, response)
                 count += 1
-    
-    elif(prompt == 'varcot'):
+
+    elif (prompt == 'varcot'):
 
         for i in range(len(result)):
             response = result.response[i]
@@ -151,14 +154,14 @@ def calculate_answer(result, prompt):
 
             # Extract eqautions from response
             for line in response.split('\n'):
-                if('=' in line and not line[0].isdigit()):
+                if ('=' in line and not line[0].isdigit()):
                     equation = line.split("=")
                     left = equation[0].strip().split(" ")
                     left = left[-1]
                     right = equation[1]
                     equation = left + " = " + right
                     equations.append(equation)
-                elif("The answer is" in line):
+                elif ("The answer is" in line):
                     newline = line.split('.')[0]
                     newline = newline.replace("The answer is", "answer =")
                     equations.append(newline)
@@ -166,8 +169,8 @@ def calculate_answer(result, prompt):
             answer = evaluate_equations(equations, mapping, response)
             answers.append(answer)
             equation_column.append(equations)
-            if(answer is None):
-                print("*****\n",i,response,equations)
+            if (answer is None):
+                print("*****\n", i, response, equations)
                 count += 1
 
     else:
@@ -177,6 +180,8 @@ def calculate_answer(result, prompt):
     return answers, equation_column
 
 # evaluate aqua dataset with multiple choice
+
+
 def eval_aqua(result):
     # output = pd.read_json("logs/e847e842-087c-4ff9-ac07-55ee02041327.jsonl", lines=True)
     total, correct, undef = len(result), 0, 0
@@ -193,35 +198,36 @@ def eval_aqua(result):
     print("acc", correct/total, "invalid", undef/total)
 
 
-
-
 # kinda too messy; needs to be cleaned
 def eval_result(filename, prompt, dataset_name):
-    
+
     result = pd.read_json("logs/"+filename+".jsonl", lines=True)
 
     if prompt == 'arithcot':
-        result['response_answer'], result['equations'] = calculate_answer(result, "arithcot")
+        result['response_answer'], result['equations'] = calculate_answer(
+            result, "arithcot")
         result['answer'] = [i[0] for i in result['answer']]
-        print("acc",np.mean(result['response_answer'] == result['answer']))
+        print("acc", np.mean(result['response_answer'] == result['answer']))
     elif prompt == 'cot' or prompt == 'zero-cot':
-        if(prompt == 'zero-cot'):
+        if (prompt == 'zero-cot'):
             raise Warning("Refer to the paper for zero-cot evaluation")
         result['response_answer'],  _ = calculate_answer(result, prompt)
         result['answer'] = [i[0] for i in result['answer']]
-        print("acc",np.mean(result['response_answer'] == result['answer']))
-        print("acc",np.mean(result['response_answer'] == result['num_answer']))
+        print("acc", np.mean(result['response_answer'] == result['answer']))
+        print("acc", np.mean(
+            result['response_answer'] == result['num_answer']))
     elif prompt == 'varcot':
-        result['response_answer'], result['equations'] = calculate_answer(result, "varcot")
+        result['response_answer'], result['equations'] = calculate_answer(
+            result, "varcot")
         result['answer'] = [i[0] for i in result['answer']]
-        print("acc",np.mean(result['response_answer'] == result['answer']))
+        print("acc", np.mean(result['response_answer'] == result['answer']))
     elif prompt == 'sympy':
         eval_aqua(result)
     else:
         print("eval not implemented")
         pass
-    
-    result.to_csv("experiment_results/"+ filename + ".csv")
+
+    result.to_csv("experiment_results/" + filename + ".csv")
 
 
 if __name__ == '__main__':
@@ -233,7 +239,7 @@ if __name__ == '__main__':
 
     eval_result(args.logname, args.prompt, args.dataset)
 
-#for i in range(0, len(result)):
+# for i in range(0, len(result)):
 #    print("\nsample ",i,"\n")
 #    print(result.response[i])
 #    print("mapping: ",result.mapping[i])
