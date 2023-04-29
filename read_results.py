@@ -42,6 +42,7 @@ def evaluate_equations(equations, mapping, response = ''):
             expression = expression[:-1]
 
         #normal evaluation
+        #too messy; mannual evaluation instead
         try:
             value = eval(expression)
         except:
@@ -89,7 +90,30 @@ def evaluate_equations(equations, mapping, response = ''):
                 return list(new_variables.values())[-1]
             else:
                 return None
-       
+
+def evaluate_function(mapping, response):
+
+    try:
+        exec(response)
+    except:
+        print('****** Fn Problem')
+        return None
+
+    arguments = ''
+    for name in mapping:
+        exec(name + '=' + str(mapping[name]))
+        arguments = arguments + name + ','
+    arguments = arguments[:-1]
+    
+    try:
+        answer = eval('Problem('+arguments+')')
+        return answer
+    except Exception as e:
+        print(e)
+        print('****** Exec Problem')
+        return None
+
+
 def extract_answer(response, prompt = 'cot'):
 
     answer = None
@@ -177,6 +201,17 @@ def calculate_answer(result, prompt):
             if(answer is None):
                 print("*****\n",i,response,equations)
                 count += 1
+    elif(prompt == 'pycot'):
+
+        for i in range(len(result)):
+            response = result.response[i]
+            mapping = result.mapping[i]
+
+            answer = evaluate_function(mapping, response)
+            answers.append(answer)
+            if(answer is None):
+                print("*****\n",i,response)
+                count += 1
 
     else:
         pass
@@ -223,6 +258,10 @@ def eval_result(filename, prompt, dataset_name):
         print("acc",np.mean(result['response_answer'] == result['num_answer']))
     elif prompt == 'varcot':
         result['response_answer'], result['equations'] = calculate_answer(result, "varcot")
+        result['answer'] = [i[0] for i in result['answer']]
+        print("acc",np.mean(result['response_answer'] == result['answer']))
+    elif prompt == 'pycot':
+        result['response_answer'], _ = calculate_answer(result, "pycot")
         result['answer'] = [i[0] for i in result['answer']]
         print("acc",np.mean(result['response_answer'] == result['answer']))
     elif prompt == 'sympy':
