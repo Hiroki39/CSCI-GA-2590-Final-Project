@@ -50,10 +50,10 @@ def generate_prompt(question, exemplar, prompt):
 
     if prompt == 'pycot':
         prompt_text = exemplar + "\n\nQ: " + question + \
-            " Write a Python function that returns the answer.\nA:"
+            " Write a Python function that returns the answer.\nA:\n"
     elif prompt == 'arithcot':
         prompt_text = exemplar + "\n\nQ: " + question + \
-            " Write multiple mathematical equations to calculate the answer step by step. \nA:"
+            " Write multiple mathematical equations to calculate the answer step by step. \nA:\n"
     elif prompt == 'sympy':
         prompt_text = exemplar + "\n\nQ: " + question + \
             "write a mapping and a mathematical equation starting with ‘Eq1:’ and solve using sympy"

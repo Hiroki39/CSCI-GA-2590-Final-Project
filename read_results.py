@@ -34,7 +34,7 @@ def evaluate_equations(equations, mapping, response = ''):
         elements = equation.split('=')
 
         #left side
-        name = elements[0].strip()
+        name = elements[0].strip().replace(' ','_')
         #right side
         expression = elements[1].strip()
 
