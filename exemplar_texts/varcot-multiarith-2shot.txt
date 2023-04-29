@@ -1,0 +1,10 @@
+Q: Andy and his brother Aaron received money for holiday. Andy had c0 dollars while his brother had c1. If they spent c2 dollars on a new video game, how many dollars do they have left? 
+A: Andy had c0 dollars. Aaron had c1 dollars. They have c0 + c1 dollars in total. They spent c2 dollars on the new video game. So the money they have left is c0 + c1 - c2. 
+money_left = c0 + c1 - c2
+The answer is money_left.
+
+Q: Each eraser regardless of brand cost c0. Alice bought c1 erasers from brand A and c2 erasers from brand B. How many dollars did she spend? 
+total_eraser = c1 + c2
+Each eraser cost c0. So she spent total_eraser * c0.
+money_spent = total_eraser * c0
+The answer is money_spent.
