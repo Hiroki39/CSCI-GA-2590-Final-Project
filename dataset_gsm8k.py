@@ -54,3 +54,4 @@ def extract_mapping_ans(dataset):
 dataset1, test_failed = extract_mapping_ans(dataset['test'])
 
 dataset1.save_to_disk("data/gsm8k")
+dataset1.to_csv("data/gsm8k.csv")

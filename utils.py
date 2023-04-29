@@ -50,10 +50,10 @@ def generate_prompt(question, exemplar, prompt):
 
     if prompt == 'pycot':
         prompt_text = exemplar + "\n\nQ: " + question + \
-            " Write a Python function that returns the answer.\nA:"
+            " Write a Python function that returns the answer.\nA:\n"
     elif prompt == 'arithcot':
         prompt_text = exemplar + "\n\nQ: " + question + \
-            " Write multiple mathematical equations to calculate the answer step by step. \nA:"
+            " Write multiple mathematical equations to calculate the answer step by step. \nA:\n"
     elif prompt == 'sympy':
         prompt_text = exemplar + "\n\nQ: " + question + \
             "write a mapping and a mathematical equation starting with ‘Eq1:’ and solve using sympy"
@@ -170,7 +170,7 @@ def generate_response(prompt, model_name):
                 response = openai.Completion.create(
                     engine='text-davinci-003',
                     prompt=prompt,
-                    max_tokens=300,
+                    max_tokens=1000,
                     temperature=0,
                     top_p=1,
                     frequency_penalty=0.0,
@@ -188,7 +188,7 @@ def generate_response(prompt, model_name):
                 response = openai.Completion.create(
                     engine='text-davinci-002',
                     prompt=prompt,
-                    max_tokens=300,
+                    max_tokens=1000,
                     temperature=0,
                     top_p=1,
                     frequency_penalty=0.0,
@@ -206,7 +206,7 @@ def generate_response(prompt, model_name):
                 response = openai.ChatCompletion.create(
                     model='gpt-3.5-turbo',
                     messages=[{"role": "user", "content": prompt}],
-                    max_tokens=300,
+                    max_tokens=1000,
                     temperature=0,
                     top_p=1,
                     frequency_penalty=0.0,
@@ -214,7 +214,7 @@ def generate_response(prompt, model_name):
                 ).to_dict()
             except (APIError, OSError, APIConnectionError, RateLimitError, Timeout) as e:
                 print(e)
-                time.sleep(60)
+                time.sleep(1)
                 continue
             break
 

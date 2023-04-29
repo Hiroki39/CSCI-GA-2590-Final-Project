@@ -35,14 +35,20 @@ def evaluate_equations(equations, mapping, response=''):
         elements = equation.split('=')
 
         # left side
-        name = elements[0].strip()
+        name = elements[0].strip().replace(' ', '_')
         # right side
         expression = elements[1].strip()
 
         # normal evaluation
+        if (expression[-1] == '.'):
+            expression = expression[:-1]
+
+        # normal evaluation
+        # too messy; mannual evaluation instead
         try:
             value = eval(expression)
         except:
+            print(expression)
             processed_expression = []
             j = 0
             words = expression.split(' ')
@@ -80,7 +86,34 @@ def evaluate_equations(equations, mapping, response=''):
             exec(equation1)
             return answer
         except Exception as e:
-            print(e)
+            print('!', e)
+            print(response)
+            if (len(new_variables) >= 1):
+                return list(new_variables.values())[-1]
+            else:
+                return None
+
+
+def evaluate_function(mapping, response):
+
+    try:
+        exec(response)
+    except:
+        print('****** Fn Problem')
+        return None
+
+    arguments = ''
+    for name in mapping:
+        exec(name + '=' + str(mapping[name]))
+        arguments = arguments + name + ','
+    arguments = arguments[:-1]
+
+    try:
+        answer = eval('Problem('+arguments+')')
+        return answer
+    except Exception as e:
+        print(e)
+        print('****** Exec Problem')
         return None
 
 
@@ -164,13 +197,24 @@ def calculate_answer(result, prompt):
                 elif ("The answer is" in line):
                     newline = line.split('.')[0]
                     newline = newline.replace("The answer is", "answer =")
-                    equations.append(newline)
+                    equations.append(newline.strip())
 
             answer = evaluate_equations(equations, mapping, response)
             answers.append(answer)
             equation_column.append(equations)
             if (answer is None):
                 print("*****\n", i, response, equations)
+                count += 1
+    elif (prompt == 'pycot'):
+
+        for i in range(len(result)):
+            response = result.response[i]
+            mapping = result.mapping[i]
+
+            answer = evaluate_function(mapping, response)
+            answers.append(answer)
+            if (answer is None):
+                print("*****\n", i, response)
                 count += 1
 
     else:

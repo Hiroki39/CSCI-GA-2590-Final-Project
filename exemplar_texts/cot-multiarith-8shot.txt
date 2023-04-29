@@ -1,0 +1,23 @@
+Q: Andy and his brother Aaron received money for holiday. Andy had 8 dollars while his brother had 10. If they spent 12 dollars on a new video game, how many dollars do they have left?
+A: Andy had 8 dollars. Aaron had 10 dollars. They have 8 + 10 = 18 dollars in total. They spent 12 dollars on the new video game. So the money they have left is 18 - 12 = 6. The answer is 6.
+
+Q: Each eraser regardless of brand cost 2. Alice bought 3 erasers from brand A and 1 erasers from brand B. How many dollars did she spend?
+A: Each eraser cost 2. Alice bought 3 + 1 = 4 erasers in total. So she spent 4 * 2 = 8 in total. The answer is 8.
+
+Q: A committee has 5 females and 4 males. If they were split into sub-committee of size 3 how many sub-committees could they make? 
+A: The committee has 5 + 4 = 9 people in total. They should split into sub-committee of 3. So they can split into 9 / 3 = 3 committees. The answer is 3.
+
+Q: A construction team has already completed 3 meters of a bridge that needs to be 7 meter long. Assuming each meter requires 90 minutes to complete, how many minutes do they have left? 
+A: The construction team completed 3 meters of a bridge. The bridge needs to be 7 meters long. The construction team needs to complete 7 - 3 = 4 more meters. Each meter requires 90 minutes. So they have 4 * 90 = 360 minutes left. The answer is 360.
+
+Q: Tom has 20 tickets to spend in an amusement park. He has already spent 12 tickets on food. Assuming each soda cost 2 tickets, how many sodas could Tom exchange with tickets?
+A: Tom has 20 tickets to spend. He has spent 12 tickets on food. So he has 20 - 12 = 8 tickets left. Each soda cost 2 tickets. He could exchange 8 / 2 = 4 sodas with tickets. The answer is 4.
+
+Q: Haley is packing gifts for holiday. She has 6 postcards from New York and 9 postcards from California. Each envelope can contain 3 postcards each. How many envelopes does Haley need to store all the postcards?
+A: Haley has 6 postcards from New York. Haley also has 9 postcards from California. She has 6 + 9 = 15 postcards in total. Each envelope can store 3 postcards. Haley needs 15 / 3 = 5 envelopes to store all the postcards. The answer is 5.
+
+Q: Charlotte got 3 marks for each correct questions. There are 50 questions on the exam, and she got 8 questions wrong. How many marks did she get?
+A: Charlotte got 3 marks for each correct question. There are 50 questions on the exam, 8 questions are wrong, so she got 50 - 8 = 42 questions right. So she got 42 * 3 = 126 marks for the exam. The answer is 126.
+
+Q: Amy had 200 cups. She put 15 of them in one large cabinet, and she wants to put the rest in 5 cabinets that are the same. How many cups will there be in a single cabinet? 
+A: Amy had 200 cups. She put 15 cups in one cabinet, so she has 200 - 15 = 185 cups left. She wants to put the the rest in 5 cabinets, so there will be 185 / 3 = 37 cups in each cabinet. The answer is 37. 

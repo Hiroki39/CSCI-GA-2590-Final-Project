@@ -1,0 +1,24 @@
+Q: Andy and his brother Aaron received money for holiday. Andy had c0 dollars while his brother had c1. If they spent c2 dollars on a new video game, how many dollars do they have left? 
+A: Andy had c0 dollars. Aaron had c1 dollars. They have c0 + c1 dollars in total. They spent c2 dollars on the new video game. So the money they have left is c0 + c1 - c2. 
+money_left = c0 + c1 - c2
+The answer is money_left.
+
+Q: Each eraser regardless of brand cost c0. Alice bought c1 erasers from brand A and c2 erasers from brand B. How many dollars did she spend? 
+total_eraser = c1 + c2
+Each eraser cost c0. So she spent total_eraser * c0.
+money_spent = total_eraser * c0
+The answer is money_spent.
+
+Q: A committee has c0 females and c1 males. If they were split into sub-committee of size c2 how many sub-committees could they make?
+A: The committee has c0 females and c1 males. So the committee has 5 + 4 = 9 people in total. 
+total_people = c0 + c1
+They should split into sub-committee of c2. So they can split into total_people / c2 committees. 
+num_subcommittees = total_people / c2
+The answer is num_subcommittees.
+
+Q: A construction team has already completed c0 meters of a bridge that needs to be c1 meter long. Assuming each meter requires c2 minutes to complete, how many minutes do they have left? 
+A: The construction team completed c0 meters of a bridge. The bridge needs to be c1 meters long. So the construction team needs to complete c0 - c1 more meters. 
+length_remain = c1 - c0
+Each meter requires c2 minutes. So they have length_remain * c2 minutes left. 
+minutes_remaining = length_remain * c2
+The answer is minutes_remaining.
