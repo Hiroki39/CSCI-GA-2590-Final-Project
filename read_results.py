@@ -227,20 +227,24 @@ def calculate_answer(result, prompt):
 
 
 def eval_aqua(result):
-    # output = pd.read_json("logs/e847e842-087c-4ff9-ac07-55ee02041327.jsonl", lines=True)
     total, correct, undef = len(result), 0, 0
     for i, response in enumerate(result['response']):
-        a = re.search(r"[Aa]nswer: [ABCDE]", response)
+        a = re.search(r"([Aa]nswer|[Cc]hoice|[Oo]ption) (?:is )?[A-Ea-e]", response)
         if a:
             _, end = a.span()
             predicted = response[end-1]
-            if predicted == result['answer'][i]:
+            if predicted.lower() == result['answer'][i].lower():
                 correct += 1
+            else:
+                print("="*10)
+                print('correct answer: ', result['answer'][i])
+                print(result['question'][i], response)
         else:
-            print(response)
+            # print(result['question'][i])
+            # print(response)
+            # print("="*10)
             undef += 1
     print("acc", correct/total, "invalid", undef/total)
-
 
 # kinda too messy; needs to be cleaned
 def eval_result(filename, prompt, dataset_name):
