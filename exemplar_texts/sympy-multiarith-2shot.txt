@@ -1,0 +1,22 @@
+Q: Michael had 58 golf balls. On tuesday, he lost 23 golf balls. On wednesday, he lost 2 more. How many golf
+balls did he have at the end of wednesday?
+A: mapping: {x: golf balls he have at the end of wednesday}
+Michael started with 58 golf balls, lost 23 on tuesday, and then lost 2 more
+Eq1: x=58-23-2
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,58-23-2)
+print(solve(Eq1,x))
+We got 33 from sympy, so the answer is 33.
+
+Q: Olivia has $23. She bought five bagels for $3 each. How much money does she have left?
+A: mapping:{x:money she have left}
+Olivia had 23 dollars. 5 bagels for 3 dollars each will be 5 x 3
+Eq1: 23-5*3=x  
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,23-5*3)
+print(solve(Eq1,x))
+We got 8 from sympy, so the answer is 8.

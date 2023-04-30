@@ -44,7 +44,7 @@ def get_dataset(dataset_name, dev):
         raise ValueError("dataset is not properly defined ...")
 
     if dev:
-        dataset = dataset.select(range(5))
+        dataset = dataset.select(range(2))
 
     return dataset
 
@@ -97,8 +97,8 @@ def build_record(sample, result, mapping, dataset_name):
 
     elif result['model'] == 'text-davinci-002':
         record['response'] = result['choices'][0]['text']
-        record['tokens'] = result['choices'][0]['logprobs']['tokens']
-        record['logprobs'] = result['choices'][0]['logprobs']['token_logprobs']
+        # record['tokens'] = result['choices'][0]['logprobs']['tokens']
+        # record['logprobs'] = result['choices'][0]['logprobs']['token_logprobs']
 
     elif result['model'].startswith('gpt-3.5-turbo'):
         record['response'] = result['choices'][0]['message']['content']
@@ -123,10 +123,10 @@ def evaluate_openai(run_id, model_name, dataset_name, prompt, shot, dev, prompts
         for sample in tqdm(dataset):
 
             # generate question text
-            if prompt == 'sympy':
+            if dataset == 'aqua_rat':
                 mapping = ''
                 sample["question"] += ', '.join(sample['options'])
-            elif prompt == 'zero-cot' or prompt == 'cot':
+            elif prompt == 'zero-cot' or prompt == 'cot' or prompt =='sympy':
                 mapping = ''
             else:
                 sample["question"], mapping = extract_mapping(
