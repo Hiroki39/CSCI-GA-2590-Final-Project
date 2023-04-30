@@ -13,10 +13,10 @@ random.seed(42)
 
 def get_exemplar(dataset_name, prompt, shot, promptset):
 
-    if(promptset == ''):
+    if promptset == '':
         promptset = dataset_name
 
-    if(prompt == 'zero-cot'):
+    if prompt == 'zero-cot':
         return ''
 
     with open(f'exemplar_texts/{prompt}-{promptset}-{shot}shot.txt') as f:
@@ -25,20 +25,26 @@ def get_exemplar(dataset_name, prompt, shot, promptset):
     return exemplar
 
 
-def get_dataset(dataset_name):
+def get_dataset(dataset_name, dev):
 
     if dataset_name == 'gsm8k':
-        # Load the GSM8K dataset from Hugging Face
-        #dataset = load_dataset(dataset_name, 'main')
 
         # Load from file for future edits
         dataset = load_from_disk("data/gsm8k")
+
     elif dataset_name == 'multiarith':
+
         dataset = load_from_disk("data/multiarith")
+
     elif dataset_name == 'aqua_rat':
-        dataset = load_dataset(dataset_name, 'raw')
+
+        dataset = load_dataset(dataset_name, 'raw')["test"]
+
     else:
-        pass
+        raise ValueError("dataset is not properly defined ...")
+
+    if dev:
+        dataset = dataset.select(range(5))
 
     return dataset
 
@@ -75,9 +81,9 @@ def build_record(sample, result, mapping, dataset_name):
     record = {}
     record['question'] = sample['question']
 
-    #record['answer'] = re.sub(
+    # record['answer'] = re.sub(
     #    r"#### (\-?[0-9\.\,]+)", r"The answer is \1.", re.sub(r'<<.*?>>', '', sample['answer']))
-    #record['numeric_answer'] = re.search(
+    # record['numeric_answer'] = re.search(
     #    r"#### (\-?[0-9\.\,]+)", sample['answer']).group(1)
     if dataset_name == 'aqua_rat':
         record['answer'] = sample['correct']
@@ -105,45 +111,16 @@ def build_record(sample, result, mapping, dataset_name):
 def evaluate_openai(run_id, model_name, dataset_name, prompt, shot, dev, promptset):
     with open(f'logs/{run_id}.jsonl', 'w') as f:
 
-    #filename = 'logs/' + str(datetime.now()).replace(':','-') + '.jsonl'
-    #with open(filename, 'w') as f:
+        # filename = 'logs/' + str(datetime.now()).replace(':','-') + '.jsonl'
+        # with open(filename, 'w') as f:
 
         # retrieve the exemplar text
         exemplar = get_exemplar(dataset_name, prompt, shot, promptset)
+
         # retrieve the dataset
-        dataset = get_dataset(dataset_name)
+        dataset = get_dataset(dataset_name, dev)
 
-        if(dataset_name == 'multiarith'):
-
-            indices = [i for i in range(0,600)]
-
-            if(not dev):
-                # Use all indices
-                modified_ds = dataset
-            else:
-                # Randomly select 10 for testing
-                indices = random.sample(indices, 10)
-            modified_ds = dataset.select(indices)
-
-        elif dataset_name == 'gsm8k':
-            if not dev:
-                modified_ds = dataset
-            else:
-                modified_ds = dataset.select(range(5))
-
-        elif dataset_name == 'aqua_rat':
-            # dataset["train"] = dataset["train"].shuffle(seed=42)
-            dataset["test"] = dataset["test"].shuffle(seed=42)
-            if not dev:
-                # modified_ds = concatenate_datasets([dataset["train"].select(range(7800)),
-                # dataset["test"].select(range(200))])
-                modified_ds = dataset["test"]
-            else:
-                modified_ds = dataset["train"].select(range(5))
-        else:
-            raise ValueError("dataset is not properly defined ...")
-
-        for sample in tqdm(modified_ds):
+        for sample in tqdm(dataset):
 
             # generate question text
             if prompt == 'sympy':
@@ -152,7 +129,9 @@ def evaluate_openai(run_id, model_name, dataset_name, prompt, shot, dev, prompts
             elif prompt == 'zero-cot' or prompt == 'cot':
                 mapping = ''
             else:
-                sample["question"], mapping = extract_mapping(sample["question"])
+                sample["question"], mapping = extract_mapping(
+                    sample["question"])
+
             # generate prompt text
             prompt_text = generate_prompt(sample["question"], exemplar, prompt)
             # get response
@@ -221,6 +200,8 @@ def generate_response(prompt, model_name):
     return response
 
 # Extract C0, C1, C2 Mapping from question
+
+
 def extract_mapping(q):
 
     # Preprocess question to combine multiple number to same word
@@ -254,11 +235,11 @@ def extract_mapping(q):
         # only support pure numbers, $, %, single number word, but not others (e.g.  1/4, 5th)
 
         # check if contains letter or other symbols
-        if(bool(re.search('[a-zA-Z]',word))):
+        if (bool(re.search('[a-zA-Z]', word))):
             new_question.append(word)
             continue
-        
-        if(bool(re.search('[\`\~\!\@\#\^\&\*\_\=\/\:\;]',word))):
+
+        if (bool(re.search('[\`\~\!\@\#\^\&\*\_\=\/\:\;]', word))):
             new_question.append(word)
             continue
 

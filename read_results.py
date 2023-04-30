@@ -76,7 +76,7 @@ def evaluate_equations(equations, mapping, response=''):
             break
         new_variables[name] = value
 
-    if ('answer' in new_variables):
+    if 'answer' in new_variables:
         return new_variables['answer']
     else:
         try:

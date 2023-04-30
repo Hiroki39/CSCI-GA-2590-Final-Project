@@ -6,10 +6,11 @@ from datasets import Dataset
 # Loading the dataset
 
 df = pd.read_json("data/MultiArith.json")
-df.columns = ['index','alignments','equation','answer','question']
+df.columns = ['index', 'alignments', 'equation', 'answer', 'question']
 dataset = Dataset.from_pandas(df)
 
 # Function for extracting mapping and answer from quesitons
+
 
 def extract_mapping_only(dataset):
 
@@ -23,11 +24,11 @@ def extract_mapping_only(dataset):
     for i, d in enumerate(dataset):
 
         q = d['question']
-        
+
         new_question, mapping = extract_mapping(q)
 
         if (len(mapping) == 0):
-            failed.append((i,q))
+            failed.append((i, q))
 
         train_mappings.append(mapping)
         train_new_questions.append(new_question)
@@ -38,6 +39,7 @@ def extract_mapping_only(dataset):
     dataset = dataset.add_column("new_question", train_new_questions)
 
     return dataset, failed
+
 
 dataset_processed, train_failed = extract_mapping_only(dataset)
 dataset_processed.save_to_disk("data/multiarith")
