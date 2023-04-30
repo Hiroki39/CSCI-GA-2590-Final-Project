@@ -21,3 +21,8 @@ ef2b4567-a132-4d58-be27-807745f10785,text-davinci-002,multiarith,cot,8,general
 88b1418e-71a0-4b96-8a8f-be1f30305543,text-davinci-002,multiarith,cot,8,general
 2e6a0587-842f-4c88-9337-ffa4bfefbe61,text-davinci-002,multiarith,varcot,8,general
 b57c0bb2-7a6a-4d31-bbca-bdd48b38ab8e,text-davinci-002,multiarith,varcot,8,general
+a015bac1-a0d1-4c29-898c-c83ee5c69690,gptturbo,multiarith,sympy,4,
+2da91f4e-b50f-4848-bb81-18473e1d0d14,gptturbo,multiarith,cot,4,
+6de5611a-e4a6-4dbb-bb2a-f17a22e51cf9,gptturbo,multiarith,cot,8,
+0ab2c711-8d3e-4272-91f0-20848972f217,text-davinci-002,aqua_rat,cot,4,
+d1d19d38-5545-46d1-a1c8-8bb7d62c1071,text-davinci-002,aqua_rat,sympy,4
