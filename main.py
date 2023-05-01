@@ -16,12 +16,14 @@ def conduct_test(model_name, dataset_name, prompt, shot, dev, name, promptset, e
 
     # Set up the OpenAI API client
     openai.api_key = os.getenv('OPENAI_API_KEY')
-    evaluate_openai(run_id, model_name, dataset_name, prompt, shot, dev, promptset)
+    evaluate_openai(run_id, model_name, dataset_name,
+                    prompt, shot, dev, promptset)
 
     if not dev:
         with open(name, 'a') as f:
             writer = csv.writer(f)
-            writer.writerow([run_id, model_name, dataset_name, prompt, shot, promptset])
+            writer.writerow(
+                [run_id, model_name, dataset_name, prompt, shot, promptset])
     if eval:
         eval_result(run_id, prompt, dataset_name)
 
@@ -39,7 +41,7 @@ if __name__ == '__main__':
     parser.add_argument('--name', type=str, required=False,
                         default='log_files.csv')
     parser.add_argument('--promptset', type=str, required=False,
-                        default='')
+                        default='general')
     parser.add_argument(
         '--eval', action=argparse.BooleanOptionalAction, default=False)
     args = parser.parse_args()
@@ -48,4 +50,5 @@ if __name__ == '__main__':
 
     load_dotenv()
 
-    conduct_test(args.model, args.dataset, args.prompt, args.shot, args.dev, args.name, args.promptset, args.eval)
+    conduct_test(args.model, args.dataset, args.prompt, args.shot,
+                 args.dev, args.name, args.promptset, args.eval)

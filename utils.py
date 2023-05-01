@@ -13,14 +13,11 @@ random.seed(42)
 
 def get_exemplar(dataset_name, prompt, shot, promptset):
 
-    if promptset == '':
-        promptset = dataset_name
-
     if prompt == 'zero-cot':
         return ''
-    
-    if prompt == 'sympy' and dataset_name != 'aqua_rat':
-        promptset = 'multiarith'
+
+    if dataset_name == 'aqua_rat' and promptset == 'general':
+        promptset = 'generalmc'
 
     with open(f'exemplar_texts/{prompt}-{promptset}-{shot}shot.txt') as f:
         exemplar = f.read()
@@ -133,7 +130,7 @@ def evaluate_openai(run_id, model_name, dataset_name, prompt, shot, dev, prompts
             if dataset == 'aqua_rat':
                 mapping = ''
                 sample["question"] += ', '.join(sample['options'])
-            elif prompt == 'zero-cot' or prompt == 'cot' or prompt =='sympy':
+            elif prompt == 'zero-cot' or prompt == 'cot' or prompt == 'sympy':
                 mapping = ''
             else:
                 sample["question"], mapping = extract_mapping(
