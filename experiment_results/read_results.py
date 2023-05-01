@@ -39,7 +39,7 @@ def evaluate_equations(equations, mapping, response=''):
         # right side
         expression = elements[1].strip()
 
-        expression = expression.replace(' x ', ' * ')
+        expression.replace(' x ', ' * ')
 
         # normal evaluation
         if (expression[-1] == '.'):
