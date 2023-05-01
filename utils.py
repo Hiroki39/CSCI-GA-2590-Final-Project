@@ -18,6 +18,9 @@ def get_exemplar(dataset_name, prompt, shot, promptset):
 
     if prompt == 'zero-cot':
         return ''
+    
+    if prompt == 'sympy' and dataset_name != 'aqua_rat':
+        promptset = 'multiarith'
 
     with open(f'exemplar_texts/{prompt}-{promptset}-{shot}shot.txt') as f:
         exemplar = f.read()
@@ -39,6 +42,10 @@ def get_dataset(dataset_name, dev):
     elif dataset_name == 'aqua_rat':
 
         dataset = load_dataset(dataset_name, 'raw')["test"]
+
+    elif dataset_name == 'svamp':
+
+        dataset = dataset = load_from_disk("data/svamp")
 
     else:
         raise ValueError("dataset is not properly defined ...")
