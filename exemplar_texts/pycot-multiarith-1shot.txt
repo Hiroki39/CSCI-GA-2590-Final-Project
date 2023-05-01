@@ -1,0 +1,19 @@
+Q: Andy and his brother Aaron received money for holiday. Andy had c0 dollars while his brother had c1. If they spent c2 dollars on a new video game, how many dollars do they have left? Write a python program to calculate the answer step by step.
+A: Let's think about it step by step:
+def Problem(c0, c1, c2):
+    # Andy has c0 dollars
+    andy = c0
+
+    # Andy's brother has c1 dollars
+    brother = c1
+
+    # They together has c0+c1 dollars in total
+    total = andy + brother
+
+    # They spend c2 on a video game
+    video_game = c2
+
+    # The money the have left in total can be calculated now as the money in total minus the price of video game
+    left = total - video_game
+
+    return left
