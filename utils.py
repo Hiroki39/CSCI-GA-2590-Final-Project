@@ -2,11 +2,10 @@ import openai
 import re
 import json
 from tqdm import tqdm
-from datasets import concatenate_datasets, load_dataset, load_from_disk
+from datasets import load_dataset, load_from_disk
 import time
 import random
 from openai.error import APIError, APIConnectionError, RateLimitError, Timeout
-from datetime import datetime
 
 random.seed(42)
 
