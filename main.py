@@ -33,7 +33,7 @@ if __name__ == '__main__':
     parser.add_argument('--prompt', type=str, required=True,
                         default='pycot', choices=['pycot', 'sympy', 'arithcot', 'cot', 'zero-cot', 'varcot'])
     parser.add_argument('--shot', type=int, required=True,
-                        default=1, choices=[1, 2, 4, 8])
+                        default=1)
     parser.add_argument(
         '--dev', action=argparse.BooleanOptionalAction, default=False)
     parser.add_argument('--name', type=str, required=False,

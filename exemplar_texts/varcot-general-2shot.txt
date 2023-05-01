@@ -1,0 +1,9 @@
+Q: There are c0 trees in the grove. Grove workers will plant trees in the grove today. After they are done, there will be c1 trees. How many trees did the grove workers plant today?
+A: There are c0 trees originally. Then there were c1 trees after some more were planted. So there must have been c1 - c0 new trees. 
+new_trees = c1 - c0
+The answer is new_trees.
+
+Q: If there are c0 cars in the parking lot and c1 more cars arrive, how many cars are in the parking lot?
+A: There are originally c0 cars. c1 more cars arrive. The total is c0 + c1. 
+total_car = c0 + c1
+The answer is total_car.
