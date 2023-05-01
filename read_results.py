@@ -134,7 +134,7 @@ def extract_answer(response, prompt='cot'):
             # to be tidied
             try:
                 temp = re.search(r'\d+(\,\d+)*(\.\d+)?', answer).group(1)
-                flag = 1
+                #flag = 1
             except:
                 pass
         except:
