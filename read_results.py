@@ -126,13 +126,21 @@ def evaluate_function(mapping, response):
 def extract_answer(response, prompt='cot'):
 
     answer = None
+    flag = 0
     if (prompt == 'cot'):
         try:
             answer = re.findall(r'(?<=The answer is ).+', response)[0]
             answer = re.search(r'\d+(\,\d+)*(\.\d+)?', answer).group(0)
+            # to be tidied
+            try:
+                temp = re.search(r'\d+(\,\d+)*(\.\d+)?', answer).group(1)
+                flag = 1
+            except:
+                pass
         except:
             try:
-                answer = re.findall(r'\d+(?:\.\d+)?', response)[0]
+                answer = re.findall(r'\d+(?:\.\d+)?', response)[-1]
+                flag = 1
             except:
                 return None
     elif (prompt == 'zero-cot'):
@@ -143,7 +151,7 @@ def extract_answer(response, prompt='cot'):
         except:
             return None
 
-    return float(answer.replace(",", ''))
+    return float(answer.replace(",", '')),flag
 
 
 def calculate_answer(result, prompt):
@@ -177,7 +185,8 @@ def calculate_answer(result, prompt):
         for i in range(len(result)):
             response = result.response[i]
 
-            answer = extract_answer(response, prompt)
+            answer, flag = extract_answer(response, prompt)
+            equation_column.append(flag)
             answers.append(answer)
             if (answer is None):
                 print("*****\n", i, response)
@@ -265,7 +274,7 @@ def eval_result(filename, prompt, dataset_name):
     elif prompt == 'cot' or prompt == 'zero-cot':
         if (prompt == 'zero-cot'):
             raise Warning("Refer to the paper for zero-cot evaluation")
-        result['response_answer'],  _ = calculate_answer(result, 'cot')
+        result['response_answer'], result['flag'] = calculate_answer(result, 'cot')
         result['answer'] = [i[0] for i in result['answer']]
         print("acc", np.mean(result['response_answer'] == result['answer']))
     elif prompt == 'varcot':
