@@ -37,9 +37,13 @@ def evaluate_equations(equations, mapping, response=''):
         # left side
         name = elements[0].strip().replace(' ', '_')
         # right side
-        expression = elements[1].strip()
+        try:
+            expression = elements[1].strip()
 
-        expression = expression.replace(' x ', ' * ')
+            expression = expression.replace(' x ', ' * ')
+        except:
+            print(equation)
+            return None
 
         # normal evaluation
         if (expression[-1] == '.'):
@@ -128,7 +132,7 @@ def extract_answer(response, prompt='cot'):
             answer = re.search(r'\d+(\,\d+)*(\.\d+)?', answer).group(0)
         except:
             try:
-                answer = re.findall(r'\d+(?:\.\d+)?', response)[-1]
+                answer = re.findall(r'\d+(?:\.\d+)?', response)[0]
             except:
                 return None
     elif (prompt == 'zero-cot'):
@@ -261,7 +265,7 @@ def eval_result(filename, prompt, dataset_name):
     elif prompt == 'cot' or prompt == 'zero-cot':
         if (prompt == 'zero-cot'):
             raise Warning("Refer to the paper for zero-cot evaluation")
-        result['response_answer'],  _ = calculate_answer(result, prompt)
+        result['response_answer'],  _ = calculate_answer(result, 'cot')
         result['answer'] = [i[0] for i in result['answer']]
         print("acc", np.mean(result['response_answer'] == result['answer']))
     elif prompt == 'varcot':
