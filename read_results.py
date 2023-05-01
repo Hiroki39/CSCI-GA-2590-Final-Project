@@ -133,8 +133,9 @@ def extract_answer(response, prompt='cot'):
             answer = re.search(r'\d+(\,\d+)*(\.\d+)?', answer).group(0)
             # to be tidied
             try:
-                temp = re.search(r'\d+(\,\d+)*(\.\d+)?', answer).group(1)
-                #flag = 1
+                if(re.search(r'\d+(\,\d+)*(\.\d+)?', answer).group(0) 
+                   != re.search(r'\d+(\,\d+)*(\.\d+)?', answer).group(-1)):
+                    flag = 1
             except:
                 pass
         except:
@@ -142,7 +143,7 @@ def extract_answer(response, prompt='cot'):
                 answer = re.findall(r'\d+(?:\.\d+)?', response)[-1]
                 flag = 1
             except:
-                return None
+                return None, 1
     elif (prompt == 'zero-cot'):
 
         # Use the number in the response
