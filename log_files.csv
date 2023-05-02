@@ -22,3 +22,14 @@ c3928ae8-8842-44e5-9976-b2f0b122eed0,text-davinci-002,multiarith,sympy,2,general
 c3b341b9-4b1f-404c-b69a-67a2e8c12acd,text-davinci-002,multiarith,sympy,4,general
 bc476773-e967-44fd-927f-0d7052a13bb1,gptturbo,svamp,cot,1,general
 a1c1c8fa-e50f-4447-b7b1-74c85ecb5c5c,text-davinci-002,multiarith,sympy,8,general
+5f52ac6c-be66-44ff-b879-dffb01c81688,gptturbo,multiarith,varcot,4,general
+
+82f0e4b7-91c5-474e-b692-afae34064dc4,gptturbo,svamp,varcot,8,general
+
+48d583fb-d328-4032-bd3d-da5c6ae4923d,gptturbo,svamp,varcot,4,general
+
+5a7bd583-e7fe-4629-a17a-892a9fc36cf9,text-davinci-002,multiarith,varcot,4,general
+
+84e762ed-b221-4f2b-92f9-419b5c8b2aa6,text-davinci-002,multiarith,varcot,4,general
+
+0ceb9262-cfad-43ea-bcda-b8e05bdff580,text-davinci-002,multiarith,cot,4,general

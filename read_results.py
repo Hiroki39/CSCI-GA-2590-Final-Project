@@ -43,43 +43,28 @@ def evaluate_equations(equations, mapping, response=''):
             expression = expression.replace(' x ', ' * ')
         except:
             print(equation)
-            return None
+            continue
 
         # normal evaluation
         if (expression[-1] == '.'):
             expression = expression[:-1]
 
-        # normal evaluation
-        # too messy; mannual evaluation instead
+        for variable in mapping:
+            expression = expression.replace(variable, str(mapping[variable]))
+
+        for variable in new_variables:
+            expression = expression.replace(variable, str(new_variables[variable]))
+        
+        expression = re.sub(r'[a-z]','',expression)
+        expression = re.sub(r'[A-Z]','',expression)
+
         try:
             value = eval(expression)
-        except:
-            print(expression)
-            processed_expression = []
-            j = 0
-            words = expression.split(' ')
-            while (j < len(words)):
-                word = words[j]
-                if (isvalid(word)):
-                    processed_expression.append(word)
-                    j += 1
-                else:
-                    break
-            try:
-                value = eval(' '.join(processed_expression))
-            except Exception as e:
-                try:
-                    value = eval(expression.split(',')[0])
-                except:
-                    print("*******Eval Error")
-                    print(' '.join(processed_expression))
-                    print(e)
-                    break
-        try:
             exec(name + ' = ' + str(value))
         except Exception as e:
-            print(response, equation, name, value)
-            break
+            print('1')
+            print(expression)
+            continue
         new_variables[name] = value
 
     if 'answer' in new_variables:
@@ -282,6 +267,11 @@ def eval_result(filename, prompt, dataset_name):
     elif prompt == 'varcot':
         result['response_answer'], result['equations'] = calculate_answer(
             result, "varcot")
+        result['answer'] = [i[0] for i in result['answer']]
+        print("acc", np.mean(result['response_answer'] == result['answer']))
+    elif prompt == 'pycot':
+        result['response_answer'], result['equations'] = calculate_answer(
+            result, "pycot")
         result['answer'] = [i[0] for i in result['answer']]
         print("acc", np.mean(result['response_answer'] == result['answer']))
     elif prompt == 'sympy':
