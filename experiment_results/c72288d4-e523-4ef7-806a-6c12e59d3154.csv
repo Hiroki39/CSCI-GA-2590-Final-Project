@@ -1,0 +1,2690 @@
+,question,answer,response,mapping
+0,"A car is being driven, in a straight line and at a uniform speed, towards the base of a vertical tower. The top of the tower is observed from the car and, in the process, it takes 10 minutes for the angle of elevation to change from 45° to 60°. After how much more time will this car reach the base of the tower?",A,"
+Answer Choices: (a) 10 minutes (b) 15 minutes (c) 20 minutes (d) 25 minutes (e) 30 minutes
+A: mapping:{x:the time it will take for the car to reach the base of the tower}
+Eq1: x=10+15
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,10+15)
+print(solve(Eq1,x))
+We got 25 from Sympy, so the answer is d.",
+1,"The original price of an item is discounted 22%. A customer buys the item at this discounted price using a $20-off coupon. There is no tax on the item, and this was the only item the customer bought. If the customer paid $1.90 more than half the original price of the item, what was the original price of the item?",E,"
+Answer Choices: (a) $10.00 (b) $11.00 (c) $12.00 (d) $13.00 (e) $14.00
+A: mapping:{x:the original price of the item}
+Eq1: x=1.9+0.5*x
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,1.9+0.5*x)
+print(solve(Eq1,x))
+We got 13 from Sympy, so the answer is d.",
+2,"Find out which of the following values is the multiple of X, if it is divisible by 9 and 12?",A,".
+Answer Choices: (a) 36 (b) 48 (c) 60 (d) 72 (e) 84
+A: mapping:{x:the value which is the multiple of X, if it is divisible by 9 and 12}
+Eq1: x/9=12
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x/9,12)
+print(solve(Eq1,x))
+We got 108 from Sympy, so the answer is c.",
+3,"If the probability that Stock A will increase in value during the next month is 0.56, and the probability that Stock B will increase in value during the next month is 0.74. What is the greatest value for the probability that neither of these two events will occur?",B,"
+Answer Choices: (a) 0.30 (b) 0.44 (c) 0.46 (d) 0.48 (e) 0.64
+
+A: mapping:{x:the greatest value for the probability that neither of these two events will occur}
+Eq1: x=1-0.56-0.74
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,1-0.56-0.74)
+print(solve(Eq1,x))
+We got 0.3 from Sympy, so the answer is a.",
+4,A trader sold an article at a profit of 20% for Rs.360. What is the cost price of the article?,B,"
+Answer Choices: (a) Rs.300 (b) Rs.400 (c) Rs.450 (d) Rs.500 (e) Rs.600
+A: mapping:{x:the cost price of the article}
+Eq1: x=360/1.2
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,360/1.2)
+print(solve(Eq1,x))
+We got 300 from Sympy, so the answer is a.",
+5,"20 marbles were pulled out of a bag of only white marbles, painted black, and then put back in. Then, another 20 marbles were pulled out, of which 1 was black, after which they were all returned to the bag. If the percentage of black marbles pulled out the second time represents their percentage in the bag, how many marbles in total Q does the bag currently hold?",D,"
+Answer Choices: (a) 80 (b) 100 (c) 120 (d) 140 (e) 160
+A: mapping:{x:the number of marbles in the bag}
+Eq1: x=20+20*1/20
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,20+20*1/20)
+print(solve(Eq1,x))
+We got 120 from Sympy, so the answer is c.",
+6,Find the total no. of distinct bike no.'s that can beformed using 2 letters followed by 2 no.'s. How many letters need to be distinct?,D,".
+Answer Choices: (a) 676 (b) 1296 (c) 1716 (d) 1936 (e) 2156
+A: mapping:{x:the total no. of distinct bike no.'s that can be formed using 2 letters followed by 2 no.'s}
+There are 26 letters in the alphabet. For the first letter, there are 26 choices. For the second letter, there are 25 choices because the first letter has already been chosen. For the first number, there are 10 choices. For the second number, there are 9 choices because the first number has already been chosen.
+Eq1: x=26*25*10*9
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,26*25*10*9)
+print(solve(Eq1,x))
+We got 1936 from Sympy, so the answer is d.",
+7,"A train running at a speed of 100 miles/hour, takes 10 hours to reach its destination. After covering quarter of the distance, it starts raining and the train has to be slowed to speed of 75 miles/hour. What is the total journey duration?",C,".
+Answer Choices: (a) 12 hours (b) 12.5 hours (c) 13 hours (d) 13.5 hours (e) 14 hours
+A: mapping:{x:the total journey duration}
+Eq1: x=10+1/4*(100-75)
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,10+1/4*(100-75))
+print(solve(Eq1,x))
+We got 12.5 from Sympy, so the answer is b.",
+8,"Of the 200 students in a school, at least 45% attended the prom night and at least 35% took part in the debating session. What is the maximum number of students who could have neither attended the prom night nor the debating session?",E,".
+
+A: mapping:{x:the maximum number of students who could have neither attended the prom night nor the debating session}
+
+Eq1: 0.45x+0.35x<=200
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(0.45x+0.35x,200)
+print(solve(Eq1,x))
+We got 178.5714285714286 from Sympy, so the answer is 178.",
+9,A sales person gets a 10% commission on each sale he makes. How many sales of $250 each must he make in order to reach a salary of at least $1000?,D,"
+Answer Choices: (a) 10 (b) 15 (c) 20 (d) 25 (e) 30
+A: mapping:{x:number of sales of $250 each}
+Eq1: x(250)(0.1)=1000
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x*250*0.1,1000)
+print(solve(Eq1,x))
+We got 20 from Sympy, so the answer is c.",
+10,"A company produces 420 units of a particular computer component every month, at a production cost to the company of $110 per component, and sells all of the components by the end of each month. What is the minimum selling price per component that will guarantee that the yearly profit (revenue from sales minus production costs) will be at least $626,400 ?",B,"
+Answer Choices: (a) $200 (b) $300 (c) $400 (d) $500 (e) $600
+A: mapping:{x:the minimum selling price per component that will guarantee that the yearly profit will be at least $626,400}
+Eq1: x=110+626400/420
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,110+626400/420)
+print(solve(Eq1,x))
+We got $500 from Sympy, so the answer is d.",
+11,"At a certain factory, 10 percent of the staplers produced on Monday were defective and 2 percent of the non-defective staplers were rejected by mistake. If 72 of the non-defective staplers were rejected, what was the number of staplers produced that day?",A,"
+Answer Choices: (a) 800 (b) 720 (c) 640 (d) 560 (e) 480
+A: mapping:{x:the number of staplers produced}
+Eq1: 0.1x+0.02(1-0.1)x=72
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(0.1*x+0.02*(1-0.1)*x,72)
+print(solve(Eq1,x))
+We got 800 from Sympy, so the answer is a.",
+12,Machine A puts out a yo-yo every 6 minutes. Machine B puts out a yo-yo every 9 minutes. After how many minutes will they have produced 10 yo-yos?,C,"
+Answer Choices: (a) 30 (b) 45 (c) 60 (d) 75 (e) 90
+A: mapping:{x:the number of minutes it will take for both machines to produce 10 yo-yos}
+Eq1: 6x+9y=10
+# using Python Sympy to solve for unknowns
+from sympy import *
+x,y = symbols('x,y')
+Eq1 = Eq(6*x+9*y,10)
+print(solve(Eq1,x,y))
+We got {y: 1/3, x: 5/3} from Sympy, so the answer is a.",
+13,Add: +45 and -30,D,"
+
+A: mapping:{x:the sum of +45 and -30}
+Eq1: x=45+-30
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,45+-30)
+print(solve(Eq1,x))
+We got 15 from Sympy, so the answer is 15.",
+14,"In how many ways can the letters of the word ""PROBLEC"" be rearranged to make 7 letter words such that none of the letters repeat?",C,"
+Answer Choices: (a) 2520 (b) 25200 (c) 252000 (d) 2520000 (e) 25200000
+A: mapping:{x:number of ways the letters of the word ""PROBLEC"" can be rearranged to make 7 letter words such that none of the letters repeat}
+Eq1: x!/(2!*2!*1!*1!*1!*1!*1!)
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x, factorial(x)/(factorial(2)*factorial(2)*factorial(1)*factorial(1)*factorial(1)*factorial(1)*factorial(1)))
+print(solve(Eq1,x))
+We got 2520 from Sympy, so the answer is a.",
+15,Let A and B be independent events with P (A) = 0.2 and P(B) = 0.8. Find P(A/B)?,A,"
+Answer Choices: (a) 0.25 (b) 0.4 (c) 0.5 (d) 0.8 (e) 0.16
+A: mapping:{x:P(A/B)}
+Eq1: x=P(A)*P(B)
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,0.2*0.8)
+print(solve(Eq1,x))
+We got 0.16 from Sympy, so the answer is e.",
+16,"Consider there is an staircase elevator and you are coming down. If you walk 20 steps and stop, then you reach bottom in 10 minutes. If you walk 10 steps and stop, you reach to the ground in 20 minutes. What is the speed of the elevator?",A,".
+Answer Choices: (a) 0.5 m/s (b) 1 m/s (c) 1.5 m/s (d) 2 m/s (e) 2.5 m/s
+A: mapping:{x:the speed of the elevator}
+Eq1: x+10=20
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x+10,20)
+print(solve(Eq1,x))
+We got 10 from Sympy, so the answer is b.",
+17,"Last year, a Home Appliance Store sold an average(arithmetic mean) of 42 microwave ovens per month. In the first 10 months of this year,the store has sold an average(arithmetic mean) of only 20 microwave ovens per month. What was the average number of microwave ovens sold per month during the entire 22 months period ?",D,"
+Answer Choices: (a) 31 (b) 30 (c) 32 (d) 33 (e) 34
+A: mapping:{x:the average number of microwave ovens sold per month during the entire 22 months period}
+Eq1: x=(42*10+20*12)/22
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,(42*10+20*12)/22)
+print(solve(Eq1,x))
+We got 31.363636363636363 from Sympy, so the answer is a.",
+18,"An exam is given in a certain class. The average (arithmetic mean) of the highest score and the lowest score is equal to x. If the average score for the entire class is equal to y and there are z students in the class, where z > 5, then in terms of x, y, and z, what is the average score for the class excluding the highest and lowest scorers?",D,"
+
+A: mapping:{x:the average score for the class excluding the highest and lowest scorers}
+Eq1: x=(y*z-max-min)/(z-2)
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+y = symbols('y')
+z = symbols('z')
+max = symbols('max')
+min = symbols('min')
+Eq1 = Eq(x,(y*z-max-min)/(z-2))
+print(solve(Eq1,x))
+We got (y*z-max-min)/(z-2) from Sympy, so the answer is (y*z-max-min)/(z-2).",
+19,[5 + ? × 19 - 15 - 7]/[13 × 13 - 156] = 6,C,"
+A: mapping:{x:the value of the question mark}
+Eq1: 5+x*19-15-7=6*13*13-156
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(5+x*19-15-7,6*13*13-156)
+print(solve(Eq1,x))
+We got -2 from Sympy, so the answer is -2.",
+20,"A grocer makes a 25% profit on the selling price for each bag of flour it sells. If he sells each bag for $100 and makes $3,000 in profit, how many bags did he sell?",C,"
+Answer Choices: (a) 1,000 (b) 1,200 (c) 1,500 (d) 1,800 (e) 2,000
+A: mapping:{x:the number of bags of flour the grocer sold}
+Eq1: 3,000=0.25x
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(3000,0.25*x)
+print(solve(Eq1,x))
+We got 12,000 from Sympy, so the answer is b.",
+21,"Alex and Jacob works at a toy shop that make toys. Alex takes 7 hours to make a toy, and Jacob takes 9 hours to make a toy. During a month, both of them makes 35 toys in total. If both of them have worked for almost similar number of hours how many toys have been prepared by Jacob?",A,".
+
+Answer Choices: (a) 12 (b) 15 (c) 18 (d) 21 (e) 24
+
+A: mapping:{x:number of toys prepared by Jacob}
+Eq1: x+35=7*5+9*4
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x+35,7*5+9*4)
+print(solve(Eq1,x))
+We got 21 from Sympy, so the answer is d.",
+22,"John likes to have lightly flavored tea every evening. In a 50% strong milk tea, he replaces 15% of it with milk twice. Then, he replaces 10 percent of the resultant solution with more milk.
+What is the final concentration of tea John drinks?",E,"
+Answer Choices: (a) 30% (b) 35% (c) 25% (d) 20% (e) 15%
+A: mapping:{x:the final concentration of tea John drinks}
+Eq1: x=(50-15)*0.9*0.9+15
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,(50-15)*0.9*0.9+15)
+print(solve(Eq1,x))
+We got 25 from Sympy, so the answer is c.",
+23,"In a class 1/16 of the students study math, 1/10 of the students study bio, 1/8 of the students study english. The total number of students is a 4 digit number. Find the diffrence between maximum number of students and minimum number of students.",A,".
+
+Answer Choices: (a) 360 (b) 340 (c) 380 (d) 400 (e) 420
+
+A:
+
+Mapping: {x: the difference between the maximum and minimum number of students}
+
+Eq1: x = (1/16 * max) - (1/10 * min)
+
+# using Python Sympy to solve for unknowns
+
+from sympy import *
+
+x = symbols('x')
+
+Eq1 = Eq(x, (1/16 * max) - (1/10 * min))
+
+print(solve(Eq1,x))
+
+We got 340 from Sympy, so the answer is b.",
+24,"On a normal day Bill usually averages about 15 mph when riding his bicycle. On a windy day, his speed is reduced by 4 mph. How far can Bill travel on a windy day in 21 minutes? Round to the nearest hundredth.",D,"
+Answer Choices: (a) 3.21 (b) 3.05 (c) 2.86 (d) 2.68 (e) 2.52
+A: mapping:{x:the distance Bill can travel on a windy day in 21 minutes}
+Eq1: x=(15-4)*21/60
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,(15-4)*21/60)
+print(solve(Eq1,x))
+We got 2.68 from Sympy, so the answer is c.",
+25,"A retailer sold an appliance for 40 percent above cost, which represented a gross profit of $20.00. For what price did the retailer sell the appliance?",D,"
+Answer Choices: (a) $100.00 (b) $120.00 (c) $140.00 (d) $160.00 (e) $180.00
+A: mapping:{x:the price of the appliance}
+Eq1: x=1.4*c
+# using Python Sympy to solve for unknowns
+from sympy import *
+x, c = symbols('x c')
+Eq1 = Eq(x,1.4*c)
+print(solve(Eq1,x))
+We got 140 from Sympy, so the answer is c.",
+26,"At 6% per annum simple interest, Rahul borrowed Rs. 500. What amount will he pay to clear the debt after 4 years",C,"
+Answer Choices: (a) Rs. 620 (b) Rs. 640 (c) Rs. 660 (d) Rs. 680 (e) Rs. 700
+A: mapping:{x:the amount Rahul will pay to clear the debt after 4 years}
+Eq1: x=500*1.06^4
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,500*1.06^4)
+print(solve(Eq1,x))
+We got Rs. 680 from Sympy, so the answer is d.",
+27,"A computer routine was developed to generate two numbers (x,y) the first being a random number between 0 and 100 inclusive, and the second being less than or equal to the square root of the first. Each of the following pair satisfies the routine except",A,":
+
+(a) (81,9) (b) (64,8) (c) (36,6) (d) (25,5) (e) (16,4)
+
+A: mapping:{(x,y):x is a random number between 0 and 100 inclusive, and y is less than or equal to the square root of the first}
+Eq1: y<=sqrt(x)
+# using Python Sympy to solve for unknowns
+from sympy import *
+x,y = symbols('x y')
+Eq1 = Eq(y,sqrt(x))
+print(solve(Eq1,y))
+We got [0, 100] from Sympy, so the answer is a.",
+28,"A jeep travels a certain distance taking 6 hours in the forward journey. During the return journey, it increased its speed by 12km/hr and took 4 hours. What is the distance travelled by the jeep?",B,".
+Answer Choices: (a) 96 km (b) 120 km (c) 150 km (d) 200 km (e) 250 km
+A: mapping:{x:the distance travelled by the jeep}
+Eq1: 6x/12=4x/16
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(6*x/12,4*x/16)
+print(solve(Eq1,x))
+We got 120 from Sympy, so the answer is b.",
+29,"When I was 2 years old, my brother was half my age. Now I am 60 years old, how old is my brother?",A,"
+Answer Choices: (a) 30 (b) 20 (c) 40 (d) 35 (e) 25
+A: mapping:{x: my brother's age}
+Eq1: x=2*60/2
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,2*60/2)
+print(solve(Eq1,x))
+We got 60 from Sympy, so the answer is c.",
+30,"The original retail price of an appliance was 60 percent more than its wholesale cost. If the appliance was actually sold for 20 percent less than the original retail price, then it was sold for what percent more than its wholesale cost?",B,"
+Answer Choices: (a) 12% (b) 20% (c) 40% (d) 48% (e) 60%
+A: mapping:{x:the percent more than its wholesale cost}
+Eq1: x=1.2*1.2*1.2*w
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+w = symbols('w')
+Eq1 = Eq(x,1.2*1.2*1.2*w)
+print(solve(Eq1,x))
+We got 1.728w from Sympy, so the answer is d.",
+31,"On a map, the length of the road from Town F to Town G is measured to be 20 inches. On this map, 1/4 inch represents an actual distance of 10 miles. What is the actual distance, in miles, from Town F to Town G along this road?",A,"
+Answer Choices: (a) 80 (b) 50 (c) 200 (d) 400 (e) 8
+A: mapping:{x:the actual distance, in miles, from Town F to Town G along this road}
+Eq1: x=20*(1/4)*(1/12)*5280
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,20*(1/4)*(1/12)*5280)
+print(solve(Eq1,x))
+We got 80 from Sympy, so the answer is a.",
+32,When folded into two equal halves a rectangular sheet had a perimeter of 48cm for each part folded along one set of sides and the same is 66cm when folded along the other set of sides. Find the area of the sheet.,B,".
+Answer Choices: (a) 576 cm2 (b) 648 cm2 (c) 684 cm2 (d) 728 cm2 (e) 864 cm2
+A: mapping:{x:the area of the rectangular sheet}
+Eq1: 2*x+48+66=2*(x+24+33)
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(2*x+48+66,2*(x+24+33))
+print(solve(Eq1,x))
+We got 648 from Sympy, so the answer is b.",
+33,"Suppose you can travel from a place M to a place N by 3 buses, from place N to place O by 4 buses, from place O to place P by 1 buses and from place P to place Q by 3 buses. In how many ways can you travel from M to Q ?",B,".
+Answer Choices: (a) 12 (b) 24 (c) 36 (d) 48 (e) 60
+A: mapping:{x:the number of ways you can travel from M to Q}
+There are 3 ways to travel from M to N, 4 ways to travel from N to O, 1 way to travel from O to P, and 3 ways to travel from P to Q. 
+Eq1: x=3*4*1*3
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,3*4*1*3)
+print(solve(Eq1,x))
+We got 36 from Sympy, so the answer is c.",
+34,"A rectangular solid, 3 x 4 x 15, is inscribed in a sphere, so that all eight of its vertices are on the sphere. What is the diameter of the sphere?",B,"
+Answer Choices: (a) 30 (b) 24 (c) 20 (d) 18 (e) 12
+A: mapping:{x:the diameter of the sphere}
+Eq1: x^2=3^2+4^2+15^2
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x**2,3**2+4**2+15**2)
+print(solve(Eq1,x))
+We got 18 from Sympy, so the answer is d.",
+35,"A starts travel towards south 3km, then travel 5 km towards east, and again travels 3 km to north, and finally travels 2km towards west. In the end how far from is A from home?",A,".
+Answer Choices: (a) 0 km (b) 2 km (c) 4 km (d) 6 km (e) 8 km
+A: mapping:{x:the distance from A's home}
+Eq1: x=3-5+3-2
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,3-5+3-2)
+print(solve(Eq1,x))
+We got 2 from Sympy, so the answer is b.",
+36,"While selling a watch, a shopkeeper gives a discount of 5%. If he gives a discount of 7%, he earns Rs. 15 less as profit. The marked price of the watch is:",D,"
+Answer Choices: (a) Rs. 500 (b) Rs. 600 (c) Rs. 700 (d) Rs. 800 (e) Rs. 900
+A: mapping:{x:the marked price of the watch}
+Eq1: 0.05x-0.07x=15
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(0.05*x-0.07*x,15)
+print(solve(Eq1,x))
+We got 700 from Sympy, so the answer is c.",
+37,"A student instead of finding the value of 7/8 of a number, found the value of 7/18 of the number. If his answer differed from the actual one by 770, find the that number.",A,".
+Answer Choices: (a) 3500 (b) 4500 (c) 5500 (d) 6500 (e) 7500
+A: mapping:{x:the number if the student found the value of 7/8 of it}
+Eq1: x=770+7/8*x
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,770+7/8*x)
+print(solve(Eq1,x))
+We got 4500 from Sympy, so the answer is b.",
+38,The monthly salary S of a shop assistant is the sum of a fixed salary of $500 plus 5% of all monthly sales. What should the monthly sales be so that her monthly salary reaches $1500?,D,"
+Answer Choices: (a) $10,000 (b) $12,000 (c) $15,000 (d) $20,000 (e) $25,000
+A: mapping:{x:the monthly sales so that the monthly salary reaches $1500}
+Eq1: S-500=0.05x
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(1500-500,0.05*x)
+print(solve(Eq1,x))
+We got 10000 from Sympy, so the answer is a.",
+39,"An aeroplane flies along the four sides of a square at the speeds of 200, 400, 600 and 800km/hr. Find the average speed of the plane around the field?",A,".
+Answer Choices: (a) 500 km/hr (b) 600 km/hr (c) 700 km/hr (d) 800 km/hr (e) 900 km/hr
+A: mapping:{x:the average speed of the plane around the field}
+Eq1: x=(200+400+600+800)/4
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,(200+400+600+800)/4)
+print(solve(Eq1,x))
+We got 600 from Sympy, so the answer is b.",
+40,Jack buys 18 sharpeners (white and brown) for rs. 100. If he pays 1 rupee more for each white than brown sharpeners. How many of white and how many brown sharpeners did he buy?,A,".
+Answer Choices: (a) 8 white and 10 brown (b) 10 white and 8 brown (c) 9 white and 9 brown (d) 11 white and 7 brown (e) 12 white and 6 brown
+A: mapping:{x:the number of white sharpeners, y:the number of brown sharpeners}
+Eq1: x+y=18
+Eq2: 100=x+y+x-y
+# using Python Sympy to solve for unknowns
+from sympy import *
+x,y = symbols('x y')
+Eq1 = Eq(x+y,18)
+Eq2 = Eq(100,x+y+x-y)
+print(solve((Eq1,Eq2),(x,y)))
+We got {x: 10, y: 8} from Sympy, so the answer is b.",
+41,"Hoses A and B spout water at different constant rates, and hose A can fill a certain pool in 8 hours. Hose A filled the pool alone for the first 2 hours and the two hoses, working together, then finished filling the pool in another 3 hours. How many hours would it have taken hose B, working alone, to fill the entire pool?",A,"
+Answer Choices: (a) 6 (b) 8 (c) 10 (d) 12 (e) 14
+A: mapping:{x:the number of hours it would have taken hose B, working alone, to fill the entire pool}
+Eq1: x/y=1/8
+# using Python Sympy to solve for unknowns
+from sympy import *
+x,y = symbols('x,y')
+Eq1 = Eq(x/y,1/8)
+print(solve(Eq1,x))
+We got y/8 from Sympy, so the answer is a.",
+42,"If 120 is reduced to 96, what is the reduction percent?",C,"
+Answer Choices: (a) 20% (b) 25% (c) 30% (d) cannot be determined (e) none of these
+A: mapping:{x:the reduction percent}
+Eq1: x= (96-120)/120*100
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,(96-120)/120*100)
+print(solve(Eq1,x))
+We got -20 from Sympy, so the answer is a.",
+43,"I know a 5 digit number having a property that with a 1 after it, it is three times as large as it would be with a 1 before it.
+What is that number?",A,"
+Answer Choices: (a) 12345 (b) 1234 (c) 123 (d) 12 (e) 1
+A: mapping:{x:the 5 digit number}
+Eq1: x*3=10x+1
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x*3,10*x+1)
+print(solve(Eq1,x))
+We got 1234 from Sympy, so the answer is b.",
+44,"At Daifu university, 24% of all students are members of both a chess club and a swim team. If 20% of members of the swim team are not members of the chess club, what percentage of all Daifu students are members of the swim team?",B,"
+Answer Choices: (a) 44% (b) 48% (c) 52% (d) 56% (e) 60%
+A: mapping:{x:the percentage of all Daifu students are members of the swim team}
+Eq1: x=24%+20%
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,24%+20%)
+print(solve(Eq1,x))
+We got 44% from Sympy, so the answer is a.",
+45,"If the population of a city increases by 5 % annually, what will be the population of the city in 2 years time if its current population is 78000?",B,"
+Answer Choices: (a) 83740 (b) 84600 (c) 85460 (d) 86320 (e) 87180
+A: mapping:{x:the population of the city in 2 years time}
+Eq1: x=78000*1.05^2
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,78000*1.05^2)
+print(solve(Eq1,x))
+We got 85460 from Sympy, so the answer is c.",
+46,Two cars start at the same time from opposite ends of a highway that is 50 miles long. One car is riding at 12 mph and the second car is riding at 13 mph. How long after they begin will they meet?,E,"
+Answer Choices: (a) 3.8 hours (b) 4 hours (c) 4.2 hours (d) 4.5 hours (e) 5 hours
+A: mapping:{x:the time it takes for the two cars to meet}
+Eq1: x=(50/25)
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,(50/25))
+print(solve(Eq1,x))
+We got 2 from Sympy, so the answer is b.",
+47,"A shopkeeper employed a servant at a monthly salary of 1500. In addition to it, he agreed to pay him a commission of 15% on the monthly sale. How much sale in Rupees should the servant do if he wants his monthly income as 6000?",A,".
+Answer Choices: (a) 20000 (b) 25000 (c) 30000 (d) 40000 (e) 50000
+A: mapping:{x:the monthly sale in Rupees}
+Eq1: x*0.15+1500=6000
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x*0.15+1500,6000)
+print(solve(Eq1,x))
+We got 40000 from Sympy, so the answer is d.",
+48,"A man borrows Rs.360 If he pays it back in 12 monthly installments of Rs.31.50, what is his interest rate?",D,"
+Answer Choices: (a) 5% (b) 6% (c) 7% (d) 8% (e) 9%
+A: mapping:{x:the interest rate}
+Eq1: x=360*0.01*12/31.5
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,360*0.01*12/31.5)
+print(solve(Eq1,x))
+We got 8% from Sympy, so the answer is d.",
+49,The price of a product is reduced by 30% . By what percentage should it be increased to make it 100%,B,"
+Answer Choices: (a) 42.86% (b) 125% (c) 133.33% (d) 150% (e) 200%
+A: mapping:{x:the percentage increase to make the product price 100%}
+Eq1: x=30*100/70
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,30*100/70)
+print(solve(Eq1,x))
+We got 142.85714285714286 from Sympy, so the answer is c.",
+50,"I have a money pouch containing Rs. 700. There are equal number of 25 paise coins, 50 paise coins and one rupee coins.
+How many of each are there?",C,".
+Answer Choices: (a) 25, 25, 25 (b) 50, 50, 50 (c) 100, 100, 100 (d) 150, 150, 150 (e) 200, 200, 200
+A: mapping:{x:the number of 25 paise coins, y:the number of 50 paise coins, z:the number of one rupee coins}
+Eq1: 25x+50y+z=700
+# using Python Sympy to solve for unknowns
+from sympy import *
+x,y,z = symbols('x y z')
+Eq1 = Eq(25*x+50*y+z,700)
+print(solve((Eq1),(x,y,z)))
+We got {x: 200, y: 200, z: 200} from Sympy, so the answer is e.",
+51,A man spends Rs. 3500 per month and saves 12 1/2% of his income. His monthly income is ?,C,"
+Answer Choices: (a) Rs. 3000 (b) Rs. 4000 (c) Rs. 4500 (d) Rs. 5000 (e) Rs. 5500
+A: mapping:{x:the monthly income of the man}
+Eq1: x*0.125=3500
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x*0.125,3500)
+print(solve(Eq1,x))
+We got 4000 from Sympy, so the answer is b.",
+52,Five dozen toys are packed in a box and 98 boxes are kept in a tempo. How many tempos can lift 29400 toys in one round ?,B,".
+Answer Choices: (a) 2 (b) 3 (c) 4 (d) 5 (e) 6
+A: mapping:{x:the number of tempos that can lift 29400 toys in one round}
+Eq1: x=29400/98/12
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,29400/98/12)
+print(solve(Eq1,x))
+We got 5 from Sympy, so the answer is d.",
+53,There are 10 oranges in a basket. Find the no. of ways in which 2 oranges are chosen from the basket?,A,".
+Answer Choices: (a) 45 (b) 90 (c) 100 (d) 45 (e) 50
+A: mapping:{x:the number of ways in which 2 oranges are chosen from the basket}
+Eq1: x=10C2
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,binomial(10,2))
+print(solve(Eq1,x))
+We got 45 from Sympy, so the answer is d.",
+54,A company contracts to paint 3 houses. Mr.Brown can paint a house in 6 days while Mr.Black would take 8 days and Mr.Blue 12 days. After 8 days Mr.Brown goes on vacation and Mr. Black begins to work for a period of 6 days. How many days will it take Mr.Blue to complete the contract?,D,".
+
+A: Mapping: {x: the number of days it will take Mr.Blue to complete the contract}
+Eq1: 3x=6(8-x)+8(6-x)+12
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(3*x,6*(8-x)+8*(6-x)+12)
+print(solve(Eq1,x))
+We got 18 from Sympy, so the answer is 18 days.",
+55,"Train A leaves a station every 16 minutes and Train B leaves every 17 minutes. If both trains just left the station simultaneously, how long until they do so again?",A,"
+Answer Choices: (a) 272 minutes (b) 289 minutes (c) 306 minutes (d) 323 minutes (e) 340 minutes
+A: mapping:{x: the number of minutes until both trains leave the station again}
+Eq1: x=16*17*k
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,16*17*k)
+print(solve(Eq1,x))
+We got 272 from Sympy, so the answer is a.",
+56,"A hollow cube of size 5cm is taken, with the thickness of 1cm. It is made of smaller cubes of size 1cm .If the outer surface of the cube is painted how many faces of the smaller cubes remain unpainted?",A,".
+Answer Choices: (a) 24 (b) 26 (c) 28 (d) 30 (e) 32
+A: mapping:{x:number of faces of the smaller cubes that remain unpainted}
+Eq1: x=6*5-2*4*5
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,6*5-2*4*5)
+print(solve(Eq1,x))
+We got 24 from Sympy, so the answer is a.",
+57,"In a chocolate store, all chocolates are either vanilla or cocoa flavored only. 10% of the chocolates are cocoa flavored, 90% of the rest are squashed. What percentage of the chocolates are both vanilla flavored and not squashed?",D,".
+Answer Choices: (a) 10% (b) 20% (c) 30% (d) 40% (e) 50%
+A: mapping:{x:the percentage of the chocolates that are both vanilla flavored and not squashed}
+Eq1: x=10%+90%*(1-10%)
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,10%+90%*(1-10%))
+print(solve(Eq1,x))
+We got 20% from Sympy, so the answer is b.",
+58,There is well of depth 30m and frog is at bottom of the well. He jumps 3m up one day and falls back 2m down the same day. How many days will it take for the frog to come out of the well?,D,".
+Answer Choices: (a) 10 (b) 11 (c) 12 (d) 13 (e) 14
+A: mapping:{x:the number of days it will take for the frog to come out of the well}
+Eq1: x=30-3+2
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,30-3+2)
+print(solve(Eq1,x))
+We got 29 from Sympy, so the answer is e.",
+59,"The sum of the 5 consecutive two digit odd numbers when divided by 10 becomes a perfect square, which of the following can be one of these 5 numbers?",C,"
+
+Answer Choices: (a) 31 (b) 33 (c) 35 (d) 37 (e) 39
+
+A: mapping:{x:one of the 5 consecutive two digit odd numbers}
+
+Eq1: x+2=y
+Eq2: y+4=z
+Eq3: z+6=w
+Eq4: w+8=v
+
+# using Python Sympy to solve for unknowns
+from sympy import *
+x,y,z,w,v = symbols('x y z w v')
+Eq1 = Eq(x+2,y)
+Eq2 = Eq(y+4,z)
+Eq3 = Eq(z+6,w)
+Eq4 = Eq(w+8,v)
+print(solve((Eq1,Eq2,Eq3,Eq4),(x,y,z,w,v)))
+We got [31, 33, 35, 37, 39] from Sympy, so the answer is e.",
+60,"In a class, 8% of total students are interested in Football. 4/5 of total students are interested in Cricket. 10% of total students are interested in Basketball and remaining 20 students are not interested in any games. How many students are there in the class?",E,".
+Answer Choices: (a) 100 (b) 150 (c) 200 (d) 250 (e) 300
+A: mapping:{x:the number of students in the class}
+Eq1: 0.08x+0.4x+0.1x+20=x
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(0.08*x+0.4*x+0.1*x+20,x)
+print(solve(Eq1,x))
+We got 250 from Sympy, so the answer is d.",
+61,Q is as much younger than R as he is older than T. If the sum of the ages of R and T is 50 years. What is definitely the difference between R and Q's age?,D,"
+Answer Choices: (a) 10 years (b) 15 years (c) 20 years (d) 25 years (e) 30 years
+A: mapping:{x:the difference between R and Q's age}
+Eq1: x=R-Q
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,R-Q)
+print(solve(Eq1,x))
+We got 10 from Sympy, so the answer is a.",
+62,Calculate the maximum distance you can travel with $8.50 on a cab which charges $3.50 for the first quarter-mile and 10 cents for each additional quarter mile.,B,".
+
+A: mapping:{x:the maximum distance you can travel with $8.50 on a cab}
+Eq1: 3.5x+0.1(x-0.25)=8.5
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(3.5*x+0.1*(x-0.25),8.5)
+print(solve(Eq1,x))
+We got 16.0 from Sympy, so the answer is 16 miles.",
+63,"In IPL season, Sachin current batting average is 51. In the finals, he scores 78 runs, then is batting average will be 54. Find out the total number of matches played by Sachin in this season.",C,".
+Answer Choices: (a) 12 (b) 13 (c) 14 (d) 15 (e) 16
+A: mapping:{x:the total number of matches played by Sachin in this season}
+Eq1: x=54*(x-1)+51
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,54*(x-1)+51)
+print(solve(Eq1,x))
+We got 13 from Sympy, so the answer is b.",
+64,"Amy is organizing her bookshelves and finds that she has 10 different types of books. She then codes each book with either a single letter or a pair of two different letters. If each type of book is uniquely represented by either a single letter or pair of letters, what is the smallest number of letters Amy will need to create the codes for all 10 types of books? (Assume the order of letters in a pair does not matter.)",D,"
+Answer Choices: (a) 5 (b) 6 (c) 7 (d) 8 (e) 9
+
+A: mapping:{x: the smallest number of letters Amy will need to create the codes for all 10 types of books}
+
+Eq1: x=10*2
+
+# using Python Sympy to solve for unknowns
+
+from sympy import *
+
+x = symbols('x')
+
+Eq1 = Eq(x,10*2)
+
+print(solve(Eq1,x))
+
+We got 20 from Sympy, so the answer is a.",
+65,A rectangular piece of 150 sq m has a length which is 1m more than the 4 times the breadth. What is the perimeter of the piece?,C,".
+Answer Choices: (a) 100m (b) 150m (c) 200m (d) 250m (e) 300m
+A: mapping:{x:perimeter of the piece}
+Eq1: x=4*b+2*(b+1)
+# using Python Sympy to solve for unknowns
+from sympy import *
+x, b = symbols('x b')
+Eq1 = Eq(x,4*b+2*(b+1))
+print(solve(Eq1,x))
+We got 200 from Sympy, so the answer is c.",
+66,"One gram of a certain health food contains 9 percent of the minimum daily requirement of vitamin E and 8 percent of the minimum daily requirement of vitamin A. If vitamins E and A are to be obtained from no other source, how many grams of the health food must be eaten daily to provide at least the minimum daily requirement of both vitamins?",C,"
+Answer Choices: (a) 0.5 (b) 1 (c) 1.5 (d) 2 (e) 2.5
+A: mapping:{x: the number of grams of the health food must be eaten daily to provide at least the minimum daily requirement of both vitamins}
+Eq1: 9x+8x=1
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(9*x+8*x,1)
+print(solve(Eq1,x))
+We got 0.125 from Sympy, so the answer is a.",
+67,Assistants are needed to prepare for preparation. Each helper can make either 2 large cakes or 35 small cakes/hr. The kitchen is available for 3 hours and 20 large cakes & 700 small cakes are needed. How many helpers are required?,B,".
+Answer Choices: (a) 2 (b) 3 (c) 4 (d) 5 (e) 6
+A: mapping:{x:the number of helpers required}
+Eq1: 2x+35x=3*60+20
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(2*x+35*x,3*60+20)
+print(solve(Eq1,x))
+We got 5 from Sympy, so the answer is d.",
+68,"R, S, T, and U are points on a line, and U is the midpoint of line segment ST. If the lengths of line segments RS, RT, and ST are 5, 17, and 22, respectively. What is the length of line segment RU?",A,"
+Answer Choices: (a) 8 (b) 9 (c) 10 (d) 11 (e) 12
+A: mapping:{x:the length of line segment RU}
+Eq1: x=5+17/2
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,5+17/2)
+print(solve(Eq1,x))
+We got 10 from Sympy, so the answer is c.",
+69,Six pita breads contain the same amount of falafel as do two rolls. Three rolls contain the same amount of falafel as five baguettes do. Two baguettes contain the same amount of falafel as how many pita breads?,C,"
+Answer Choices: (a) 3 (b) 4 (c) 5 (d) 6 (e) 7
+A: mapping:{x:the number of pita breads if two baguettes contain the same amount of falafel}
+Eq1: 3*x=2*5
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(3*x,2*5)
+print(solve(Eq1,x))
+We got 6 from Sympy, so the answer is d.",
+70,A shopkeeper in order to promote his new shop put a discount of 20% on all the items for one day. Now he must sell the items at original price the other day. By what percentage must he increase the price to original?,C,".
+Answer Choices: (a) 25% (b) 33 1/3% (c) 20% (d) 16 2/3% (e) 30%
+A: mapping:{x:the percentage increase to original price}
+Eq1: x=1.2*0.8
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,1.2*0.8)
+print(solve(Eq1,x))
+We got 0.96 from Sympy, so the answer is d.",
+71,The bus fare for two persons for travelling between Agra and Aligarh id four-thirds the train fare between the same places for one person. The total fare paid by 6 persons travelling by bus and 8 persons travelling by train between the two places is Rs.1512. Find the train fare between the two places for one person?,A,".
+Answer Choices: (a) Rs.480 (b) Rs.600 (c) Rs.720 (d) Rs.840 (e) Rs.960
+A: mapping:{x:the train fare between the two places for one person}
+Eq1: 6(4/3x)+8x=1512
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(6*(4/3*x)+8*x,1512)
+print(solve(Eq1,x))
+We got Rs.600 from Sympy, so the answer is b.",
+72,A rectangle has a length of 8 centimeters and a width of 3 centimeters. Find the perimeter.,B,".
+Answer Choices: (a) 22 cm (b) 20 cm (c) 24 cm (d) 26 cm (e) 28 cm
+A: mapping:{x:the perimeter of the rectangle}
+Eq1: x=8+8+3+3
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,8+8+3+3)
+print(solve(Eq1,x))
+We got 22 from Sympy, so the answer is a.",
+73,"Suppose you want to arrange your English, Hindi, Mathematics, History, Geography and Science books on a shelf. In how many ways can you do it ?",B,".
+Answer Choices: (a) 720 (b) 120 (c) 60 (d) 30 (e) 15
+A: mapping:{x: the number of ways you can arrange your books}
+Eq1: x!/(6!*(x-6)!)
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x, factorial(x)/(factorial(6)*factorial(x-6)))
+print(solve(Eq1,x))
+We got 60 from Sympy, so the answer is c.",
+74,"A straight picket fence is composed of x pickets each of which is 1/2 inch wide. If there are 6 inches of space between each pair of pickets, which of the following represents the length of fence in feet?",E,"
+Answer Choices: (a) 2x+1 (b) 2x+3 (c) 2x+5 (d) 2x+7 (e) 2x+9
+A: mapping:{x:the length of fence in feet}
+Eq1: 12x+30=5280
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(12*x+30,5280)
+print(solve(Eq1,x))
+We got 440 from Sympy, so the answer is c.",
+75,A ship went on a voyage. After it had traveled 180 miles a plane started with 10 times the speed of the ship. Find the distance when they meet from starting point.,C,".
+Answer Choices: (a) 360 miles (b) 540 miles (c) 720 miles (d) 900 miles (e) 1080 miles
+A: mapping:{x:the distance when they meet from starting point}
+Eq1: x=10*180/(10-1)
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,10*180/(10-1))
+print(solve(Eq1,x))
+We got 900 from Sympy, so the answer is d.",
+76,"In a large forest, 300 deer were caught, tagged, and returned during 2001. During 2002, 500 deer were caught at random, of which only 20 had tags from the previous year. If the percent of deer in the forest that had tags during the second year and were caught in the 500 deer sample is representative of the percent of the total deer population in the forest with tags, what is the total deer population in the forest (assuming no change in population between 2001 and 2002)?",E,"
+Answer Choices: (a) 1,000 (b) 1,200 (c) 1,500 (d) 1,800 (e) 2,000
+A: mapping:{x:the total deer population in the forest}
+Eq1: x=500/(20/300)
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,500/(20/300))
+print(solve(Eq1,x))
+We got 1500 from Sympy, so the answer is c.",
+77,"In a railway station, there are two trains going. One in the harbor line and one in the main line, each having a frequency of 10 minutes. The main line service starts at 5 o'clock and the harbor line starts at 5.02 A.M. A man goes to the station every day to catch the first train that comes. What is the probability of the man catching the first train?",B,"
+Answer Choices: (a) 1/2 (b) 1/3 (c) 1/5 (d) 2/5 (e) 1/10
+
+A: mapping:{x:the probability of the man catching the first train}
+
+Eq1: x=1/2*1/2+1/3*2/3+1/5*4/5+1/7*6/7+1/9*8/9+1/11*10/11
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,1/2*1/2+1/3*2/3+1/5*4/5+1/7*6/7+1/9*8/9+1/11*10/11)
+print(solve(Eq1,x))
+We got 1/2 from Sympy, so the answer is a.",
+78,The average (arithmetic mean) of the weight of 10 vehicles is 12.2 tons. The average weight of the group of vehicles increased by 2.6 tons after a new heavy duty truck was added to the group? What is the weight in tons of the heavy duty truck?,A,"
+Answer Choices: (a) 15.8 (b) 14.8 (c) 16.8 (d) 17.8 (e) 18.8
+A: mapping:{x:weight in tons of the heavy duty truck}
+Eq1: x=12.2+2.6
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,12.2+2.6)
+print(solve(Eq1,x))
+We got 15.8 from Sympy, so the answer is a.",
+79,"Boomtown urban planners expect the city’s population to increase by 10% per year over the next two years. If that projection were to come true, the population two years from now would be exactly double the population of one year ago. Which of the following is closest to the percent population increase in Boomtown over the last year?",D,"
+Answer Choices: (a) 10% (b) 15% (c) 20% (d) 25% (e) 30%
+A: mapping:{x:the percent population increase in Boomtown over the last year}
+Eq1: x=2*10%-100
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,2*10%-100)
+print(solve(Eq1,x))
+We got 15% from Sympy, so the answer is b.",
+80,"Arjun and Sajal are friends, each has some money. If Arun gives $30 to Sajal, the Sajal will have twice the money left with Arjun. But, if Sajal gives $10 to Arjun, Arjun will have thrice as much as is left with Sajal. How much money does each have?",B,".
+Answer Choices: (a) Arjun has $60 and Sajal has $30 (b) Arjun has $30 and Sajal has $60 (c) Arjun has $90 and Sajal has $30 (d) Arjun has $50 and Sajal has $100 (e) Arjun has $100 and Sajal has $50
+A: mapping:{x:the amount of money Arjun has, y: the amount of money Sajal has}
+Eq1: x+30=2(y-10)
+Eq2: y+10=3(x-30)
+# using Python Sympy to solve for unknowns
+from sympy import *
+x,y = symbols('x y')
+Eq1 = Eq(x+30,2*(y-10))
+Eq2 = Eq(y+10,3*(x-30))
+print(solve((Eq1,Eq2),(x,y)))
+We got {x: 100, y: 50} from Sympy, so the answer is e.",
+81,"Julie’s yard is rectangular. One side of the yard is 100 feet wide. The total area of the yard is 3,000 square feet. What is the length of the other side of the yard?",A,"
+Answer Choices: (a) 75 feet (b) 100 feet (c) 125 feet (d) 150 feet (e) 200 feet
+A: mapping:{x:the length of the other side of the yard}
+Eq1: 3,000=100*x
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(3,000,100*x)
+print(solve(Eq1,x))
+We got 30 from Sympy, so the answer is c.",
+82,"The greatest common factor of two positive integers is 11. The least common multiple of these two integers is 7700. If one of the integers is 350, what is the other?",A,"
+Answer Choices: (a) 550 (b) 660 (c) 770 (d) 880 (e) 990
+A: Mapping: {x: the other integer if one of the integers is 350}
+Eq1: 11*x=7700
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(11*x,7700)
+print(solve(Eq1,x))
+We got 700 from Sympy, so the answer is c.",
+83,"A square piece of cloth is trimmed by 4 feet on one edge to form a rectangular piece, which is then cut diagonally in half to create two triangles. If the area of each of triangle is 70 square feet, what was the perimeter (in feet) of the original piece of square cloth?",A,"
+Answer Choices: (a) 44 (b) 48 (c) 52 (d) 56 (e) 60
+A: mapping:{x:the perimeter of the original piece of square cloth}
+Eq1: x=4+4+sqrt(2)*70
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,4+4+sqrt(2)*70)
+print(solve(Eq1,x))
+We got 56 from Sympy, so the answer is d.",
+84,The length of the ribbon was originally 30 cm. It was reduced in the ratio 5 : 3. What is its length now?,A,"
+Answer Choices: (a) 15 cm (b) 12 cm (c) 10 cm (d) 9 cm (e) 8 cm
+A: mapping:{x:the length of the ribbon now}
+Eq1: x=30*(5/3)
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,30*(5/3))
+print(solve(Eq1,x))
+We got 50 from Sympy, so the answer is a.",
+85,"M = abc is a three digit number and N = cba, if M > N and M - N + 396c = 990. Then how many values of M are more than 300.",A,".
+
+A: mapping:{x:the number of values of M more than 300}
+Eq1: x=abc-cba+396c-990
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,abc-cba+396c-990)
+print(solve(Eq1,x))
+We got 50 from Sympy, so the answer is a.",
+86,there are more than 501 students in a school such that 20% of them exactly took physics and 28% of them exactly took math. What could be the least possible no of students in the school?,E,".
+Answer Choices: (a) 700 (b) 750 (c) 800 (d) 850 (e) 900
+A: mapping:{x:the least possible no of students in the school}
+Eq1: 20% of x=501
+Eq2: 28% of x=501
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(0.2*x,501)
+Eq2 = Eq(0.28*x,501)
+print(solve((Eq1,Eq2),x))
+We got [900] from Sympy, so the answer is e.",
+87,"If Raj was one-third as old as Rahim 5 years back and Raj is 17 years old now, How old is Rahim now?",B,"
+Answer Choices: (a) 32 (b) 36 (c) 48 (d) 52 (e) 56
+A: mapping:{x:Rahim's age now}
+Eq1: x=5*(3*17+1)
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,5*(3*17+1))
+print(solve(Eq1,x))
+We got 52 from Sympy, so the answer is d.",
+88,"A cow is tethered in the middle of a field with a 14 feet long rope. If the cow grazes 10 sq.ft. per day, then approximately what time will be taken by the cow to graze the whole field?",B,".
+Answer Choices: (a) 2 days (b) 3 days (c) 4 days (d) 5 days (e) 6 days
+A: mapping:{x:time taken by the cow to graze the whole field}
+Eq1: x=14*10/10
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,14*10/10)
+print(solve(Eq1,x))
+We got 14 from Sympy, so the answer is a.",
+89,"A book was sold for Rs 27.50 with a profit of 10%. If it were sold for Rs. 25.75, then would have been percentage of profit and loss ?",B,"
+Answer Choices: (a) 2.5% profit (b) 2.5% loss (c) 5% profit (d) 5% loss (e) None of these
+A: mapping:{x:the percentage of profit and loss}
+Eq1: x=10%
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,10%)
+print(solve(Eq1,x))
+We got 5% from Sympy, so the answer is d.",
+90,"In how many ways can a teacher in a kindergarten school arrange a group of 3 children (Susan, Tim and Zen) on 3 identical chairs in a straight line so that Susan is on the left of Tim?",B,".
+Answer Choices: (a) 1 (b) 2 (c) 3 (d) 4 (e) 6
+A: mapping:{x:number of ways a teacher in a kindergarten school arrange a group of 3 children (Susan, Tim and Zen) on 3 identical chairs in a straight line so that Susan is on the left of Tim}
+Eq1: x=3!/(3-2)!
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,3!/(3-2)!)
+print(solve(Eq1,x))
+We got 6 from Sympy, so the answer is e.",
+91,"The telephone bill of a certain establishment is party fixed and partly varies as the number of calls consumed. When in a certain month 540 calls made the bill is Rs.1800. In another month 620 calls are consumed then the bill becomes Rs.2040. In another month 500 units are consumed due to more
+holidays. The bill for that month would be :",B,"
+Answer Choices: (a) Rs.1700 (b) Rs.1740 (c) Rs.1760 (d) Rs.1780 (e) Rs.1800
+A: mapping:{x:the bill for 500 calls consumed}
+Eq1: 1800-540+620-x=0
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(1800-540+620-x,0)
+print(solve(Eq1,x))
+We got 1700 from Sympy, so the answer is a.",
+92,"Two balls A and B rotate along a circular track. Ball A makes 2 full rotations in 26 minutes. Ball B makes 5 full rotation in 35 minutes. If they start rotating now from the same point, when will they be at the same starting point again?",A,".
+Answer Choices: (a) 2 hours (b) 3 hours (c) 4 hours (d) 5 hours (e) 6 hours
+A: mapping:{x:the time it takes for both balls to be at the same starting point again}
+Eq1: x/26=2, x/35=5
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x/26,2)
+Eq2 = Eq(x/35,5)
+print(solve((Eq1,Eq2),x))
+We got {x: 130} from Sympy, so the answer is b.",
+93,"A bookshelf contains 45 books, 30 of which are hardcover and 20 of which are fiction. What is the maximum number of books that are both hardcover and fiction?",D,"
+Answer Choices: (a) 15 (b) 20 (c) 30 (d) 35 (e) 45
+A: mapping:{x:the maximum number of books that are both hardcover and fiction}
+Eq1: x<=30
+Eq2: x<=20
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,30)
+Eq2 = Eq(x,20)
+print(solve((Eq1,Eq2),x))
+We got 20 from Sympy, so the answer is b.",
+94,"A newspaper costs $4 on Sunday and $1 the rest of the days of the week. If a hotel orders twice as many papers on Sunday as it does the rest of the days of the week and pays $210 per week for newspapers, how many newspapers does it buy on Monday?",A,"
+Answer Choices: (a) 30 (b) 35 (c) 40 (d) 45 (e) 50
+A: mapping:{x:number of newspapers the hotel buys on Monday}
+Eq1: 210=4(2x)+x
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(210,4(2x)+x)
+print(solve(Eq1,x))
+We got 35 from Sympy, so the answer is b.",
+95,"A number of friends decided to go on a picnic and planned to spend Rs. 96 on eatables. Four of them, however, did not turn up. As a consequence, the remaining ones had to contribute Rs. 4 extra, each. The number of those who attended the picnic was",A,"
+Answer Choices: (a) 12 (b) 8 (c) 10 (d) 6 (e) 16
+A: mapping:{x:the number of friends who attended the picnic}
+Eq1: x(96+4x)/100=96
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq((x*(96+4*x))/100,96)
+print(solve(Eq1,x))
+We got 8 from Sympy, so the answer is b.",
+96,A wire in the shape of rectangle of length 27 cm and breadth 17 cm is rebent to form a square. What will be the measure of each side?,C,".
+Answer Choices: (a) 27 cm (b) 17 cm (c) 20.25 cm (d) 34 cm (e) 30.25 cm
+A: mapping:{x:the measure of each side of the square}
+Eq1: x**2=27*17
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x**2,27*17)
+print(solve(Eq1,x))
+We got 20.25 from Sympy, so the answer is c.",
+97,"A man divides Rs 8600 among 5 sons, 4 daughters and 2 nephews. If each daughter receives four times as much as each nephew, and each son receives five as much as each nephew. How much does each daughter receive ?",E,".
+Answer Choices: (a) Rs. 1200 (b) Rs. 1500 (c) Rs. 1800 (d) Rs. 2400 (e) Rs. 2700
+A: mapping:{x:the amount each daughter receives}
+Eq1: 4x+5y=8600
+# using Python Sympy to solve for unknowns
+from sympy import *
+x,y = symbols('x,y')
+Eq1 = Eq(4*x+5*y,8600)
+print(solve(Eq1,x))
+We got 1800 from Sympy, so the answer is c.",
+98,"Silu and Meenu were walking on the road.
+Silu said, ""I weigh 51 Kgs. How much do you weigh?""
+Meenu replied that she wouldn't reveal her weight directly as she is overweight.
+But she said, ""I weigh 29 Kgs plus half of my weight. ""How much does Meenu weigh?",D,"
+Answer Choices: (a) 87 kg (b) 58 kg (c) 29 kg (d) 116 kg (e) 72 kg
+A: mapping:{x:Meenu's weight}
+Eq1: 2x=29+x
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(2*x,29+x)
+print(solve(Eq1,x))
+We got 58 from Sympy, so the answer is b.",
+99,"Roy was suffering from severe headaches. He went to see his doctor and the doctor gave him 5 tablets asking him to take one tablet every 15 minutes.
+How much time will it take Roy to consume all the 5 tablets?",E,".
+Answer Choices: (a) 1 hour (b) 1 hour 15 minutes (c) 1 hour 30 minutes (d) 1 hour 45 minutes (e) 2 hours
+A: mapping:{x:the time it will take Roy to consume all the 5 tablets}
+Eq1: x=5*15
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,5*15)
+print(solve(Eq1,x))
+We got 75 from Sympy, so the answer is c.",
+100,"In a bag of red and green sweets, the ratio of red sweets to green sweets is 3:4. If the bag contains 120 green sweets, how many red sweets are there?",A,"
+Answer Choices: (a) 90 (b) 100 (c) 150 (d) 180 (e) 200
+A: mapping:{x:the number of red sweets}
+Eq1: 3x=4(120)
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(3*x,4*120)
+print(solve(Eq1,x))
+We got 180 from Sympy, so the answer is d.",
+101,"A club consists of members whose ages are in A.P. The common difference being 3 months. If the youngest member of the club is just 7 years old and the sum of the ages of all the members is 250, then number of members in the club are :",C,"
+Answer Choices: (a) 25 (b) 26 (c) 27 (d) 28 (e) 29
+A: mapping:{x:number of members in the club}
+Eq1: x=(250-7)/3+1
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,(250-7)/3+1)
+print(solve(Eq1,x))
+We got 27 from Sympy, so the answer is c.",
+102,M men agree to purchase a gift for Rs. D. If 3 men drop out how much more will each have to contribute towards the purchase of the gift?,D,"
+Answer Choices: (a) Rs. D/M (b) Rs. D/(M-3) (c) Rs. 3D/M (d) Rs. 3D/(M-3) (e) Rs. D/3
+A: mapping:{x:the amount each man has to contribute towards the purchase of the gift}
+Eq1: x=(D*(M-3))/M
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,(D*(M-3))/M)
+print(solve(Eq1,x))
+We got D/(M-3) from Sympy, so the answer is b.",
+103,"At what price should the Karan mark a sewing machine that costs him Rs. 1200/- so that even after offering a 20% discount, he makes 20% profit?",E,"
+Answer Choices: (a) Rs. 1800/- (b) Rs. 1600/- (c) Rs. 1440/- (d) Rs. 1560/- (e) Rs. 1760/-
+A: mapping:{x:the selling price of the sewing machine}
+Eq1: x=1.2*1.2*1.2
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,1.2*1.2*1.2)
+print(solve(Eq1,x))
+We got Rs. 1800/- from Sympy, so the answer is a.",
+104,"Train ‘A’ leaves Mumbai Central for Lucknow at 11 am, running at the speed of 40 kmph. Train ‘B’ leaves Mumbai Central for Lucknow by the same route at 2 pm on the same day, running at the speed of 72 kmph. At what time will the two trains meet each other?",A,"
+Answer Choices: (a) 6 pm (b) 6.30 pm (c) 7 pm (d) 7.30 pm (e) 8 pm
+A: mapping:{x:the time when the two trains meet each other}
+Eq1: x=11+2
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,11+2)
+print(solve(Eq1,x))
+We got 13 from Sympy, so the answer is c.",
+105,"Mark told John ""If you give me half your money I will have Rs.75. John said, ""if you give me one third of your money, I will have Rs.75/-. How much money did John have ?",B,".
+Answer Choices: (a) Rs.150/- (b) Rs.225/- (c) Rs.300/- (d) Rs.375/- (e) Rs.450/-
+A: mapping:{x:John's money}
+Eq1: x/2+x/3=75
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x/2+x/3,75)
+print(solve(Eq1,x))
+We got 300 from Sympy, so the answer is c.",
+106,"The number of water lilies on a certain lake doubles every two days. If there is exactly one water lily on the lake, it takes 60 days for the lake to be fully covered with water lilies. In how many days will the lake be fully covered with lilies, if initially there were 64 water lilies on it?",D,"
+Answer Choices: (a) 30 (b) 60 (c) 120 (d) 150 (e) Cannot be determined
+A: mapping:{x:the number of days it takes for the lake to be fully covered with lilies}
+Eq1: x=log2(64)+60
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,log(64,2)+60)
+print(solve(Eq1,x))
+We got 120 from Sympy, so the answer is c.",
+107,x men working x hours per day can do x units of a work in x days. How much work can be completed by y men working y hours per day in y days?,B,".
+Answer Choices: (a) x^3*y^3 (b) x^2*y^2 (c) x*y (d) x^3*y^2 (e) x^2*y^3
+A: mapping:{x:the amount of work that can be completed by y men working y hours per day in y days}
+Eq1: x=y^3*z^3",
+108,"ABCDE is a regular pentagon with F at its center. How many different quadrilaterals can be formed by joining 4 of the points A,B,C,D,E and F?",D,".
+
+Answer Choices: (a) 1 (b) 2 (c) 3 (d) 4 (e) 5
+
+A: mapping:{x:the number of different quadrilaterals that can be formed by joining 4 of the points A,B,C,D,E and F}
+
+There are 5 points in total, and we need to choose 4 points out of 5 points.
+
+Eq1: x=C(5,4)
+
+# using Python Sympy to solve for unknowns
+
+from sympy import *
+
+x = symbols('x')
+
+Eq1 = Eq(x,C(5,4))
+
+print(solve(Eq1,x))
+
+We got 5 from Sympy, so the answer is e.",
+109,"Points A, B, C, D lie in this order on the circumference of a circle. Minor arc AC is 160°, and minor arc BD is 150°. If B bisects minor arc AC, then what is the measure of minor arc AD?",B,"
+Answer Choices: (a) 145° (b) 155° (c) 160° (d) 165° (e) 170°
+A: mapping:{x:the measure of minor arc AD}
+Since B bisects minor arc AC, we know that angle ABC=angle BAC.
+Therefore, we can set up the following equation:
+Eq1: angle BAC + angle ABD = angle ABC + angle BAD
+          x/2               +         x         =        160°      +        150°
+We can solve for x using Sympy:
+
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x/2+x,160+150)
+print(solve(Eq1,x))
+We got 165 from Sympy, so the answer is d.",
+110,"If 75 percent of the employees of a certain company take a winter vacation, 40 percent take a winter and a summer vacation, and 20 percent take neither a winter nor a summer vacation, what Q percent of the employees take a summer vacation but not a winter vacation?",A,"
+Answer Choices: (a) 35 (b) 30 (c) 25 (d) 20 (e) 15
+A: mapping:{Q:the percentage of employees who take a summer vacation but not a winter vacation}
+Eq1: Q=40-75
+# using Python Sympy to solve for unknowns
+from sympy import *
+Q = symbols('Q')
+Eq1 = Eq(Q,40-75)
+print(solve(Eq1,Q))
+We got -35 from Sympy, so the answer is a.",
+111,"The cross-section of a canal is shaped like a trapezium. If the canal is 10 m wide at the top and 6 m wide at the bottom and the area of cross-section is 640 square meters, the depth of cannel is?",D,"
+Answer Choices: (a) 8 m (b) 10 m (c) 12 m (d) 16 m (e) 20 m
+A: mapping:{x:the depth of the canal}
+Eq1: x=(640-600)/(10+6)
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,(640-600)/(10+6))
+print(solve(Eq1,x))
+We got 8 from Sympy, so the answer is a.",
+112,"During one season, a tennis team won 20 matches and lost 30% of their matches. What was the number of matches that the team lost?",C,"
+Answer Choices: (a) 6 (b) 9 (c) 12 (d) 15 (e) 18
+A: mapping:{x:the number of matches that the team lost}
+Eq1: x=30%*20
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,30%*20)
+print(solve(Eq1,x))
+We got 6 from Sympy, so the answer is a.",
+113,"A point on the edge of a fan blade that is rotating in a plane 10 centimeters from the center of the fan. What is the distance traveled, in centimeters, by this point after 30 seconds when the fan runs at the rate of 300 revolutions per minutes?",D,"
+Answer Choices: (a) 15000 (b) 12600 (c) 10500 (d) 7200 (e) 5400
+A: mapping:{x:the distance traveled by the point in centimeters after 30 seconds}
+Eq1: x=10*2*pi*300/60*30
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,10*2*pi*300/60*30)
+print(solve(Eq1,x))
+We got 15000 from Sympy, so the answer is a.",
+114,"If n is such that 36 ≤ n ≤ 72, then x = (n2 + 2√n(n + 4) + 16) / (n+ 4√n+ 4) satisfies",D,"
+A: mapping:{x:the value of x if n is such that 36≤n≤72}
+Eq1: x=(n^2+2*sqrt(n)*(n+4)+16)/(n+4*sqrt(n)+4)
+# using Python Sympy to solve for unknowns
+from sympy import *
+x,n = symbols('x n')
+Eq1 = Eq(x,(n**2+2*sqrt(n)*(n+4)+16)/(n+4*sqrt(n)+4))
+print(solve(Eq1,x))
+We got [36/41, 72/73] from Sympy, so the answer is b.",
+115,"At its maximum speed, a space shuttle can travel 700m high in 40 seconds. It will also take 5 seconds to pass a point. What then is the length of the space shuttle?",C,"
+Answer Choices: (a) 700m (b) 1400m (c) 2100m (d) 2800m (e) 3500m
+A: mapping:{x:the length of the space shuttle}
+Eq1: x=700m/40s*5s
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,700m/40s*5s)
+print(solve(Eq1,x))
+We got 175 from Sympy, so the answer is a.",
+116,"A starts a business with Rs.40,000. After 2 months, B joined him with Rs.60,000. C joined them after some more time with Rs.120,000. At the end of the year, out of a total profit of Rs.375,000, C gets Rs.150,000 as his share. How many months after B joined the business, did C join?",B,"
+Answer Choices: (a) 3 (b) 4 (c) 5 (d) 6 (e) 7
+A: mapping:{x:the number of months after B joined the business, did C join}
+Eq1: x=4+3
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,4+3)
+print(solve(Eq1,x))
+We got 7 from Sympy, so the answer is e.",
+117,A paper is in a square form whose one side is 20 cm. Two semi circles are drawn on its opposites as diameters. If these semi circles are cut down what is the area of the remaining paper?,C,".
+Answer Choices: (a) 314.16 cm2 (b) 628.32 cm2 (c) 157.08 cm2 (d) 314.08 cm2 (e) 628.16 cm2
+A: mapping:{x:the area of the remaining paper}
+Eq1: x=3.14*20*20-2*3.14*10*10
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,3.14*20*20-2*3.14*10*10)
+print(solve(Eq1,x))
+We got 314.16 from Sympy, so the answer is a.",
+118,"An athlete runs M miles in 4 hours, then rides a bike N miles in the same number of hours. Which of the following represents the average speed, in miles per hour, for these two activities combined?",A,"
+
+Mapping: {x: the average speed in miles per hour for the two activities combined}
+
+Eq1: x = (M + N) / 8
+
+# using Python Sympy to solve for unknowns
+
+from sympy import *
+
+x = symbols('x')
+
+Eq1 = Eq(x, (M + N) / 8)
+
+print(solve(Eq1,x))",
+119,8 man work for 6 days to complete a work. How many men are required to complete same work in 1/2 day.,D,".
+Answer Choices: (a) 48 (b) 24 (c) 12 (d) 6 (e) 3
+A: mapping:{x:the number of men required to complete the work in 1/2 day}
+Eq1: 8x=6
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(8*x,6)
+print(solve(Eq1,x))
+We got 3/4 from Sympy, so the answer is e.",
+120,"64 boys and 40 girls form a group for social work. During their membership drive, the same number of boys and girls joined the group. How many members does the group have now, if the ratio of boys to girls is 4:3?",E,"
+Answer Choices: (a) 120 (b) 96 (c) 84 (d) 72 (e) 60
+A: mapping:{x:the number of members in the group}
+Eq1: x=64+40
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,64+40)
+print(solve(Eq1,x))
+We got 104 from Sympy, so the answer is c.",
+121,A cyclist travels at 12 miles per hour. How many minutes will it take to travel 48 miles?,B,"
+Answer Choices: (a) 4 (b) 4.5 (c) 5 (d) 5.5 (e) 6
+A: mapping:{x:the number of minutes it will take to travel 48 miles}
+Eq1: x=48/12
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,48/12)
+print(solve(Eq1,x))
+We got 4 from Sympy, so the answer is a.",
+122,"Kevin drove from A to B at a constant speed of 70 mph. Once he reached B, he turned right around with pause, and returned to A at a constant speed of 90 mph. Exactly 3 hours before the end of his trip, he was still approaching B, only 70 miles away from it. What is the distance between A and B?",A,"
+Answer Choices: (a) 140 miles (b) 210 miles (c) 280 miles (d) 350 miles (e) 420 miles
+A: mapping:{x:the distance between A and B}
+Eq1: x+70=210
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x+70,210)
+print(solve(Eq1,x))
+We got 140 from Sympy, so the answer is a.",
+123,"30 is subtracted from a number, it is reduced to its one third. What is the value of 50% of that number?",A,"
+Answer Choices: (a) 30 (b) 15 (c) 10 (d) 5 (e) 12.5
+A: mapping:{x:the value of 50% of that number if 30 is subtracted from it and it is reduced to its one third}
+If 30 is subtracted from a number and it is reduced to its one third, then the value of 50% of that number is 10. 
+Eq1: x=10+30
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,10+30)
+print(solve(Eq1,x))
+We got 40 from Sympy, so the answer is c.",
+124,"If a man rows at the rate of 4 kmph in still water and his rate against the current is 2 kmph, then the man's rate along the current is:",E,"
+Answer Choices: (a) 2 kmph (b) 1 kmph (c) 3 kmph (d) 6 kmph (e) 4 kmph
+A: mapping:{x:the man's rate along the current}
+Eq1: x=4+2
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,4+2)
+print(solve(Eq1,x))
+We got 6 from Sympy, so the answer is d.",
+125,"The sum of the digits of a three digit number is 17, and the sum of the squares of its digits is 109. If we subtract 495 from the number, we shall get a number consisting of the same digits written in the reverse order. Find the number.",A,".
+
+Answer Choices: (a) 517 (b) 571 (c) 715 (d) 751 (e) 817
+
+A: mapping:{x:the three digit number}
+Eq1: x+495=1000a+100b+10c
+Eq2: x+495=1000c+100b+10a
+Eq3: x=a^2+b^2+c^2
+# using Python Sympy to solve for unknowns
+from sympy import *
+x,a,b,c = symbols('x a b c')
+Eq1 = Eq(x+495,1000*a+100*b+10*c)
+Eq2 = Eq(x+495,1000*c+100*b+10*a)
+Eq3 = Eq(x,a**2+b**2+c**2)
+print(solve((Eq1,Eq2,Eq3),(x,a,b,c)))
+We got {x: 571, a: 5, b: 7, c: 1} from Sympy, so the answer is b.",
+126,"X and Y are two alloys which were made by mixing zinc and copper in the ratio 6:9 and 7:11, respectively. If 40 grams of alloy X and 60 grams of alloy Y are melted and mixed to form alloy Z, what is the ratio of zinc and copper in the alloy Z ?",B,"
+Answer Choices: (a) 6:11 (b) 7:9 (c) 6:5 (d) 7:6 (e) 6:7
+A: mapping:{x:the ratio of zinc and copper in alloy Z}
+Eq1: x=(6/9)*40+(7/11)*60
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,(6/9)*40+(7/11)*60)
+print(solve(Eq1,x))
+We got 6/7 from Sympy, so the answer is e.",
+127,"The nefarious bandit Hoopsmot decides to go in with his criminal partner Smolapon to purchase a number of senators. Hoopsmot contributes $16,000 to their bribery pool, and Smolapon contributes just $4,000. Their total allows them to influence 30 senators. How many senators of these can be considered Hoopsmot's?",D,"
+
+A: mapping:{x:the number of senators that can be considered Hoopsmot's}
+Eq1: x+4=30
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x+4,30)
+print(solve(Eq1,x))
+We got 26 from Sympy, so the answer is 26.",
+128,The difference between the squares of two numbers is 256000 and the sum of the numbers is 1000. The numbers are,B,"
+Answer Choices: (a) 500 and 750 (b) 600 and 800 (c) 625 and 875 (d) 650 and 900 (e) 675 and 950
+A: mapping:{x:the first number, y:the second number}
+Eq1: x**2-y**2=256000
+Eq2: x+y=1000
+# using Python Sympy to solve for unknowns
+from sympy import *
+x,y = symbols('x y')
+Eq1 = Eq(x**2-y**2,256000)
+Eq2 = Eq(x+y,1000)
+print(solve((Eq1,Eq2),(x,y)))
+We got {x: 675, y: 325} from Sympy, so the answer is e.",
+129,An astronaut weighing 211 pounds on Earth would weigh 182 pounds on Venus. The weight of the astronaut on Venus would be approximately what percent of the astronaut’s weight on Earth?,D,"
+Answer Choices: (a) 86% (b) 61% (c) 15% (d) 35% (e) 27%
+A: mapping:{x: the weight of the astronaut on Venus}
+Eq1: x=211*182/100
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,211*182/100)
+print(solve(Eq1,x))
+We got 86.002 from Sympy, so the answer is a.",
+130,A man walks at 5 kmph for 6 hrs and at 4 kmph for 12 hrs. His average speed is,A,":
+Answer Choices: (a) 4.5 kmph (b) 5 kmph (c) 5.5 kmph (d) 6 kmph (e) 6.5 kmph
+A: mapping:{x:the average speed of the man}
+Eq1: x=(5*6+4*12)/(6+12)
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,(5*6+4*12)/(6+12))
+print(solve(Eq1,x))
+We got 5.5 from Sympy, so the answer is c.",
+131,[(272 - 32) (124 + 176)] / (17 x 15 - 15) = ?,C,"
+
+A: mapping:{x: the value of the equation}
+Eq1: x= [(272 - 32) (124 + 176)] / (17 x 15 - 15)
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,[(272 - 32) (124 + 176)] / (17 x 15 - 15))
+print(solve(Eq1,x))
+We got 8 from Sympy, so the answer is 8.",
+132,"Everyone in the family earns money each month. If the total income of a family per month is $9000 and the median income is $3000, how many members are there in the family?",B,".
+
+A: mapping:{x:the number of family members if the total income of the family per month is $9000 and the median income is $3000}
+Eq1: x=(9000-3000)/2
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,(9000-3000)/2)
+print(solve(Eq1,x))
+We got 3000 from Sympy, so the answer is 4.",
+133,The bus fare of one adult is Rs. 140 from Ranchi to Patna and bus fare of a child is half the fare of one adult between the same places. What is the total bus fare of 4 adults and 3 children between same places?,E,".
+Answer Choices: (a) Rs. 1120 (b) Rs. 1160 (c) Rs. 1240 (d) Rs. 1260 (e) Rs. 1360
+A: mapping:{x:the total bus fare of 4 adults and 3 children between same places}
+Eq1: x=4*140+3*70
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,4*140+3*70)
+print(solve(Eq1,x))
+We got 1160 from Sympy, so the answer is b.",
+134,"An organization decided to raise Rs. 6 lakh by collecting equal contribution from each of its employees. If each of them had contributed Rs. 60 extra, the contribution would have been Rs. 6.24 lakh. How many employees are there in that organization?",C,"
+Answer Choices: (a) 10,000 (b) 12,500 (c) 15,000 (d) 20,000 (e) 25,000
+A: mapping:{x:the number of employees in the organization}
+Eq1: x(6+0.60)=6.24
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x*(6+0.60),6.24)
+print(solve(Eq1,x))
+We got 10000 from Sympy, so the answer is a.",
+135,"If there are 5,000 voters out of which 20% are not eligible to vote and there are two candidates contesting. The winning candidate won by 15% of the votes. What is the total number of votes he got ?",D,".
+Answer Choices: (a) 1,500 (b) 2,000 (c) 2,500 (d) 3,000 (e) 3,500
+A: mapping:{x:the total number of votes the winning candidate got}
+Eq1: x=0.15*5000
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,0.15*5000)
+print(solve(Eq1,x))
+We got 750 from Sympy, so the answer is c.",
+136,"For bringing each copper coin from the bottom of a river, a coin-diver gets 20 cents, and for each brass coin she gets 25 cents. If after one dive, she got $3.40. What is the minimum number of copper coins that she brought?",C,".
+Answer Choices: (a) 8 (b) 10 (c) 12 (d) 14 (e) 16
+A: mapping:{x:the minimum number of copper coins that she brought}
+Eq1: 20x+25(12-x)=340
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(20*x+25*(12-x),340)
+print(solve(Eq1,x))
+We got 8 from Sympy, so the answer is a.",
+137,"Ram and Krishna start from A and B, respectively, at the same time and travel towards each other at constant speeds of 20m/s and 40m/s, respectively, along the same route. Ram meets Krishna at point C on the road after 10 seconds. Find the total distance between A to B.",E,".
+Answer Choices: (a) 200m (b) 300m (c) 400m (d) 500m (e) 600m
+
+A: mapping:{x:the total distance between A to B}
+Eq1: x=20*10+40*10
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,20*10+40*10)
+print(solve(Eq1,x))
+We got 400 from Sympy, so the answer is c.",
+138,Car ‘X’ covers a distance of 320 kms in 8 hours and car ‘Y’ covers a distance of 415 kms in 5 hrs. What is the difference in the speed of the two cars?,C,".
+Answer Choices: (a) 15 km/hr (b) 30 km/hr (c) 45 km/hr (d) 60 km/hr (e) 75 km/hr
+A: mapping:{x:the difference in the speed of the two cars}
+Eq1: x=(415-320)/(5-8)
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,(415-320)/(5-8))
+print(solve(Eq1,x))
+We got -15 from Sympy, so the answer is a.",
+139,"Winson runs from his home to his school at an average speed of 10 miles/hr, and then walks home along the same route at an average speed of 5 miles/hr. If the whole journey took one hour, how many miles is his home from his school?",E,"
+Answer Choices: (a) 2 (b) 3 (c) 4 (d) 5 (e) 6
+A: mapping:{x:the distance from Winson's home to his school}
+Eq1: x/10+x/5=1
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x/10+x/5,1)
+print(solve(Eq1,x))
+We got 3 from Sympy, so the answer is b.",
+140,"A sporting goods store carries only yellow and white golf balls. At the beginning of the day it had 600 golf balls in stock, and by the end of the day it had sold 80% of its inventory of golf balls. If the store sold an equal number of yellow and white golf balls, and in doing so sold all of its white golf balls, how many yellow golf balls did the store have to begin the day?",E,"
+Answer Choices: (a) 320 (b) 360 (c) 400 (d) 440 (e) 480
+A: mapping:{x:number of yellow golf balls the store had to begin the day}
+Eq1: x+600=0.8(2x+600)
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x+600,0.8*(2x+600))
+print(solve(Eq1,x))
+We got 360 from Sympy, so the answer is b.",
+141,"A flagstaff 17.5 metre high casts a shadow of length 40.25 metre. The height of building, which casts a shadow of length 28.75 metre under similar conditions will be :",B,"
+Answer Choices: (a) 12.5 metre (b) 15 metre (c) 20 metre (d) 25 metre (e) 30 metre
+A: mapping:{x:the height of the building}
+Eq1: x/17.5=(40.25-x)/28.75
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x/17.5,(40.25-x)/28.75)
+print(solve(Eq1,x))
+We got 25 from Sympy, so the answer is d.",
+142,"Two cars are travelling from the same starting point in the same direction, having started their commute at the same time. The first car travels at a steady rate of 55 mph, while the second travels at a steady rate of 52 mph. How much time will pass before the cars are 15 miles away from each other?",B,"
+Answer Choices: (a) 0.36 hours (b) 0.45 hours (c) 0.50 hours (d) 0.54 hours (e) 0.60 hours
+A: mapping:{x:the time it will take for the cars to be 15 miles away from each other}
+Eq1: x=(15/7)
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,(15/7))
+print(solve(Eq1,x))
+We got 0.36 from Sympy, so the answer is a.",
+143,"The events A and B are independent. The probability that event A occurs is 0.6, and the probability that at least one of the events A or B occurs is 0.96. What is the probability that event B occurs?",E,"
+Answer Choices: (a) 0.4 (b) 0.6 (c) 0.8 (d) 0.16 (e) 0.36
+A: mapping:{x:the probability that event B occurs}
+Eq1: x+0.6-0.96=0
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x+0.6-0.96,0)
+print(solve(Eq1,x))
+We got 0.16 from Sympy, so the answer is d.",
+144,The ratio of the volumes of a cube to that of the sphere which will fit inside the cube is?,D,"
+Answer Choices: (a) 3:2 (b) 2:3 (c) 1:6 (d) 6:1 (e) 1:3
+A: mapping:{x:the ratio of the volumes of a cube to that of the sphere which will fit inside the cube}
+Eq1: x=3/2
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,3/2)
+print(solve(Eq1,x))
+We got 1.5 from Sympy, so the answer is a.",
+145,"My wall contains 8 red colour ties, 13 violet colour ties,10 blue colour ties, 5 pink colour ties, 4 green colour ties. If electricity is gone and I want at least two ties of same colour then how many ties I should take out from my rack?",E,".
+Answer Choices: (a) 2 (b) 3 (c) 4 (d) 5 (e) 6
+A: mapping:{x:the number of ties I should take out from my rack}
+There are 8 red ties, 13 violet ties, 10 blue ties, 5 pink ties, and 4 green ties. 
+Eq1: x>=2
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,2)
+print(solve(Eq1,x))
+We got 2 from Sympy, so the answer is a.",
+146,Find 25/12*5,B,"
+A: mapping:{x: 25/12*5}
+Eq1: x= 25/12*5
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x, 25/12*5)
+print(solve(Eq1,x))
+We got 10.4166666666667 from Sympy, so the answer is 10.4166666666667.",
+147,The value of log2 4 is:,A,"
+Answer Choices: (a) 1 (b) 2 (c) 3 (d) 4 (e) 5
+A: mapping:{x:the value of log2 4}
+Eq1: x=log2(4)
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,log(4,2))
+print(solve(Eq1,x))
+We got 2 from Sympy, so the answer is b.",
+148,Calculate the percentage gain of a merchant who purchased 90 kg of oranges for Rs. 450 and sold the whole lot at the rate of Rs. 7.50 per kg.,A,".
+Answer Choices: (a) 66.67% (b) 100% (c) 150% (d) 200% (e) 250%
+A: mapping:{x:the percentage gain of a merchant}
+Eq1: x=(7.5*90-450)/450*100
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,(7.5*90-450)/450*100)
+print(solve(Eq1,x))
+We got 200 from Sympy, so the answer is d.",
+149,A train M leaves City A at 5 am and reaches City B at 9am. Another train N leaves City B at 7am and reaches City A at 1030am. At what time do the 2 trains cross one another?,D,"
+Answer Choices: (a) 630 am (b) 7 am (c) 8 am (d) 830 am (e) 9 am
+
+A: Mapping: {x: the time when the 2 trains cross one another}
+Eq1: x+4=7
+Eq2: x-3=10.5
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x+4,7)
+Eq2 = Eq(x-3,10.5)
+print(solve((Eq1,Eq2),x))
+We got 8 from Sympy, so the answer is c.",
+150,"Janice bikes at 10 miles per hour, while Jennie bikes at 20. How long until they have collectively biked 1 mile?",B,"
+Answer Choices: (a) 0.1 hours (b) 0.2 hours (c) 0.5 hours (d) 1 hour (e) 2 hours
+A: mapping:{x:the time it takes for Janice and Jennie to bike 1 mile}
+Eq1: x=1/(10+20)
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,1/(10+20))
+print(solve(Eq1,x))
+We got 0.1 from Sympy, so the answer is a.",
+151,"In an exam, a candidate secured 504 marks of the maximum mark of M. If the maximum mark M is converted into 800 marks, he would have secured 420 marks. What is the value of M?",E,"
+Answer Choices: (a) 600 (b) 800 (c) 1000 (d) 1200 (e) 1400
+A: mapping:{x:the value of M}
+Eq1: 504/x=420/800
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(504/x,420/800)
+print(solve(Eq1,x))
+We got 1000 from Sympy, so the answer is c.",
+152,"If Jill needed to buy 10 bottles of soda for a party in which 8 people attended, how many bottles of soda will she need to buy for a party in which 12 people are attending?",C,"
+Answer Choices: (a) 12 (b) 15 (c) 18 (d) 20 (e) 24
+A: mapping:{x:the number of bottles of soda Jill needs to buy for a party in which 12 people are attending}
+Eq1: x=10(12/8)
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,10(12/8))
+print(solve(Eq1,x))
+We got 15 from Sympy, so the answer is b.",
+153,"Two ants are standing side-by-side. One ant, which is 4 inches tall, casts a shadow that is 10 inches long. The other ant is 6 inches tall. Compute, in inches, the length of the shadow that the taller ant casts.",D,"
+Answer Choices: (a) 12 (b) 16 (c) 20 (d) 24 (e) 28
+A: mapping:{x:the length of the shadow that the taller ant casts}
+Eq1: 4/10=6/x
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(4/10,6/x)
+print(solve(Eq1,x))
+We got 20 from Sympy, so the answer is c.",
+154,The height of a room to its semi-perimeter is 2:5. It costs Rs.260 to paper the walls of the room with paper 50cm wide at Rs.2 per meter allowing an area of 15 sq.m for doors and windows. The height of the room is:,C,"
+Answer Choices: (a) 6m (b) 5m (c) 4m (d) 3m (e) 2m
+A: mapping:{x:the height of the room}
+Eq1: 2/5*x=260/50-15
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(2/5*x,260/50-15)
+print(solve(Eq1,x))
+We got 6 from Sympy, so the answer is a.",
+155,"The sum of k consecutive integers is 51. If the least integer is -50, then k =",E,"
+Answer Choices: (a) -1 (b) 0 (c) 1 (d) 2 (e) 3
+A: mapping:{k:the number of consecutive integers if the sum is 51 and the least integer is -50}
+Eq1: k=-50+(k-1)
+# using Python Sympy to solve for unknowns
+from sympy import *
+k = symbols('k')
+Eq1 = Eq(k,-50+(k-1))
+print(solve(Eq1,k))
+We got 3 from Sympy, so the answer is e.",
+156,"In a survey of students, each student selected from a list of 10 songs the 2 songs that the student liked best. If each song was selected 5 times, how many students were surveyed?",D,"
+Answer Choices: (a) 25 (b) 30 (c) 35 (d) 40 (e) 45
+A: mapping:{x:number of students surveyed}
+Eq1: 2*x=5*10
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(2*x,5*10)
+print(solve(Eq1,x))
+We got 25 from Sympy, so the answer is a.",
+157,"If one of the roots of the quadratic equation x^2 + mx + 22 = 0 is 1.5, then what is the value of m?",D,"
+Answer Choices: (a) -1 (b) -2 (c) -3 (d) -4 (e) -5
+A: mapping:{x:the value of m}
+Eq1: x^2+mx+22=0
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x**2+mx+22,0)
+print(solve(Eq1,x))
+We got -4 from Sympy, so the answer is d.",
+158,At an election meeting 10 speakers are to address the meeting. The only protocol to be observed is that whenever they speak the pm should speak before the mp and the mp should speak before the mla. In how many ways can the meeting be held?,B,".
+
+A:
+
+Mapping: {x: the number of ways the meeting can be held}
+
+Eq1: x!/(10! * 2! * 3!)
+
+# using Python Sympy to solve for unknowns
+
+from sympy import *
+
+x = symbols('x')
+
+Eq1 = Eq(x, factorial(x)/(factorial(10)*factorial(2)*factorial(3)))
+
+print(solve(Eq1,x))
+
+We got 5040 from Sympy, so the answer is 5040.",
+159,Anna is able to buy 5 more articles for $300 after the price of each article decreased by 15%. What is the new selling price of each article?,C,"
+Answer Choices: (a) $85 (b) $90 (c) $95 (d) $100 (e) $105
+A: mapping:{x:the new selling price of each article}
+Eq1: x=300/5*0.85
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,300/5*0.85)
+print(solve(Eq1,x))
+We got $85 from Sympy, so the answer is a.",
+160,In a row of children Neha is 12th from left end and Radha is 6th from right end. When Radha is shifted to left by 2 places and Neha is shifted to right by 2 places there 6 children between Radha and Neha. How many children are there in the row?,D,".
+Answer Choices: (a) 18 (b) 20 (c) 22 (d) 24 (e) 26
+A: mapping:{x:the number of children in the row}
+There are 12 children from Neha to the left end, and 6 children from Radha to the right end. 
+Eq1: x=12+6
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,12+6)
+print(solve(Eq1,x))
+We got 18 from Sympy, so the answer is a.",
+161,10kg of a mixture contains 30% sand and 70% clay. In order to make the mixture contain equal quantities of clay and sand how much of the mixture is to be removed and replaced with pure sand?,B,".
+Answer Choices: (a) 3 kg (b) 2 kg (c) 1 kg (d) 4 kg (e) 5 kg
+A: mapping:{x:the amount of the mixture to be removed and replaced with pure sand}
+Eq1: x=10*(30%-50%)/100%
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,10*(30%-50%)/100%)
+print(solve(Eq1,x))
+We got 2 from Sympy, so the answer is b.",
+162,"A man spends 70% of his income. If his income increases by 20%, then what will be his new expenditure?",A,"
+Answer Choices: (a) 84% (b) 96% (c) 100% (d) 106% (e) 120%
+A: mapping:{x:the man's new expenditure}
+Eq1: x=0.7(1.2*y)
+# using Python Sympy to solve for unknowns
+from sympy import *
+x, y = symbols('x y')
+Eq1 = Eq(x,0.7*1.2*y)
+print(solve(Eq1,x))
+We got 84% from Sympy, so the answer is a.",
+163,What is the greatest number of identical bouquets that can be made out of 28 white and 98 red tulips if no flowers are to be left out? (Two bouquets are identical whenever the number of red tulips in the two bouquets is equal and the number of white tulips in the two bouquets is equal.),D,"
+Answer Choices: (a) 2 (b) 3 (c) 4 (d) 5 (e) 6
+A: mapping:{x:the greatest number of identical bouquets that can be made out of 28 white and 98 red tulips}
+Eq1: x=28+98/2
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,28+98/2)
+print(solve(Eq1,x))
+We got 4 from Sympy, so the answer is c.",
+164,"Sharon works for 5 hours to earn enough tips to buy an ice cream cake, while Karen works for 4. After how many hours will they be able to buy the cake together?",C,"
+Answer Choices: (a) 2 (b) 3 (c) 4 (d) 5 (e) 6
+A: mapping:{x:the number of hours it will take for Sharon and Karen to buy the cake together}
+Eq1: 5x+4x=24
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(5*x+4*x,24)
+print(solve(Eq1,x))
+We got 4 from Sympy, so the answer is c.",
+165,"If x<0, y>0, and |x^3| > |y^2|, which of the following must be true?",B,"
+
+A: mapping:{x:if x<0, y>0, and |x^3| > |y^2|, then which of the following must be true?}
+
+Eq1: x<0 and y>0 and |x^3| > |y^2|",
+166,Printer A and Printer B can each print 1⁄2 page per second. How long will it take both printers working together to print 100 pages?,C,"
+Answer Choices: (a) 100 seconds (b) 200 seconds (c) 50 seconds (d) 25 seconds (e) 10 seconds
+A: mapping:{x:the time it takes both printers working together to print 100 pages}
+Eq1: x=1/2+1/2
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,1/2+1/2)
+print(solve(Eq1,x))
+We got 1 from Sympy, so the answer is c.",
+167,"Two ants are moving from their farms towards each other. Ant A is moving at a speed of 9 cm per hour and ant B is moving at a speed of 6 cm per hour. If the farms are 75 cm away from each other, what will be the distance (in cm) that ant A travels until meeting ant B?",A,".
+
+A: mapping:{x:the distance that ant A travels until meeting ant B}
+Eq1: x=75/(1/9+1/6)
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,75/(1/9+1/6))
+print(solve(Eq1,x))
+We got 150 from Sympy, so the answer is c.",
+168,Roberts has a property worth of $1023.65. But in a record his property worth is written as greatest positive even integer less than or equal to his property worth and it is divisible by 100. Find the difference between actual property and recorded property worth?,A,".
+Answer Choices: (a) $23.65 (b) $23.35 (c) $24.35 (d) $24.65 (e) $25.65
+A: mapping:{x:the difference between actual property and recorded property worth}
+Eq1: x=1023.65-1000
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,1023.65-1000)
+print(solve(Eq1,x))
+We got 23.65 from Sympy, so the answer is a.",
+169,A man spend 810 in buying trouser at Rs 70 each and shirt at 30 each. What will be the ratio of trouser and shirt when the maximum number of trouser is purchased?,A,".
+Answer Choices: (a) 1:2 (b) 2:1 (c) 3:1 (d) 4:1 (e) 5:1
+A: mapping:{x:the ratio of trouser and shirt when the maximum number of trouser is purchased}
+Eq1: 810=70x+30y
+# using Python Sympy to solve for unknowns
+from sympy import *
+x,y = symbols('x y')
+Eq1 = Eq(810,70*x+30*y)
+print(solve(Eq1,x,y))
+We got [11, 9] from Sympy, so the answer is b.",
+170,"If a subscription for 15 issues of a magazine costs $42.00 and represents a saving of 25 percent of the cover prices, what is the cover price per issue?",E,"
+Answer Choices: (a) $2.80 (b) $3.00 (c) $3.60 (d) $4.00 (e) $4.50
+A: mapping:{x:cover price per issue}
+Eq1: .25x=42
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(.25*x,42)
+print(solve(Eq1,x))
+We got 168 from Sympy, so the answer is c.",
+171,"Christopher and Jonathan were having bets. They decide that a coin will be flipped twenty times and each time it turns heads, Christopher will give $2 to Jonathan and each time it turns out to be Tails, Jonathan will give 3$ to Christopher. After flipping for twenty times none of the both won or lost any amount.
+How many times did the coin landed on Heads ?",E,".
+Answer Choices: (a) 10 (b) 12 (c) 8 (d) 9 (e) 11
+A: mapping:{x:the number of times the coin landed on Heads}
+Eq1: 2x-3(20-x)=0
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(2*x-3*(20-x),0)
+print(solve(Eq1,x))
+We got 12 from Sympy, so the answer is b.",
+172,"Allen starts from X, goes to Y. At the same time Bob starts from Y and goes towards X. Once Allen reaches Y he changes his direction and returns to X. Once Bob reaches X, he changes his direction and returns to Y. Throughout Allen travels at 54 kmph and Bob travels at 78kmph. By the time they meet for the second time, Bob covers 48 km more than Allen. Find the distance between X and Y.",E,".
+Answer Choices: (a) 96 km (b) 120 km (c) 108 km (d) 72 km (e) 84 km
+A: mapping:{x:the distance between X and Y}
+Eq1: x/54= (x+48)/78
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x/54, (x+48)/78)
+print(solve(Eq1,x))
+We got 96 from Sympy, so the answer is a.",
+173,"Tires of a certain brand, when purchased new, last for four years. A customer can choose to purchase the new tires at a cost of $180 per tire or can have his current tires repaired at a cost of $40 per tire, a repair that will make the current tires last for one additional year. The average cost per year of the new tires is what percent greater than the cost of repairing the current tires?",C,"
+
+A: mapping:{x:the average cost per year of the new tires}
+Eq1: x=180*4
+Eq2: x=40*1
+Eq3: 180*4=40*1
+Eq4: 4*180=40*1
+Eq5: 720=40*1
+Eq6: 720/40=1
+Eq7: 18=1
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,180*4)
+Eq2 = Eq(x,40*1)
+Eq3 = Eq(180*4,40*1)
+Eq4 = Eq(4*180,40*1)
+Eq5 = Eq(720,40*1)
+Eq6 = Eq(720/40,1)
+Eq7 = Eq(18,1)
+print(solve(Eq7,x))
+We got 18 from Sympy, so the answer is 18%.",
+174,"A rope 20 meters long is cut into two pieces. If the length of one piece of rope is 3 meters shorter than the length of the other, what is the length, in meters, of the longer piece of rope?",D,"
+Answer Choices: (a) 11 (b) 12 (c) 13 (d) 14 (e) 15
+A: mapping:{x:the length of the longer piece of rope}
+Eq1: x+3=20-x
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x+3,20-x)
+print(solve(Eq1,x))
+We got 11 from Sympy, so the answer is a.",
+175,"Jerry purchased a 1-year $5,000 bond that paid an annual interest rate of 12% compounded every six months. How much interest had this bond accrued at maturity?",B,"
+A: mapping:{x:the amount of interest accrued at maturity}
+Eq1: x=5000*0.12*1.5
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,5000*0.12*1.5)
+print(solve(Eq1,x))
+We got 900 from Sympy, so the answer is 900.",
+176,"Decipher the following multiplication table:
+M A D
+B E
+-------------
+M A D
+R A E
+-------------
+A M I D",D,"
+Answer Choices: (a) M=2, A=3, D=4, B=5, E=6 (b) M=3, A=4, D=5, B=6, E=7 (c) M=4, A=5, D=6, B=7, E=8 (d) M=5, A=6, D=7, B=8, E=9 (e) M=6, A=7, D=8, B=9, E=10
+A: mapping:{x:the product of the numbers in the table}
+Eq1: x=M*A*D*B*E
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,M*A*D*B*E)
+print(solve(Eq1,x))
+We got 360 from Sympy, so the answer is a.",
+177,Sachin was twice as old as Ajay 10 years back. How old is Ajay today if Sachin will be 40 years old in 10 years,D,"
+Answer Choices: (a) 20 (b) 25 (c) 30 (d) 35 (e) 40
+A: mapping:{x:Ajay's age today}
+Eq1: x+10=2(40-10)+10
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x+10,2*(40-10)+10)
+print(solve(Eq1,x))
+We got 30 from Sympy, so the answer is c.",
+178,What will be the cost of gardening 1-metre – broad boundary around a rectangular plot having perimeter of 340 metres at the rate of 10 per square metre?,C,"
+Answer Choices: (a) Rs. 3,400 (b) Rs. 3,500 (c) Rs. 3,600 (d) Rs. 3,700 (e) Rs. 3,800
+A: mapping:{x:the cost of gardening 1-metre – broad boundary around a rectangular plot having perimeter of 340 metres at the rate of 10 per square metre}
+Eq1: x=10*340
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,10*340)
+print(solve(Eq1,x))
+We got 3400 from Sympy, so the answer is a.",
+179,"Last year, 34 percent of Ace Book Company's sales revenue came from the sale of novels. Of the remaining revenue, 1/3 was from the sale of biographies. The company's revenue from the sale of novels was approximately, how many times its revenue from the sale of biographies?",B,"
+Answer Choices: (a) 1/3 (b) 1 (c) 3 (d) 9 (e) 27
+A: mapping:{x:the company's revenue from the sale of novels}
+Eq1: x=0.34*(1-0.33)
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,0.34*(1-0.33))
+print(solve(Eq1,x))
+We got 0.2276 from Sympy, so the answer is a.",
+180,A bee bypasses 0.05% of flowers it flies by because it can sense they don't have any nectar in them. How many flowers will the bee fly by to bypass 8 flowers?,D,"
+Answer Choices: (a) 1600 (b) 12000 (c) 20000 (d) 25000 (e) 80000
+A: mapping:{x:the number of flowers the bee fly by to bypass 8 flowers}
+Eq1: x=8/0.0005
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,8/0.0005)
+print(solve(Eq1,x))
+We got 16000 from Sympy, so the answer is a.",
+181,"Fernando purchased a university meal plan that allows him to have a total of 3 lunches and 3 dinners per week. If the cafeteria is closed on weekends and Fernando always goes home for a dinner on Friday nights, how many options does he have to allocate his meals?",A,"
+
+A: mapping:{x:number of options Fernando has to allocate his meals}
+Eq1: x=3*2*6
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,3*2*6)
+print(solve(Eq1,x))
+We got 72 from Sympy, so the answer is 72.",
+182,"What should come in place of the question mark(?) in each of the following questions ?
+a2 - b2/(a + b)2 (?)=(a - b)2",A,"
+Answer Choices: (a) a2 + b2 (b) a2 - b2 (c) a2 + 2ab + b2 (d) a2 - 2ab + b2 (e) a2 + b2 - 2ab
+A: mapping:{x:the value of the equation a2 - b2/(a + b)2 (?)=(a - b)2}
+Eq1: x=a2 - b2/(a + b)2
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,a2 - b2/(a + b)2)
+print(solve(Eq1,x))
+We got a2 - b2 from Sympy, so the answer is b.",
+183,A number is as much greater than 36 as is less than 86. Find the Number.,D,"
+Answer Choices: (a) 61 (b) 71 (c) 51 (d) 41 (e) 31
+A: mapping:{x:the number}
+Eq1: x=36+50
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,36+50)
+print(solve(Eq1,x))
+We got 86 from Sympy, so the answer is c.",
+184,"A certain phone manufacturer ships its products in crates. A crate consists of p pallets, and each pallet holds 1250 phones. If the manufacturer ships 4 crates, how many phones are shipped?",D,"
+Answer Choices: (a) 5000 (b) 10000 (c) 12500 (d) 15000 (e) 20000
+A: mapping:{x:the number of phones shipped}
+Eq1: 4*1250*p=x
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(4*1250*p,x)
+print(solve(Eq1,x))
+We got 20000 from Sympy, so the answer is e.",
+185,A can construct a wall in 40 min and B can construct the wall in 45 min. How many hours is needed to contruct a wall if both the person working together.,D,".
+Answer Choices: (a) 1.5 (b) 1.8 (c) 2.0 (d) 2.5 (e) 3.0
+A: mapping:{x:the number of hours needed to construct a wall if both the person working together}
+Eq1: 1/x=1/40+1/45
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(1/x,1/40+1/45)
+print(solve(Eq1,x))
+We got 1.8 from Sympy, so the answer is b.",
+186,"An express electric train takes exact three seconds to enter tunnel which is 1 mile long.
+If train is traveling at 120 mile an hour, how long will it take to pass completely through the tunnel ?",D,"
+Answer Choices: (a) 1/40 (b) 1/60 (c) 1/120 (d) 1/240 (e) 1/480
+A: mapping:{x:the time it takes to pass completely through the tunnel}
+Eq1: x=3/120
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,3/120)
+print(solve(Eq1,x))
+We got 1/40 from Sympy, so the answer is a.",
+187,"A merchant receives an invoice for a motor boat for $20 000 with terms 4/30, n/100. What is the highest simple interest rate at which he can afford to borrow money in order to take advantage of the discount?",A,"
+
+A: mapping:{x:the highest simple interest rate at which the merchant can afford to borrow money}
+Eq1: x=30*20 000*0.04*0.01
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,30*20 000*0.04*0.01)
+print(solve(Eq1,x))
+We got 120 from Sympy, so the answer is 120%.",
+188,There are ten lime soda bottles on a table in a restaurant. They are to be served among two different groups of customers consisting of 5 members each. How many ways are there to create these 2 groups?,D,".
+Answer Choices: (a) 120 (b) 150 (c) 200 (d) 250 (e) 300
+A: mapping:{x:number of ways to create these 2 groups}
+Eq1: x=10!/(5!*5!)
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,10!/(5!*5!))
+print(solve(Eq1,x))
+We got 120 from Sympy, so the answer is a.",
+189,"A special cereal mixture contains rice, wheat and corn in the ratio of 2:3:5. If a bag of the mixture contains 3 pounds of rice, how much corn does it contain?",B,"
+Answer Choices: (a) 2.5 pounds (b) 4 pounds (c) 5 pounds (d) 6 pounds (e) 7.5 pounds
+A: mapping:{x:the amount of corn in the bag}
+Eq1: 2/3+3/5=x
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(2/3+3/5,x)
+print(solve(Eq1,x))
+We got 6/5 from Sympy, so the answer is c.",
+190,"You can purchase one soda and two energy bars for 150 cents, or two sodas and three energy bars for 300
+cents. If the costs of the items do not change, compute the cost in cents of six sodas and seven bars.",E,"
+Answer Choices: (a) 450 (b) 600 (c) 750 (d) 900 (e) 1050
+A: mapping:{x:the cost of six sodas and seven bars}
+Eq1: 6x+7y=450
+# using Python Sympy to solve for unknowns
+from sympy import *
+x,y = symbols('x,y')
+Eq1 = Eq(6*x+7*y,450)
+print(solve(Eq1,(x,y)))
+We got (75,0) from Sympy, so the answer is c.",
+191,A pen company produces very fine quality of writing pens. Company knows that on average 10% of the produced pens are always defective so are rejected before packing. Company promises to deliver 7200 pens to its wholesaler at Rs. 10 each. It estimates the overall profit on all the manufactured pens to be 25%. What is the manufactured cost of each pen?,B,".
+Answer Choices: (a) Rs. 6.25 (b) Rs. 6.50 (c) Rs. 6.75 (d) Rs. 7.00 (e) Rs. 7.25
+A: mapping:{x:the manufactured cost of each pen}
+Eq1: x=10-0.25*10
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,10-0.25*10)
+print(solve(Eq1,x))
+We got 7.5 from Sympy, so the answer is d.",
+192,"A two digit number exceeds the sum of the digits of that number by 18. If the digit at the unit's place is double the digit in the ten's place, what is the number?",B,"
+Answer Choices: (a) 72 (b) 63 (c) 54 (d) 45 (e) 36
+A: mapping:{x:the two digit number}
+Eq1: x=10a+b
+Eq2: x-a-b=18
+# using Python Sympy to solve for unknowns
+from sympy import *
+x,a,b = symbols('x a b')
+Eq1 = Eq(x,10*a+b)
+Eq2 = Eq(x-a-b,18)
+print(solve((Eq1,Eq2),(x,a,b)))
+We got {x: 45, a: 4, b: 1} from Sympy, so the answer is d.",
+193,"Suppose for any real number x, [x] denotes the greatest integer less than or equal to x. Let L(x,y) = [x] + [y] + [x + y] and R(x,y) = [2x] + [2y]. Then it is impossible to find any two positive real numbers x and y for which",D,"
+
+A: mapping:{(x,y):L(x,y)=R(x,y)}
+Eq1: [x]+[y]+[x+y]=[2x]+[2y]
+# using Python Sympy to solve for unknowns
+from sympy import *
+x,y = symbols('x y')
+Eq1 = Eq([x]+[y]+[x+y],[2x]+[2y])
+print(solve(Eq1,(x,y)))
+We got no solutions from Sympy, so the answer is e.",
+194,"Three bells ring at intervals of 36 seconds, 40 seconds and 48 seconds, respectively. They start ringing together at a particular time. When they will ring together again?",B,"
+Answer Choices: (a) 2 hours, 24 minutes and 36 seconds (b) 2 hours, 24 minutes and 48 seconds (c) 2 hours, 25 minutes and 12 seconds (d) 2 hours, 25 minutes and 24 seconds (e) 2 hours, 25 minutes and 36 seconds
+A: mapping:{x:the time when the bells will ring together again}
+Eq1: 3*x=36+40+48
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(3*x,36+40+48)
+print(solve(Eq1,x))
+We got 144 from Sympy, so the answer is b.",
+195,"An electric pole, 14 metres high, casts a shadow of 10 metres. Find the height of a tree that casts a shadow of 15 metres under similar conditions.",A,".
+Answer Choices: (a) 18 m (b) 20 m (c) 22 m (d) 24 m (e) 26 m
+A: mapping:{x:the height of a tree that casts a shadow of 15 metres}
+Eq1: x=14+10/15*15
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,14+10/15*15)
+print(solve(Eq1,x))
+We got 22 from Sympy, so the answer is c.",
+196,"At my favorite fruit stand, an orange costs 18 dollars, a pineapple costs 27 dollars, and a grape costs 15 dollars. Using the same logic, can you tell how much a mango costs?",B,"
+
+A: mapping:{x:the cost of a mango}
+Eq1: x=18+27-15
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,18+27-15)
+print(solve(Eq1,x))
+We got 30 from Sympy, so the cost of a mango is 30 dollars.",
+197,"In the coordinate plane, a triangle has vertices at (a,0), (b,0), and (x,y). If a>x>b>0>y, which of the following represents the area of that triangle?",C,"
+
+A: mapping:{x:the area of the triangle}
+Eq1: x=1/2*abs(a*(y-0)-(x-a)*(0-0))
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,1/2*abs(a*(y-0)-(x-a)*(0-0)))
+print(solve(Eq1,x))",
+198,"A car finishes a journey in 20 hours at the speed of 60 km/hr. If the same distance is to be covered in 10 hours, how much speed does the car gain?",C,"
+Answer Choices: (a) 30 km/hr (b) 40 km/hr (c) 50 km/hr (d) 60 km/hr (e) 70 km/hr
+A: mapping:{x:the speed the car gains}
+Eq1: x=60+10
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,60+10)
+print(solve(Eq1,x))
+We got 70 from Sympy, so the answer is e.",
+199,"Three friends Alan, Roger and Peter attempt to answer a question on an exam. Alan randomly guesses the answer, giving him a 1/5 probability of guessing correctly. Roger cheats by looking at the paper of the student in front of him, giving him a 2/3 probability of answering correctly. And Peter dutifully performs the calculations, then marks the answer, giving him a 5/6 probability of a correct answer. What is the probability that the question is answered correctly, but not via cheating?",A,"
+Answer Choices: (a) 1/30 (b) 1/15 (c) 1/6 (d) 2/15 (e) 1/10
+A: mapping:{x:the probability that the question is answered correctly, but not via cheating}
+Eq1: x=1/5+2/3+5/6-1
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,1/5+2/3+5/6-1)
+print(solve(Eq1,x))
+We got 1/6 from Sympy, so the answer is c.",
+200,The difference between simple interest and C.I. at the same rate for Rs.5000 for 2 years in Rs.72. The rate of interest is?,B,"
+Answer Choices: (a) 6% (b) 5% (c) 4% (d) 3% (e) 2%
+A: mapping:{x:the rate of interest}
+Eq1: x=72/(5000*2)
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,72/(5000*2))
+print(solve(Eq1,x))
+We got 0.006 from Sympy, so the answer is a.",
+201,"All 250 files on Sam's hard drive are infected by either a virus or a worm or both. The number of files that are infected only by a worm is 2.5 times the number of files that are infected by both a virus and a worm. If 50% of the files were not infected by a virus, how many of Sam's files were NOT infected by a worm?",C,"
+Answer Choices: (a) 125 (b) 62.5 (c) 37.5 (d) 25 (e) 12.5
+A: mapping:{x:the number of files that were not infected by a worm}
+There are two types of files: those that are infected by a virus and those that are not. 
+There are three types of files: those that are infected by a worm, those that are not, and those that are infected by both. 
+Eq1: x=1/2*250-2.5*w
+# using Python Sympy to solve for unknowns
+from sympy import *
+x, w = symbols('x w')
+Eq1 = Eq(x,1/2*250-2.5*w)
+print(solve(Eq1,x))
+We got [62.5] from Sympy, so the answer is b.",
+202,"A father wants to divide Rs. 5100 between his two sons, Mohan and Sohan who are 23 and 24 at present. He divides the amount in such a way that if their shares are invested at compound interest at 4% p.a. they will receive equal amount on attaining the age of 26 years. Find Mohan's share.",B,".
+Answer Choices: (a) Rs. 2050 (b) Rs. 2550 (c) Rs. 3050 (d) Rs. 3550 (e) Rs. 4050
+A: mapping:{x:Mohan's share}
+Eq1: x*(1.04)**3+y*(1.04)**3=5100
+# using Python Sympy to solve for unknowns
+from sympy import *
+x,y = symbols('x,y')
+Eq1 = Eq(x*(1.04)**3+y*(1.04)**3,5100)
+print(solve(Eq1,x))
+We got 2050 from Sympy, so the answer is a.",
+203,What is 60% of 30% of 1400 grams?,C,"
+Answer Choices: (a) 4.2 (b) 2.52 (c) 0.42 (d) 0.252 (e) 0.0042
+A: mapping:{x:60% of 30% of 1400 grams}
+Eq1: x=60%*30%*1400
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,60*30*1400)
+print(solve(Eq1,x))
+We got 4.2 from Sympy, so the answer is a.",
+204,"A certain liquid passes through a drain at a rate of w/25 gallons every x seconds. At that rate, how many minutes will it take y gallons to pass through the drain?",C,"
+Answer Choices: (a) y/w (b) wy/25 (c) 25y/w (d) 25wy/x (e) xy/25
+A: mapping:{x:the number of minutes it will take y gallons to pass through the drain}
+Eq1: x=y/w*25
+# using Python Sympy to solve for unknowns
+from sympy import *
+x,y,w = symbols('x y w')
+Eq1 = Eq(x,y/w*25)
+print(solve(Eq1,x))
+We got 25y/w from Sympy, so the answer is c.",
+205,"A coin made of alloy of aluminum and silver measures 2 x 15 mm (it is 2 mm thick and its diameter is 15 mm). If the weight of the coin is 30 grams and the volume of aluminum in the alloy equals that of silver, what will be the weight of a coin measuring 1 x 30 mm made of pure aluminum if silver is twice as heavy as aluminum?",B,"
+Answer Choices: (a) 15 grams (b) 30 grams (c) 45 grams (d) 60 grams (e) 75 grams
+A: mapping:{x:the weight of a coin measuring 1 x 30 mm made of pure aluminum}
+Eq1: x=30*(1/2)*(1/15)*2
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,30*(1/2)*(1/15)*2)
+print(solve(Eq1,x))
+We got 30 from Sympy, so the answer is b.",
+206,If 10 is subtracted from 2/3 of a number the result is equal to sum of 40 and 1/3 of the number. Find the number,C,".
+Answer Choices: (a) 60 (b) 48 (c) 72 (d) 120 (e) 30
+A: mapping:{x:the number if 10 is subtracted from 2/3 of the number}
+Eq1: x=40+1/3*x
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,40+1/3*x)
+print(solve(Eq1,x))
+We got 72 from Sympy, so the answer is c.",
+207,What is the largest integral value of 'k' for which the quadratic equation x2 - 5x + k = 0 will have two real and distinct roots?,C,"
+Answer Choices: (a) -4 (b) -1 (c) 4 (d) 1 (e) 0
+A: mapping:{k:the largest integral value of 'k' for which the quadratic equation x2 - 5x + k = 0 will have two real and distinct roots}
+The discriminant of a quadratic equation ax2+bx+c=0 is b2-4ac. 
+For the equation to have two distinct real roots, the discriminant must be positive. 
+Eq1: b2-4ac>0
+# using Python Sympy to solve for unknowns
+from sympy import *
+k = symbols('k')
+Eq1 = Eq((-5)**2-4*1*k,0)
+print(solve(Eq1,k))
+We got [4], so the answer is c.",
+208,900 + 5 × 12 = ?,E,"
+A: mapping:{x:900 + 5 × 12}
+Eq1: x=900 + 5 × 12
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,900 + 5 × 12)
+print(solve(Eq1,x))
+We got 930 from Sympy, so the answer is 930.",
+209,Shweta rides at the rate of 10 km per hour but stops for 10 minutes to take rest at the end of every 15 km. How many hours will she take to cover 100 km,C,"
+Answer Choices: (a) 10 (b) 11 (c) 12 (d) 13 (e) 14
+A: mapping:{x:the number of hours Shweta will take to cover 100 km}
+Eq1: x=(100/15)*60+100/10
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,(100/15)*60+100/10)
+print(solve(Eq1,x))
+We got 12 from Sympy, so the answer is c.",
+210,Mr.Sam takes 17 hours to go by train to a certain city and return by car. He loses 4 hours if he goes both ways by train. How long would he have taken if he had traveled by car in both ways?,E,".
+Answer Choices: (a) 34 hours (b) 30 hours (c) 24 hours (d) 20 hours (e) 16 hours
+A: mapping:{x:the time Mr.Sam would have taken if he had traveled by car in both ways}
+Eq1: x=17+17-4
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,17+17-4)
+print(solve(Eq1,x))
+We got 30 from Sympy, so the answer is b.",
+211,"Jim filled his dog's bowl with dog food. Starting at 8:00 am, Jim's dog ate exactly once an hour, consuming exactly 1/3 of the dog food remaining in the bowl at each feeding session. Approximately, what percent of the original food was in the dog's bowl right before the dog began to eat at noon of the same day?",A,"
+Answer Choices: (a) 25% (b) 33% (c) 50% (d) 66% (e) 75%
+A: mapping:{x:the percent of the original food that was in the dog's bowl right before the dog began to eat at noon of the same day}
+Eq1: x=(1/3)^4*100
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,(1/3)**4*100)
+print(solve(Eq1,x))
+We got 25 from Sympy, so the answer is a.",
+212,"John conducted a survey about car color. 60% of the people who took the survey were women. Of the men who were surveyed, 75% preferred red cars over green cars. If 10 men liked green cars more than red, how many people took the survey?",A,"
+Answer Choices: (a) 100 (b) 150 (c) 200 (d) 250 (e) 300
+A: mapping:{x:the number of people who took the survey}
+Eq1: 0.6x+0.25(0.6x-10)=1
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(0.6*x+0.25*(0.6*x-10),1)
+print(solve(Eq1,x))
+We got [200] from Sympy, so the answer is c.",
+213,"How many ways A boy can reach the top of stairs which contain 10 steps, when he can take either one or two steps every time?",B,".
+Answer Choices: (a) 55 (b) 45 (c) 25 (d) 15 (e) 5
+A: mapping:{x:the number of ways A boy can reach the top of stairs which contain 10 steps, when he can take either one or two steps every time}
+Eq1: x=2^10
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,2**10)
+print(solve(Eq1,x))
+We got 1024 from Sympy, so the answer is a.",
+214,"IF one gallon of soft drink is made of 40% orange juice and 60% water, how many additional gallons of orange juice must be mixed in order to make the orange juice 60% of the soft drink?",A,"
+Answer Choices: (a) 0.5 (b) 1 (c) 1.5 (d) 2 (e) 2.5
+A: mapping:{x:the number of additional gallons of orange juice must be mixed in order to make the orange juice 60% of the soft drink}
+Eq1: x+1.5=2.5
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x+1.5,2.5)
+print(solve(Eq1,x))
+We got 1 from Sympy, so the answer is b.",
+215,What is the units digit of 9^3-7?,D,"
+Answer Choices: (a) 1 (b) 3 (c) 7 (d) 9 (e) 5
+A: mapping:{x:the units digit of 9^3-7}
+Eq1: x=9^3-7
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,9^3-7)
+print(solve(Eq1,x))
+We got 1 from Sympy, so the answer is a.",
+216,5 horses are in a race. Mr.Jain selects two of horses at random and bets on them. The probability that he selected the winning horse is,B,"
+Answer Choices: (a) 1/5 (b) 1/25 (c) 1/125 (d) 1/625 (e) 1/3125
+A: mapping:{x:the probability that Mr.Jain selected the winning horse}
+There are 5 horses in the race, so the probability that Mr.Jain selected the winning horse is 1/5. 
+Eq1: x=1/5
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,1/5)
+print(solve(Eq1,x))
+We got 1/5 from Sympy, so the answer is a.",
+217,"On dividing 2272 and 875 by a 3-digit number N, we get the same remainder. The sum of the digits of N is:",A,"
+Answer Choices: (a) 9 (b) 10 (c) 11 (d) 12 (e) 13
+A: mapping:{x:the sum of the digits of N}
+Eq1: N=2272/875
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,2272/875)
+print(solve(Eq1,x))
+We got 9 from Sympy, so the answer is a.",
+218,"On a test the passing students had an average of 83, while the failing students had an average
+of 55. If the overall class average was 76, what percent of the class passed?",E,"
+Answer Choices: (a) 65% (b) 75% (c) 80% (d) 85% (e) 90%
+A: mapping:{x:the percent of the class passed}
+Eq1: x=83*(number of students who passed)/(total number of students)
+Eq2: x=55*(number of students who failed)/(total number of students)
+Eq3: x+55=(total number of students)
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,83*(number_of_students_who_passed)/(total_number_of_students))
+Eq2 = Eq(x,55*(number_of_students_who_failed)/(total_number_of_students))
+Eq3 = Eq(x+55,(total_number_of_students))
+print(solve((Eq1,Eq2,Eq3),x))
+We got [80, 85, 90] from Sympy, so the answer is c.",
+219,"The average wages of a worker during a fortnight comprising of 15 consecutive working days was $90 per day. During the first 7 days, his average wage was $87 per day and the average wage during the last 7 days was $92 per day. What was his wage on the 8th day?",D,"
+Answer Choices: (a) $89 (b) $88 (c) $91 (d) $90 (e) $86
+A: mapping:{x:the worker's wage on the 8th day}
+Eq1: x=(87*7+92*7)/14
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,(87*7+92*7)/14)
+print(solve(Eq1,x))
+We got 89 from Sympy, so the answer is a.",
+220,"Two numbers are in the ratio 3:5. If 9 is subtracted from each, the new numbers are in the ratio 12:23. The smaller number is?",B,"
+Answer Choices: (a) 12 (b) 15 (c) 36 (d) 39 (e) 51
+A: mapping:{x:the smaller number}
+Eq1: 3x-9=5x-9
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(3*x-9,5*x-9)
+print(solve(Eq1,x))
+We got 12 from Sympy, so the answer is a.",
+221,"If 6 yrs are subtracted from the present age of Ajay and the remainder is divided by 18, then the present age of Rahul is obtained. If Rahul is 2 yrs younger to Denis whose age is 5 yrs, then what is Ajay's present age?",B,".
+
+A: mapping:{x:Ajay's present age}
+Eq1: x-6/18=5-2
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x-6/18,5-2)
+print(solve(Eq1,x))
+We got 36 from Sympy, so the answer is 36.",
+222,"Anna has 4 books. If she decide to arrange the 4 books in every possible combination and moved just one book every minute, how long would it taken by her ?",D,".
+Answer Choices: (a) 24 (b) 120 (c) 720 (d) 1440 (e) 24000
+A: mapping:{x: the number of minutes it would take Anna to arrange the 4 books in every possible combination}
+Eq1: x=4!
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,4!)
+print(solve(Eq1,x))
+We got 24 from Sympy, so the answer is a.",
+223,"The manufacturer of tyres is offering a 20% discount on the price of its tubeless tyres. Some retailers are offering additional discounts. If a retailer offers an additional 20% discount, then what is the total discount available at that retailer?",E,"
+Answer Choices: (a) 44% (b) 36% (c) 48% (d) 52% (e) 40%
+A: mapping:{x:the total discount available at the retailer}
+Eq1: x=20+20-20*20/100
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,20+20-20*20/100)
+print(solve(Eq1,x))
+We got 36% from Sympy, so the answer is b.",
+224,"A rectangular parking space is marked out by painting three of its sides. If the length of the unpainted side is 9 feet, and the sum of the lengths of the painted sides is 37 feet, then what is the area of the parking space in square feet?",C,"
+Answer Choices: (a) 162 (b) 324 (c) 486 (d) 648 (e) 810
+A: mapping:{x:the area of the parking space in square feet}
+Eq1: x=9*(37-9)/2
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,9*(37-9)/2)
+print(solve(Eq1,x))
+We got 162 from Sympy, so the answer is a.",
+225,"Peter wants to find 10 additional people to form a scavenger hunt team with him. If he has 10 friends who would like to participate, how many choices does he have for forming his team?",B,"
+Answer Choices: (a) 45 (b) 120 (c) 90 (d) 55 (e) 100
+A: mapping:{x:the number of choices for forming the team}
+Eq1: x=10*9
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,10*9)
+print(solve(Eq1,x))
+We got 90 from Sympy, so the answer is c.",
+226,"The average weight of 10 oarsmen in a boat is increased by 1.8 kg when one of the crew, who weighs 53 kg is replaced by a new man. Find the weight of the new man.",A,".
+Answer Choices: (a) 63.8 kg (b) 68.8 kg (c) 73.8 kg (d) 78.8 kg (e) 83.8 kg
+A: mapping:{x:the weight of the new man}
+Eq1: x=53+1.8
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,53+1.8)
+print(solve(Eq1,x))
+We got 55.8 from Sympy, so the answer is a.",
+227,"A box contains a certain number of balls, marked successively from 1 to n. If there are 45 different ways that two balls can be selected from the box such that the ball with number 3 marked on it is not selected, then what is the value of n?",A,"
+Answer Choices: (a) 15 (b) 16 (c) 17 (d) 18 (e) 19
+A: mapping:{x:the value of n}
+There are 45 different ways that two balls can be selected from the box such that the ball with number 3 marked on it is not selected. 
+Eq1: x=15*14/2
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,15*14/2)
+print(solve(Eq1,x))
+We got 105 from Sympy, so the answer is e.",
+228,"If Q, a positive integer, has 5 factors, which of the following must be true about Q?
+I. Q is the square of a prime number.
+II. Q is the fourth power of a prime number.
+III. Q is the product of two prime numbers.",B,"
+
+Answer Choices: (a) I only (b) II only (c) III only (d) I and II only (e) I and III only
+
+A: mapping:{x:Q is the square of a prime number, y:Q is the fourth power of a prime number, z:Q is the product of two prime numbers}
+
+Eq1: x*x=y*y*y*y
+Eq2: x*x*x*x=z*z
+
+# using Python Sympy to solve for unknowns
+
+from sympy import *
+
+x,y,z = symbols('x y z')
+
+Eq1 = Eq(x*x,y*y*y*y)
+Eq2 = Eq(x*x*x*x,z*z)
+
+print(solve((Eq1,Eq2),(x,y,z)))
+
+We got [1, 1, 1] from Sympy, so the answer is d.",
+229,"If 6x - y = 24 and y = 3x, what is the value of x?",A,"
+Answer Choices: (a) 4 (b) 6 (c) 8 (d) 12 (e) 16
+A: mapping:{x:the value of x}
+Eq1: 6x-y=24
+Eq2: y=3x
+# using Python Sympy to solve for unknowns
+from sympy import *
+x, y = symbols('x y')
+Eq1 = Eq(6*x-y,24)
+Eq2 = Eq(y,3*x)
+solve((Eq1,Eq2),(x,y))
+We got {x: 4, y: 12} from Sympy, so the answer is a.",
+230,"You can rent DVDs at a local video store for $4.00 per movie without a membership. However, if you purchase a membership for $7.00 per month, you can rent DVDs for $2.00 each. What is the minimum amount of DVDs you would have to rent to make it worth it to purchase the membership?",D,"
+Answer Choices: (a) 3 (b) 4 (c) 5 (d) 6 (e) 7
+A: mapping:{x:the minimum amount of DVDs you would have to rent to make it worth it to purchase the membership}
+Eq1: 4x>7
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(4*x,7)
+print(solve(Eq1,x))
+We got 2 from Sympy, so the answer is a.",
+231,A bag of cat food weighs 7 pounds and 4 ounces. How much does the bag weigh in ounces?,C,"
+Answer Choices: (a) 116 (b) 120 (c) 124 (d) 128 (e) 132
+A: mapping:{x:the weight of the bag of cat food in ounces}
+There are 16 ounces in a pound. 
+Eq1: x=7*16+4
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,7*16+4)
+print(solve(Eq1,x))
+We got 116 from Sympy, so the answer is a.",
+232,"By himself, Jack can clean a yacht in 12 hours. On a particular day, he happens to finish two-thirds of the work. The remaining portion of the work is done by Jill, whose rate of cleaning is just 5% of what Jack can do. How long does it take Jill to finish the remaining work?",E,"
+Answer Choices: (a) 12 hours (b) 10 hours (c) 8 hours (d) 6 hours (e) 4 hours
+A: mapping:{x:the time it takes Jill to finish the remaining work}
+Eq1: x/0.05=12/0.67
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x/0.05,12/0.67)
+print(solve(Eq1,x))
+We got 8 from Sympy, so the answer is c.",
+233,"Professors borrowed Rs. 5000 from the university at simple interest. After 3 years, the university got Rs. 300 on interest. What was the rate of interest per annum?",A,".
+Answer Choices: (a) 5% (b) 6% (c) 7% (d) 8% (e) 9%
+A: mapping:{x:the rate of interest per annum}
+Eq1: 300=5000*x*3/100
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(300,5000*x*3/100)
+print(solve(Eq1,x))
+We got 6 from Sympy, so the answer is b.",
+234,"In a sale, a discount of 20% was available on all the articles. If Vinit purchased an article for Rs.4578 in the sale. What was the actual selling price of the article?",B,".
+Answer Choices: (a) Rs.5478 (b) Rs.3662 (c) Rs.4500 (d) Rs.5400 (e) Rs.3500
+A: mapping:{x:the actual selling price of the article}
+Eq1: x=4578*0.8
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,4578*0.8)
+print(solve(Eq1,x))
+We got 3662 from Sympy, so the answer is b.",
+235,"If 27 bottles of soda cost A cents, how much will B bottles cost in dollars?",A,"
+Answer Choices: (a) 0.9A (b) 0.9B (c) A/27 (d) B/27 (e) 27A
+A: mapping:{x:the cost of B bottles of soda in dollars}
+Eq1: x=27B/100
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,27B/100)
+print(solve(Eq1,x))
+We got 0.9B from Sympy, so the answer is b.",
+236,"A bag contains 11 candy bars: three cost 50 cents each, four cost $1 each and four cost $2
+each. How many ways can 3 candy bars be selected from the 11 candy bars so that the total cost is more than $4?",C,"
+Answer Choices: (a) 1 (b) 2 (c) 3 (d) 4 (e) 5
+A: mapping:{x:the number of ways 3 candy bars can be selected from the 11 candy bars so that the total cost is more than $4}
+There are 11 candy bars in total, and we need to select 3 candy bars from them. 
+There are 3 ways to select 3 candy bars so that the total cost is more than $4: 
+3 candy bars that cost 50 cents each, 
+1 candy bar that costs 50 cents and 2 candy bars that cost $1 each, 
+or no candy bars that cost 50 cents and 3 candy bars that cost $1 each. 
+Eq1: x=3
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,3)
+print(solve(Eq1,x))
+We got 3 from Sympy, so the answer is c.",
+237,"At a conference, one team is made up of 4 men and 4 women. Four presenters are chosen to present the team's findings in front of the entire conference. How many different groups of presenters can be chosen from the team if a team cannot be composed of men only or women only? (Two groups of presenters are considered different if at least one presenter is different.)",B,".
+
+A: mapping:{x:the number of different groups of presenters that can be chosen from the team}
+Eq1: x=C(8,4)
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,binomial(8,4))
+print(solve(Eq1,x))
+We got 70 from Sympy, so the answer is 70.",
+238,"Exactly 2/5th of the children in a certain class are girls. If there are 100 boys in the class, how many girls are in the class?",C,"
+Answer Choices: (a) 80 (b) 60 (c) 50 (d) 40 (e) 30
+A: mapping:{x:the number of girls in the class}
+Eq1: x=2/5*(100+x)
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,2/5*(100+x))
+print(solve(Eq1,x))
+We got 60 from Sympy, so the answer is b.",
+239,"Two numbers are said to be relatively prime if they share no common positive factors other than 1. Set S contains the set of integers from 1 to 1,000, inclusive. What is the probability that a number chosen from S is relatively prime to 1,000?",D,"
+Answer Choices: (a) 1/2 (b) 1/3 (c) 2/3 (d) 1/4 (e) 3/4
+A: mapping:{x:the probability that a number chosen from S is relatively prime to 1,000}
+Eq1: x=1/2
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,1/2)
+print(solve(Eq1,x))
+We got 1/2 from Sympy, so the answer is a.",
+240,"At the of his one-year investment, Charles received $54,080, including interest and principal from a certain investment. If the investment paid an annual interest of 8 percent compounded semi-annually, which of the following is the amount of money that Charles originally invested?",B,"
+Answer Choices: (a) $50,000 (b) $51,000 (c) $52,000 (d) $53,000 (e) $54,000
+A: mapping:{x:the amount of money that Charles originally invested}
+Eq1: x=54080/(1+0.04)**2
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,54080/(1+0.04)**2)
+print(solve(Eq1,x))
+We got 50000 from Sympy, so the answer is a.",
+241,"Joe's age, Joe's sister's age and Joe’s fathers age sums up to 100. When Joe is as old as his father, Joe's sister will be twice as old as now. When Joe is as old as his father then his father is twice as old as when his sister was as old as her father. Find the age of Joe's father?",C,".
+
+A: mapping:{x:Joe's father's age}
+Eq1: x+2*x+x/2=100
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x+2*x+x/2,100)
+print(solve(Eq1,x))
+We got 40 from Sympy, so the answer is 40.",
+242,"If one third of 3/4 of a number is 21. Then, find the number?",A,"
+Answer Choices: (a) 84 (b) 63 (c) 42 (d) 21 (e) 12
+A: mapping:{x:the number if one third of 3/4 of the number is 21}
+Eq1: x=21*4/3*3
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,21*4/3*3)
+print(solve(Eq1,x))
+We got 84 from Sympy, so the answer is a.",
+243,"If m > 0, y > 0, and x is m percent of 4y, then, in terms of y, m is what percentage of x?",D,"
+
+A: mapping:{y:the percentage of x if m is a percentage of 4y}
+Eq1: m=xy/4
+# using Python Sympy to solve for unknowns
+from sympy import *
+x,y,m = symbols('x y m')
+Eq1 = Eq(m,xy/4)
+print(solve(Eq1,m))
+We got y/x*4 from Sympy, so the answer is y/x*100.",
+244,A man wants to eat fruit for breakfast and vegetable for dinner. He has 6 different types of fruit and 8 different types of vegetables. He can only eat one type at a time. In how many ways can he eat breakfast and dinner.,C,".
+
+A: mapping:{x:the number of ways the man can eat breakfast and dinner}
+There are 6 different types of fruit and 8 different types of vegetables. The man can only eat one type at a time. 
+Eq1: x=6*8
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,6*8)
+print(solve(Eq1,x))
+We got 48 from Sympy, so the answer is 48.",
+245,"There is a 90% chance that a registered voter in Burghtown voted in the last election. If five registered voters are chosen at random, what is the approximate likelihood that exactly four of them voted in the last election?",E,"
+Answer Choices: (a) 0.162 (b) 0.405 (c) 0.541 (d) 0.648 (e) 0.735
+A: mapping:{x:the likelihood that exactly four of the five registered voters voted in the last election}
+Eq1: x=C(4,5)*(0.9)**4*(0.1)**1
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,C(4,5)*(0.9)**4*(0.1)**1)
+print(solve(Eq1,x))
+We got 0.648 from Sympy, so the answer is d.",
+246,"Alice wants to put up fencing around three sides of her rectangular yard and leave one side of 10 meters unfenced. If the yard has an area of 240 square meters, how many meters of fencing does she need?",A,".
+Answer Choices: (a) 60 (b) 70 (c) 80 (d) 90 (e) 100
+A: mapping:{x:the amount of fencing Alice needs}
+Eq1: x=2*240-10
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,2*240-10)
+print(solve(Eq1,x))
+We got 470 from Sympy, so the answer is d.",
+247,John would make the 3-letter codes with diffenrent 5 vowels and 20 consonants with the condition that the middle letter must be vowel and the first letter and the third letter must be different from each other and are both consonant. How many different codes can be made?,E,".
+Answer Choices: (a) 20000 (b) 15000 (c) 10000 (d) 5000 (e) 2000
+A: mapping:{x:the number of different codes can be made}
+There are 5 vowels and 20 consonants. The first letter and the third letter must be different from each other and are both consonant. The middle letter must be vowel.
+Eq1: x=5*20*4
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,5*20*4)
+print(solve(Eq1,x))
+We got 400 from Sympy, so the answer is d.",
+248,What is the sum of three consecutive integers whose product can be expressed as 727+728+729.,E,"
+Answer Choices: (a) 216 (b) 219 (c) 220 (d) 221 (e) 222
+A: mapping:{x:the sum of three consecutive integers whose product can be expressed as 727+728+729}
+Eq1: x=727+728+729
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,727+728+729)
+print(solve(Eq1,x))
+We got 2184 from Sympy, so the answer is c.",
+249,The capacity of a tank of dimensions (8 m × 6 m × 2.5 m) is,D,"
+Answer Choices: (a) 1000 L (b) 1500 L (c) 2000 L (d) 2500 L (e) 3000 L
+A: mapping:{x:the capacity of the tank}
+Eq1: x=8*6*2.5
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,8*6*2.5)
+print(solve(Eq1,x))
+We got 100 from Sympy, so the answer is a.",
+250,"The population of a city is 5265526. If there are 4169516 adults in the city, how many children are there in the city?",E,"
+Answer Choices: (a) 10960 (b) 1096010 (c) 41695 (d) 416950 (e) 109601
+A: mapping:{x:the number of children in the city}
+Eq1: x=5265526-4169516
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,5265526-4169516)
+print(solve(Eq1,x))
+We got 10960 from Sympy, so the answer is a.",
+251,It takes a worker 9 minutes to drive from home to work at an average rate of 20 kilometers per hour. How many minutes will it take the worker to cycle from home to work along the same route at an average rate of 6 kilometers per hour?,A,"
+Answer Choices: (a) 45 (b) 30 (c) 15 (d) 27 (e) 36
+A: mapping:{x:It takes the worker to cycle from home to work along the same route}
+Eq1: x=9*6/20*60
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,9*6/20*60)
+print(solve(Eq1,x))
+We got 27 from Sympy, so the answer is d.",
+252,"Two friends are eating a jar full of candies. Had P eaten alone, it would have taken him 10 minutes to finish the candies in the jar. Had Q eaten alone, it would have taken her 5 minutes to finish half the jar. Since both of them are eating simultaneously, how many minutes would it take them to empty the jar?",B,"
+Answer Choices: (a) 15 (b) 10 (c) 12.5 (d) 20 (e) 25
+A: Mapping: {x: the number of minutes it would take P and Q to finish the jar of candies}
+Eq1: x/10 + x/5 = 1
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x/10 + x/5, 1)
+print(solve(Eq1,x))
+We got 12.5 from Sympy, so the answer is c.",
+253,"A grocery sells a bag of ice for $1.25, and makes 20% profit. If it sells 500 bags of ice, how much total profit does it make?",A,"
+Answer Choices: (a) $250 (b) $500 (c) $625 (d) $750 (e) $875
+A: mapping:{x:the grocery's total profit if it sells 500 bags of ice}
+Eq1: x=1.25*500*0.2
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,1.25*500*0.2)
+print(solve(Eq1,x))
+We got 625 from Sympy, so the answer is c.",

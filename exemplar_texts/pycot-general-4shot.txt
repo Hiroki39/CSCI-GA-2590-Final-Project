@@ -1,0 +1,83 @@
+
+
+#Q: There are c0 trees in the grove. Grove workers will plant trees in the grove today. After they are done, there will be c1 trees. How many trees did the grove workers plant today? Write a python program to calculate the answer step by step.
+#A: Let's think about it step by step:
+def Problem(c0, c1):
+    #there are originally c0 trees
+    trees_before = c0
+
+    #after grove workers plant some trees today. there are c1 trees
+    trees_after = c1
+
+    #The number of trees they planted can be calculated by subtracting the orginal number of trees from the number of trees afterward
+    planted = trees_after - trees_before
+
+    return planted
+
+
+
+#Q: If there are c0 cars in the parking lot and c1 more cars arrive, how many cars are in the parking lot? Write a python program to calculate the answer step by step.
+#A: Let's think about it step by step:
+def Problem(c0, c1):
+    #there are originally c0 cars in the parking lot
+    cars_before = c0
+
+    #there are c1 cars arrives at the parking lot
+    arrived = c1
+
+    #The number of cars right now at the parking lot can be calculated by adding the number of cars arrived by the original number of cars
+    cars_after = cars_before + arrived
+
+    return cars_after
+
+
+
+#Q: Leah had c0 chocolates and her sister had c1. If they ate c2, how many pieces do they have left in total? Write a python program to calculate the answer step by step.
+#A: Let's think about it step by step:
+def Problem(c0, c1, c2):
+    #Leah had c0 chocolates
+    leah = c0
+
+    #Leah's sister had c1 chocolates
+    sister = c1
+
+    #They together have c0 plus c1 chocolate in total
+    total_before = leah + sister
+
+    #They ate c2 chocolates
+    ate = c2
+
+    #The number of chocolates they have left in total right now can be calculated by subtracting the number of chocolates they ate from the orginal number of chocolates they had in total
+    total_now = total_before - ate
+
+    return total_now
+
+
+#Q: Jason had c0 lollipops. He gave Denny some lollipops. Now Jason has c1 lollipops. How many lollipops did Jason give to Denny? Write a python program to calculate the answer step by step.
+#A: Let's think about it step by step:
+def Problem(c0, c1):
+    #Jason originally had c0 lollipops
+    jason_original = c0
+
+    #After Jason gave Denny some lollipops,he now has c1 lollipops
+    jason_now = c1
+
+    #The number of lollipops Jason gave to Denny can be calculated by substracting the number of lollipops Jason has now from the original number of lollipops Jason had.
+    gave = jason_original - jason_now
+
+    return gave
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,5 @@
+Q: John found that the average of 15 numbers is 40. If 10 is added to each number then the mean of the numbers
+is?
+Answer Choices: (a) 50 (b) 45 (c) 65 (d) 78 (e) 64
+A: If 10 is added to each number, then the mean of the numbers also increases by 10. So the new mean would be
+50. The answer is a.

@@ -1,0 +1,33 @@
+
+
+#Q: There are c0 trees in the grove. Grove workers will plant trees in the grove today. After they are done, there will be c1 trees. How many trees did the grove workers plant today? Write a python program to calculate the answer step by step.
+#A: Let's think about it step by step:
+def Problem(c0, c1):
+    #there are originally c0 trees
+    trees_before = c0
+
+    #after grove workers plant some trees today. there are c1 trees
+    trees_after = c1
+
+    #The number of trees they planted can be calculated by subtracting the orginal number of trees from the number of trees afterward
+    planted = trees_after - trees_before
+
+    return planted
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

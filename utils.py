@@ -126,7 +126,7 @@ def evaluate_openai(run_id, model_name, dataset_name, prompt, shot, dev, prompts
         for sample in tqdm(dataset):
 
             # generate question text
-            if dataset == 'aqua_rat':
+            if dataset_name == 'aqua_rat':
                 mapping = ''
                 sample["question"] += ', '.join(sample['options'])
             elif prompt == 'zero-cot' or prompt == 'cot' or prompt == 'sympy':
