@@ -86,12 +86,20 @@ def evaluate_equations(equations, mapping, response=''):
 
 
 def evaluate_function(mapping, response):
-
+    # print("="*10)
+    # print(response.split('\n')[0])
     try:
         exec(response)
     except:
-        print('****** Fn Problem')
-        return None
+        try:
+            response = response[5:].strip()
+            start, _ = re.search('def', response).span()
+            response = response[start:]
+            exec(response)
+        except:
+            print('****** Fn Problem')
+            print(response)
+            return None
 
     arguments = ''
     for name in mapping:
@@ -100,7 +108,8 @@ def evaluate_function(mapping, response):
     arguments = arguments[:-1]
 
     try:
-        answer = eval('Problem('+arguments+')')
+        problem = response.split('\n')[0].split()[1].split('(')[0]
+        answer = eval(problem +'('+arguments+')')
         return answer
     except Exception as e:
         print(e)
@@ -270,7 +279,7 @@ def eval_result(filename, prompt, dataset_name):
         result['answer'] = [i[0] for i in result['answer']]
         print("acc", np.mean(result['response_answer'] == result['answer']))
     elif prompt == 'pycot':
-        result['response_answer'], result['equations'] = calculate_answer(
+        result['response_answer'], _ = calculate_answer(
             result, "pycot")
         result['answer'] = [i[0] for i in result['answer']]
         print("acc", np.mean(result['response_answer'] == result['answer']))
