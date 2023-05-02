@@ -33,3 +33,5 @@ a1c1c8fa-e50f-4447-b7b1-74c85ecb5c5c,text-davinci-002,multiarith,sympy,8,general
 84e762ed-b221-4f2b-92f9-419b5c8b2aa6,text-davinci-002,multiarith,varcot,4,general
 
 0ceb9262-cfad-43ea-bcda-b8e05bdff580,text-davinci-002,multiarith,cot,4,general
+d708afa1-cc71-4761-a30e-e3f1ae79c455,gptturbo,multiarith,pycot,4,general
+43b16f44-67ee-4f6a-97fe-e1e6e8eed2ac,gptturbo,multiarith,pycot,8,general
