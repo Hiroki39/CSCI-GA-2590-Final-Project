@@ -273,7 +273,7 @@ def eval_result(filename, prompt, dataset_name):
             result, "arithcot")
         result['answer'] = [i[0] for i in result['answer']]
         print("acc", np.mean(result['response_answer'] == result['answer']))
-    elif prompt == 'cot' or prompt == 'zero-cot':
+    elif prompt == 'cot' or prompt == 'zero-cot' or (prompt == 'sympy' and dataset_name != 'aqua_rat'):
         if (prompt == 'zero-cot'):
             raise Warning("Refer to the paper for zero-cot evaluation")
         result['response_answer'], result['flag'] = calculate_answer(result, 'cot')
