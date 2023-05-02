@@ -1,15 +1,12 @@
-Q: You can purchase one soda and two energy bars for 150 cents , or two sodas and three energy bars for 300
-cents . If tsolve(x**2 - 1, x)he costs of the items do not change , compute the cost in cents of six sodas and seven bars . 
-A)900, B)800, C)100, D)1200, E)1400     
-Mapping:{x: the cost of sodas, y: the cost of bars, z: cost of six sodas and seven bars}
-‘Eq1:1*x+2*y=150’
-‘Eq2:2*x+3*y=300’ 
-‘Eq3:6*x+7*y=z’ 
+Q: John found that the average of 15 numbers is 40. If 10 is added to each number then the mean of the numbers
+is?
+Answer Choices: (a) 50 (b) 45 (c) 65 (d) 78 (e) 64
+A: mapping:{x:the mean of the numbers if 10 is added to each number}
+If 10 is added to each number, then the mean of the numbers also increases by 10. 
+Eq1: x=40+10
 # using Python Sympy to solve for unknowns
-x,y,z = symbols('x, y, z')
-Eq1 = Eq(1*x+2*y,150)
-Eq2 = Eq(2*x+3*y,300)
-Eq3 = Eq(6*x+7*y, z)
-print(solve([Eq1, Eq2, Eq3],(x,y,z)))
-# end of Python Sympy
-Answer: A
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,40+10)
+print(solve(Eq1,x))
+We got 50 from Sympy, so the answer is a.

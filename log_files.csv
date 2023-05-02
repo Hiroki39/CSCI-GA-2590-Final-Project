@@ -14,3 +14,10 @@ e7b0ac77-2e66-4160-b1df-67917d7a79d3,text-davinci-002,multiarith,varcot,2,genera
 c539fa25-73c6-462c-b928-eb19f0f77681,gptturbo,multiarith,cot,1,general
 677e53b3-b5fd-4b5d-bc09-3ff7ef6a10fa,gptturbo,multiarith,varcot,1,general
 
+c72288d4-e523-4ef7-806a-6c12e59d3154,text-davinci-002,aqua_rat,sympy,1,general
+476a966f-b005-4594-bac7-dc35045b7048,text-davinci-002,aqua_rat,sympy,2,general
+415636a8-435e-4057-bffd-700e0b01a453,text-davinci-002,aqua_rat,cot,1,general
+11dc277e-b354-4bf7-b74d-726e0eb267d7,text-davinci-002,aqua_rat,cot,2,general
+2b35ac28-9316-44fe-b2b8-5714ec312386,text-davinci-002,multiarith,sympy,1,general
+c3928ae8-8842-44e5-9976-b2f0b122eed0,text-davinci-002,multiarith,sympy,2,general
+c3b341b9-4b1f-404c-b69a-67a2e8c12acd,text-davinci-002,multiarith,sympy,4,general
