@@ -13,7 +13,7 @@ for row in data:
             if name == 'Body' and k==name:
                 # map 'Question' and 'Body' to 'questions'
                 row[v] = row.pop(name)+row.pop('Question')
-            elif name == 'Answer' and k == name:
+            elif name == 'Answer' and k == name:    
                 row[v] = [row.pop(name)]
             elif k == name:
                 row[v] = row.pop(name)

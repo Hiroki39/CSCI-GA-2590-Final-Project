@@ -43,43 +43,28 @@ def evaluate_equations(equations, mapping, response=''):
             expression = expression.replace(' x ', ' * ')
         except:
             print(equation)
-            return None
+            continue
 
         # normal evaluation
         if (expression[-1] == '.'):
             expression = expression[:-1]
 
-        # normal evaluation
-        # too messy; mannual evaluation instead
+        for variable in mapping:
+            expression = expression.replace(variable, str(mapping[variable]))
+
+        for variable in new_variables:
+            expression = expression.replace(variable, str(new_variables[variable]))
+        
+        expression = re.sub(r'[a-z]','',expression)
+        expression = re.sub(r'[A-Z]','',expression)
+
         try:
             value = eval(expression)
-        except:
-            print(expression)
-            processed_expression = []
-            j = 0
-            words = expression.split(' ')
-            while (j < len(words)):
-                word = words[j]
-                if (isvalid(word)):
-                    processed_expression.append(word)
-                    j += 1
-                else:
-                    break
-            try:
-                value = eval(' '.join(processed_expression))
-            except Exception as e:
-                try:
-                    value = eval(expression.split(',')[0])
-                except:
-                    print("*******Eval Error")
-                    print(' '.join(processed_expression))
-                    print(e)
-                    break
-        try:
             exec(name + ' = ' + str(value))
         except Exception as e:
-            print(response, equation, name, value)
-            break
+            print('1')
+            print(expression)
+            continue
         new_variables[name] = value
 
     if 'answer' in new_variables:
@@ -101,12 +86,20 @@ def evaluate_equations(equations, mapping, response=''):
 
 
 def evaluate_function(mapping, response):
-
+    # print("="*10)
+    # print(response.split('\n')[0])
     try:
         exec(response)
     except:
-        print('****** Fn Problem')
-        return None
+        try:
+            response = response[5:].strip()
+            start, _ = re.search('def', response).span()
+            response = response[start:]
+            exec(response)
+        except:
+            print('****** Fn Problem')
+            print(response)
+            return None
 
     arguments = ''
     for name in mapping:
@@ -115,7 +108,8 @@ def evaluate_function(mapping, response):
     arguments = arguments[:-1]
 
     try:
-        answer = eval('Problem('+arguments+')')
+        problem = response.split('\n')[0].split()[1].split('(')[0]
+        answer = eval(problem +'('+arguments+')')
         return answer
     except Exception as e:
         print(e)
@@ -133,8 +127,9 @@ def extract_answer(response, prompt='cot'):
             answer = re.search(r'\d+(\,\d+)*(\.\d+)?', answer).group(0)
             # to be tidied
             try:
-                temp = re.search(r'\d+(\,\d+)*(\.\d+)?', answer).group(1)
-                #flag = 1
+                if(re.search(r'\d+(\,\d+)*(\.\d+)?', answer).group(0) 
+                   != re.search(r'\d+(\,\d+)*(\.\d+)?', answer).group(-1)):
+                    flag = 1
             except:
                 pass
         except:
@@ -142,7 +137,7 @@ def extract_answer(response, prompt='cot'):
                 answer = re.findall(r'\d+(?:\.\d+)?', response)[-1]
                 flag = 1
             except:
-                return None
+                return None, 1
     elif (prompt == 'zero-cot'):
 
         # Use the number in the response
@@ -251,13 +246,14 @@ def eval_aqua(result):
             if predicted.lower() == result['answer'][i].lower():
                 correct += 1
             else:
-                print("="*10)
-                print('correct answer: ', result['answer'][i])
-                print(result['question'][i], response)
+                pass
+                # print("="*10)
+                # print('correct answer: ', result['answer'][i])
+                # print(result['question'][i], response)
         else:
-            # print(result['question'][i])
-            # print(response)
-            # print("="*10)
+            print(result['question'][i])
+            print(response)
+            print("="*10)
             undef += 1
     print("acc", correct/total, "invalid", undef/total)
 
@@ -271,7 +267,7 @@ def eval_result(filename, prompt, dataset_name):
             result, "arithcot")
         result['answer'] = [i[0] for i in result['answer']]
         print("acc", np.mean(result['response_answer'] == result['answer']))
-    elif prompt == 'cot' or prompt == 'zero-cot':
+    elif prompt == 'cot' or prompt == 'zero-cot' or (prompt == 'sympy' and dataset_name != 'aqua_rat'):
         if (prompt == 'zero-cot'):
             raise Warning("Refer to the paper for zero-cot evaluation")
         result['response_answer'], result['flag'] = calculate_answer(result, 'cot')
@@ -280,6 +276,11 @@ def eval_result(filename, prompt, dataset_name):
     elif prompt == 'varcot':
         result['response_answer'], result['equations'] = calculate_answer(
             result, "varcot")
+        result['answer'] = [i[0] for i in result['answer']]
+        print("acc", np.mean(result['response_answer'] == result['answer']))
+    elif prompt == 'pycot':
+        result['response_answer'], _ = calculate_answer(
+            result, "pycot")
         result['answer'] = [i[0] for i in result['answer']]
         print("acc", np.mean(result['response_answer'] == result['answer']))
     elif prompt == 'sympy':

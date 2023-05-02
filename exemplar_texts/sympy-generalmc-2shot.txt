@@ -1,28 +1,25 @@
-Q: During one season , a tennis team won 20 matches and lost 20 % of their matches . What was the number 
-of matches that the team lost.
-A)70, B)30, C)3, D)7, E)5
-Mapping: {x: number of matches that the team lost}
-‘Eq1:x/(20+x)=30%’
+Q: John found that the average of 15 numbers is 40. If 10 is added to each number then the mean of the numbers
+is?
+Answer Choices: (a) 50 (b) 45 (c) 65 (d) 78 (e) 64
+A: mapping:{x:the mean of the numbers if 10 is added to each number}
+If 10 is added to each number, then the mean of the numbers also increases by 10. 
+Eq1: x=40+10
 # using Python Sympy to solve for unknowns
 from sympy import *
 x = symbols('x')
-Eq1 = Eq(x/(20+x),0.2)
-solve(Eq1,x)
-# end of Python Sympy
-Answer: E
+Eq1 = Eq(x,40+10)
+print(solve(Eq1,x))
+We got 50 from Sympy, so the answer is a.
 
-Q: You can purchase one soda and two energy bars for 150 cents , or two sodas and three energy bars for 300
-cents . If tsolve(x**2 - 1, x)he costs of the items do not change , compute the cost in cents of six sodas and seven bars . 
-A)900, B)800, C)100, D)1200, E)1400     
-Mapping:{x: the cost of sodas, y: the cost of bars, z: cost of six sodas and seven bars}
-‘Eq1:1*x+2*y=150’
-‘Eq2:2*x+3*y=300’ 
-‘Eq3:6*x+7*y=z’ 
+Q: If a / b = 3/4 and 8a + 5b = 22,then find the value of a.
+Answer Choices: (a) 1/2 (b) 3/2 (c) 5/2 (d) 4/2 (e) 7/2
+A: mapping{a:a, b:b}
+Eq1: a / b = 3/4
+Eq2: 8a + 5b = 22
 # using Python Sympy to solve for unknowns
-x,y,z = symbols('x, y, z')
-Eq1 = Eq(1*x+2*y,150)
-Eq2 = Eq(2*x+3*y,300)
-Eq3 = Eq(6*x+7*y, z)
-print(solve([Eq1, Eq2, Eq3],(x,y,z)))
-# end of Python Sympy
-Answer: A
+from sympy import *
+a, b = symbols('a, b')
+Eq1 = Eq(a / b, 3/4)
+Eq2 = Eq(8*a + 5*b, 22)
+print(solve([Eq1, Eq2],(a,b)))
+So a is equal to 3/2 from sympy. so the answer is b.

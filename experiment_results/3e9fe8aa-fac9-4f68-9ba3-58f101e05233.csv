@@ -1,0 +1,21 @@
+,question,answer,response,mapping,response_answer,flag
+0," For Halloween Debby and her sister combined the candy they received. Debby had 32 pieces of candy while her sister had 42. If they ate 35 pieces the first night, how many pieces do they have left? ",39.0,".
+
+A: mapping:{x:pieces of candy left}
+Eq1: 32+42-35=x
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,32+42-35)
+print(solve(Eq1,x))
+We got 39 from sympy, so the answer is 39.",,39.0,1
+1, A pet store had 13 siamese cats and 5 house cats. During a sale they sold 10 cats. How many cats do they have left? ,8.0,"
+A: 
+Mapping: {x: number of cats left}
+Eq1: x=13+5-10
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,13+5-10)
+print(solve(Eq1,x))
+We got 8 from sympy, so the answer is 8.",,8.0,1

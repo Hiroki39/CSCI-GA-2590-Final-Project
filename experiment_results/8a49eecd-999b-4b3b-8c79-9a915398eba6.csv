@@ -1,0 +1,21 @@
+,question,answer,response,mapping
+0,"A car is being driven, in a straight line and at a uniform speed, towards the base of a vertical tower. The top of the tower is observed from the car and, in the process, it takes 10 minutes for the angle of elevation to change from 45° to 60°. After how much more time will this car reach the base of the tower?",A,"
+Answer Choices: (a) 10 minutes (b) 15 minutes (c) 20 minutes (d) 25 minutes (e) 30 minutes
+A: mapping:{x:the time it will take for the car to reach the base of the tower}
+Eq1: x=10+10
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x,10+10)
+print(solve(Eq1,x))
+We got 20 from Sympy, so the answer is c.",
+1,"The original price of an item is discounted 22%. A customer buys the item at this discounted price using a $20-off coupon. There is no tax on the item, and this was the only item the customer bought. If the customer paid $1.90 more than half the original price of the item, what was the original price of the item?",E,".
+Answer Choices: (a) $4.00 (b) $4.50 (c) $5.00 (d) $5.50 (e) $6.00
+A: mapping:{x:the original price of the item}
+Eq1: x*0.78-20=1.9*0.5
+# using Python Sympy to solve for unknowns
+from sympy import *
+x = symbols('x')
+Eq1 = Eq(x*0.78-20,1.9*0.5)
+print(solve(Eq1,x))
+So the original price of the item is $5.50. So the answer is d.",
