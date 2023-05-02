@@ -1,0 +1,76 @@
+Q: Andy and his brother Aaron received money for holiday. Andy had c0 dollars while his brother had c1. If they spent c2 dollars on a new video game, how many dollars do they have left? Write a python program to calculate the answer step by step.
+A: Let's think about it step by step:
+def Problem(c0, c1, c2):
+    # Andy has c0 dollars
+    andy = c0
+
+    # Andy's brother has c1 dollars
+    brother = c1
+
+    # They together has c0+c1 dollars in total
+    total = andy + brother
+
+    # They spend c2 on a video game
+    video_game = c2
+
+    # The money the have left in total can be calculated now as the money in total minus the price of video game
+    left = total - video_game
+
+    return left
+
+
+Q: Each eraser regardless of brand cost c0. Alice bought c1 erasers from brand A and c2 erasers from brand B. How many dollars did she spend? Write a python program to calculate the answer step by step.
+A: Let's think about it step by step
+def Problem(c0, c1, c2):
+    # Each eraser costs c0
+    eraser = c0
+
+    # Alice bought c1 erasers from brand A and c2 erasers from brand B, so she bought c1 plus c2 erasers in total
+    total = c1 + c2
+
+    # Thus, alice must have spent 'Money * total' in total
+    spent = eraser * total
+
+    return spent
+
+
+Q: A comittee has c0 females and c1 males. If they were split into sub-comittee of size c2 how many sub-comittees could they make? Write a python program to calculate the answer step by step.
+A: Solve the problem step by step:
+def Problem(c0, c1, c2):
+    # The committee has c0 females
+    female = c0
+
+    # The comittee has c1 males
+    male = c1
+
+    # The total number of people of the committee can be calculated by adding the number of male and the number of female
+    total = female + male
+
+    # Now the committee will be split into sub-committees each of which is sized c2
+    size = c2
+
+    # Now the number of committees can be calcullated by dividing the total number of people of the original committee by the number of people of each sub-committee
+    num_subcommittees = total / size
+
+    return num_subcommittees
+
+
+Q: A construction team has already completed c0 meters of a bridge that needs to be c1 meter long. Assuming each meter requries c2 minutes to complete, how many minutes do they have left? Write a python program to calculate the answer step by step.
+A: Solve the problem step by step:
+def Problem(c0, c1, c2):
+    # The construction team has finished c0 meters of the bridge
+    finished = c0
+
+    # The bridge needs to be c1 meters long
+    bridge_length = c1
+
+    # Now the left part to be finished is calculated by the total length minus the length of the finished part
+    length_remain = finished - bridge_length
+
+    # Each meters requires c2 minutes to complete
+    minutes_per_meter  = c2
+
+    # The total minute requires to finish the bridge can be calculated by multiplying the total meters left with the number of minutes to finish one meter
+    minutes_remaining = length_remain * minutes_per_meter
+
+    return minutes_remaining
