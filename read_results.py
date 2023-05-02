@@ -252,13 +252,14 @@ def eval_aqua(result):
             if predicted.lower() == result['answer'][i].lower():
                 correct += 1
             else:
-                print("="*10)
-                print('correct answer: ', result['answer'][i])
-                print(result['question'][i], response)
+                pass
+                # print("="*10)
+                # print('correct answer: ', result['answer'][i])
+                # print(result['question'][i], response)
         else:
-            # print(result['question'][i])
-            # print(response)
-            # print("="*10)
+            print(result['question'][i])
+            print(response)
+            print("="*10)
             undef += 1
     print("acc", correct/total, "invalid", undef/total)
 
