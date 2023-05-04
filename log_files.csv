@@ -32,3 +32,6 @@ d708afa1-cc71-4761-a30e-e3f1ae79c455,gptturbo,multiarith,pycot,4,general
 43b16f44-67ee-4f6a-97fe-e1e6e8eed2ac,gptturbo,multiarith,pycot,8,general
 9db01da6-1bba-4aef-a026-7c12b6f1af23,gptturbo,multiarith,pycot,1,general
 7b903feb-44d8-433a-809d-16265a48b2c5,gptturbo,multiarith,pycot,2,general
+a50d1748-dc9b-4226-9eb7-42f59777a230,text-davinci-002,multiarith,cot,1,general
+381fee81-2b90-4e62-a067-84d6221a8e6e,text-davinci-002,multiarith,varcot,1,general3a9e3d33-aced-4d55-92f0-ab1a08df8ecd,gptturbo,svamp,cot,8,general
+3a9e3d33-aced-4d55-92f0-ab1a08df8ecd,gptturbo,svamp,cot,8,general
