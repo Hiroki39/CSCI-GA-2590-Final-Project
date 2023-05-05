@@ -40,3 +40,5 @@ a1c1c8fa-e50f-4447-b7b1-74c85ecb5c5c,text-davinci-002,multiarith,sympy,8,general
 e7b0ac77-2e66-4160-b1df-67917d7a79d3,text-davinci-002,multiarith,varcot,2,general
 5a7bd583-e7fe-4629-a17a-892a9fc36cf9,text-davinci-002,multiarith,varcot,4,general
 84e762ed-b221-4f2b-92f9-419b5c8b2aa6,text-davinci-002,multiarith,varcot,4,general
+12e7ed23-48c4-41e2-8d8e-0971149b3d8d,gptturbo,aqua_rat,cot,2,general
+3aa5b4c7-a123-4312-ad35-00ffa0ebdffd,gptturbo,aqua_rat,cot,1,general
