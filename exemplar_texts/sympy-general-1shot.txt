@@ -7,4 +7,3 @@ from sympy import *
 x = symbols('x')
 Eq1 = Eq(x,23-5*3)
 print(solve(Eq1,x))
-We got 8 from sympy, so the answer is 8.

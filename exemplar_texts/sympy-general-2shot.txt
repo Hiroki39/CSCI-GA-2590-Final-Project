@@ -8,7 +8,6 @@ from sympy import *
 x = symbols('x')
 Eq1 = Eq(x,58-23-2)
 print(solve(Eq1,x))
-We got 33 from sympy, so the answer is 33.
 
 Q: Olivia has $23. She bought five bagels for $3 each. How much money does she have left?
 A: mapping:{x:money she have left}
@@ -19,4 +18,3 @@ from sympy import *
 x = symbols('x')
 Eq1 = Eq(x,23-5*3)
 print(solve(Eq1,x))
-We got 8 from sympy, so the answer is 8.

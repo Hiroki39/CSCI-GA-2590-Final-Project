@@ -10,6 +10,7 @@ import sys
 from io import StringIO
 import contextlib
 
+import random
 
 def evaluate_equations(equations, mapping, response=''):
 

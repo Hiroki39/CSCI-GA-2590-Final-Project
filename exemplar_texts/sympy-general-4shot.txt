@@ -8,7 +8,6 @@ from sympy import *
 x = symbols('x')
 Eq1 = Eq(x,21-15)
 print(solve(Eq1,x))
-We got 6 from sympy, so the answer is 6.
 
 Q: If there are 3 cars in the parking lot and 2 more cars arrive, how many cars are in the parking lot?
 A: mapping:{x: cars in the parking lot}
@@ -19,7 +18,6 @@ from sympy import *
 x = symbols('x')
 Eq1 = Eq(x,3+2)
 print(solve(Eq1,x))
-We got 5 from sympy, so the answer is 5.
 
 Q: Michael had 58 golf balls. On tuesday, he lost 23 golf balls. On wednesday, he lost 2 more. How many golf
 balls did he have at the end of wednesday?
@@ -31,7 +29,6 @@ from sympy import *
 x = symbols('x')
 Eq1 = Eq(x,58-23-2)
 print(solve(Eq1,x))
-We got 33 from sympy, so the answer is 33.
 
 Q: Olivia has $23. She bought five bagels for $3 each. How much money does she have left?
 A: mapping:{x:money she have left}
@@ -42,4 +39,3 @@ from sympy import *
 x = symbols('x')
 Eq1 = Eq(x,23-5*3)
 print(solve(Eq1,x))
-We got 8 from sympy, so the answer is 8.
