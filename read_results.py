@@ -6,6 +6,9 @@ from collections import OrderedDict
 
 import argparse
 import os
+import sys
+from io import StringIO
+import contextlib
 
 
 def evaluate_equations(equations, mapping, response=''):
@@ -235,8 +238,6 @@ def calculate_answer(result, prompt):
     return answers, equation_column
 
 # evaluate aqua dataset with multiple choice
-
-
 def eval_aqua(result):
     total, correct, undef = len(result), 0, 0
     for i, response in enumerate(result['response']):
@@ -259,8 +260,53 @@ def eval_aqua(result):
             undef += 1
     print("acc", correct/total, "invalid", undef/total)
 
-# kinda too messy; needs to be cleaned
+# for execute print function 
+@contextlib.contextmanager
+def stdoutIO(stdout=None):
+    old = sys.stdout
+    if stdout is None:
+        stdout = StringIO()
+    sys.stdout = stdout
+    yield stdout
+    sys.stdout = old
 
+# extract sympy code from output, then exec the codes
+def extract_equations(response):
+    ls = response.split("\n")
+    start = None
+    for ind, item in enumerate(ls):
+        if item and item.strip()[0]== "#":
+            start = ind+1
+            break
+    if start is None:
+        return None
+    code = "\n".join(ls[start:-1])
+    with stdoutIO() as s:
+        try:
+            exec(code)
+        except Exception as e:
+            print(e)
+            # print(response)
+            return None
+    try:
+        res = float(s.getvalue().strip()[1:-1])
+    except Exception as e:
+        print(e)
+        # print(response)
+        return None
+    return [res]
+
+def eval_sympy(result):
+    answers = []
+    invalid = 0
+    for i in range(len(result)):
+        answer = extract_equations(result['response'][i])
+        answers.append(answer)
+        invalid += 1 if answer is None else 0
+    print("invalid", invalid)
+    return answers
+
+# kinda too messy; needs to be cleaned
 
 def eval_result(filename, prompt, dataset_name):
 
@@ -271,7 +317,7 @@ def eval_result(filename, prompt, dataset_name):
             result, "arithcot")
         result['answer'] = [i[0] for i in result['answer']]
         print("acc", np.mean(result['response_answer'] == result['answer']))
-    elif prompt == 'cot' or prompt == 'zero-cot' or (prompt == 'sympy' and dataset_name != 'aqua_rat'):
+    elif prompt == 'cot' or prompt == 'zero-cot':
         if (prompt == 'zero-cot'):
             raise Warning("Refer to the paper for zero-cot evaluation")
         result['response_answer'], result['flag'] = calculate_answer(
@@ -289,7 +335,11 @@ def eval_result(filename, prompt, dataset_name):
         result['answer'] = [i[0] for i in result['answer']]
         print("acc", np.mean(result['response_answer'] == result['answer']))
     elif prompt == 'sympy':
-        eval_aqua(result)
+        if dataset_name == 'aqua_rat':
+            eval_aqua(result)
+        else:
+            result['response_answer'] = eval_sympy(result)
+            print("acc", np.mean(result['response_answer'] == result['answer']))
     else:
         print("eval not implemented")
         pass
