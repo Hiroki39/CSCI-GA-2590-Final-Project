@@ -1,0 +1,12 @@
+,question,answer,response,mapping,response_answer,equations
+0,Janet’s ducks lay c0 eggs per day. She eats three for breakfast every morning and bakes muffins for her friends every day with four. She sells the remainder at the farmers' market daily for $c1 per fresh duck egg. How much in dollars does she make every day at the farmers' market?,J,"Janet eats three eggs for breakfast and bakes four into muffins, so she uses a total of 3+4=7 eggs per day.
+This means she has c0-7 eggs left to sell at the farmers' market.
+If she sells each egg for $c1, then her daily earnings are (c0-7)*c1.
+The answer is (c0-7)*c1 in dollars.","{'c0': 16.0, 'c1': 2.0}",18.0,"['3+4 = 7 eggs per day.', 'answer = (c0-7)*c1 in dollars']"
+1,A robe takes c0 bolts of blue fiber and half that much white fiber. How many bolts in total does it take?,I,"To find the total number of bolts, we need to add the number of blue bolts and the number of white bolts. We know that the robe takes c0 bolts of blue fiber and half that much white fiber, so the number of white bolts is c0/2. Therefore, the total number of bolts is:
+
+total bolts = blue bolts + white bolts
+total bolts = c0 + c0/2
+total bolts = 3/2 * c0
+
+So the robe takes 3/2 times as many bolts as the original c0 bolts of blue fiber.",{'c0': 2.0},3.0,"['bolts =  blue bolts + white bolts', 'bolts =  c0 + c0/2', 'bolts =  3/2 * c0']"
