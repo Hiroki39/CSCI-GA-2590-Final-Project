@@ -1,8 +1,4 @@
 bf925727-041e-49cc-a7f2-7cc7ae6e3296,gpt3,aqua_rat,sympy,4,
-6a16bc77-21a2-47c8-ba4d-572f3545bf00,gptturbo,gsm8k,arithcot,8,general
-3d6ac214-0a2d-4dab-bc78-7855592fabc4,gptturbo,gsm8k,cot,8,general
-b59e1a6a-57ef-4b24-a7fe-e644e6c825f8,gptturbo,gsm8k,pycot,8,gsm8k
-21304d1b-c61d-4c42-a0b7-d613e0194a4e,gptturbo,gsm8k,varcot,8,general
 9beadaa5-01c2-4f59-a3e9-e54d7728076e,gptturbo,multiarith,arithcot,8,general
 9b6287f6-2926-40bb-9802-cd69c297a32f,gptturbo,multiarith,arithcot,8,general
 a1183cac-73bb-4c2f-be3a-795523471c14,gptturbo,multiarith,arithcot,8,general

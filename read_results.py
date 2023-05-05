@@ -53,10 +53,11 @@ def evaluate_equations(equations, mapping, response=''):
             expression = expression.replace(variable, str(mapping[variable]))
 
         for variable in new_variables:
-            expression = expression.replace(variable, str(new_variables[variable]))
-        
-        expression = re.sub(r'[a-z]','',expression)
-        expression = re.sub(r'[A-Z]','',expression)
+            expression = expression.replace(
+                variable, str(new_variables[variable]))
+
+        expression = re.sub(r'[a-z]', '', expression)
+        expression = re.sub(r'[A-Z]', '', expression)
 
         try:
             value = eval(expression)
@@ -109,7 +110,7 @@ def evaluate_function(mapping, response):
 
     try:
         problem = response.split('\n')[0].split()[1].split('(')[0]
-        answer = eval(problem +'('+arguments+')')
+        answer = eval(problem + '('+arguments+')')
         return answer
     except Exception as e:
         print(e)
@@ -127,7 +128,7 @@ def extract_answer(response, prompt='cot'):
             answer = re.search(r'\d+(\,\d+)*(\.\d+)?', answer).group(0)
             # to be tidied
             try:
-                if(re.search(r'\d+(\,\d+)*(\.\d+)?', answer).group(0) 
+                if (re.search(r'\d+(\,\d+)*(\.\d+)?', answer).group(0)
                    != re.search(r'\d+(\,\d+)*(\.\d+)?', answer).group(-1)):
                     flag = 1
             except:
@@ -146,7 +147,7 @@ def extract_answer(response, prompt='cot'):
         except:
             return None
 
-    return float(answer.replace(",", '')),flag
+    return float(answer.replace(",", '')), flag
 
 
 def calculate_answer(result, prompt):
@@ -239,7 +240,8 @@ def calculate_answer(result, prompt):
 def eval_aqua(result):
     total, correct, undef = len(result), 0, 0
     for i, response in enumerate(result['response']):
-        a = re.search(r"([Aa]nswer|[Cc]hoice|[Oo]ption) (?:is )?[A-Ea-e]", response)
+        a = re.search(
+            r"([Aa]nswer|[Cc]hoice|[Oo]ption) (?:is )?[A-Ea-e]", response)
         if a:
             _, end = a.span()
             predicted = response[end-1]
@@ -258,9 +260,11 @@ def eval_aqua(result):
     print("acc", correct/total, "invalid", undef/total)
 
 # kinda too messy; needs to be cleaned
+
+
 def eval_result(filename, prompt, dataset_name):
 
-    result = pd.read_json("logs/"+filename+".jsonl", lines=True)
+    result = pd.read_json("logs/" + filename + ".jsonl", lines=True)
 
     if prompt == 'arithcot':
         result['response_answer'], result['equations'] = calculate_answer(
@@ -270,7 +274,8 @@ def eval_result(filename, prompt, dataset_name):
     elif prompt == 'cot' or prompt == 'zero-cot' or (prompt == 'sympy' and dataset_name != 'aqua_rat'):
         if (prompt == 'zero-cot'):
             raise Warning("Refer to the paper for zero-cot evaluation")
-        result['response_answer'], result['flag'] = calculate_answer(result, 'cot')
+        result['response_answer'], result['flag'] = calculate_answer(
+            result, 'cot')
         result['answer'] = [i[0] for i in result['answer']]
         print("acc", np.mean(result['response_answer'] == result['answer']))
     elif prompt == 'varcot':
