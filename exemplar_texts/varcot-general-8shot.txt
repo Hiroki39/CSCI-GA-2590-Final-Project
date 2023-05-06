@@ -44,7 +44,7 @@ The answer is golf_balls_wednesday.
 
 Q: Olivia has $c0. She bought c1 bagels for $c2 each. How much money does she have left?
 A: Olivia had c0 dollars. c1 bagels for c2 dollars each will be c0 * c1 dollars. 
-money_spent = c0 * c1
+money_spent = c1 * c2
 So she has c0 - money_spent dollars left. 
 money_remaining = c0 - money_spent 
 The answer is money_remaining.
